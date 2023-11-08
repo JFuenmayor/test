@@ -1,0 +1,153 @@
+{
+  "data": {
+    "searchMagicLinks": [
+      {
+        "id": "5fd90b6a310cd0398852e579",
+        "name": "Giftcard MagicLink",
+        "linkUrl": "http://localhost:3000/l/OhLT1c2J",
+        "status": "DISABLED",
+        "expirationDate": null,
+        "maxExecutions": 1,
+        "message": "Giftcard Message",
+        "approvedPostalId": "5fd90b674a19281f10436507",
+        "variantId": "5fd86d094a19281f10436352",
+        "distributionChannel": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": null,
+          "linkExpiredViews": null,
+          "linkExecutions": 0,
+          "__typename": "BasicMetrics"
+        },
+        "lastView": null,
+        "lastExecution": null,
+        "created": {
+          "actor": "5fd90b64123e0d4507dcdd9d",
+          "dateTime": "2020-12-14T19:15:54.829Z",
+          "__typename": "ActionRecord"
+        },
+        "updated": null,
+        "userLink": {
+          "userName": "8807dc37-546f-40d7-a36f-692b124c99e3@postal.dev",
+          "fullName": "Gustave O'Reilly",
+          "__typename": "UserLink"
+        },
+        "__typename": "MagicLink"
+      },
+      {
+        "id": "5fd90b72310cd0398852e57c",
+        "name": "MagicLink 1",
+        "linkUrl": "http://localhost:3000/l/ZtdrSx07",
+        "status": "ACTIVE",
+        "expirationDate": null,
+        "maxExecutions": 2,
+        "message": "",
+        "approvedPostalId": "5fd90b674a19281f10436508",
+        "variantId": "5fd86d094a19281f10436341",
+        "distributionChannel": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": null,
+          "linkExpiredViews": null,
+          "linkExecutions": 0,
+          "__typename": "BasicMetrics"
+        },
+        "lastView": null,
+        "lastExecution": null,
+        "created": {
+          "actor": "5fd90b64123e0d4507dcdd9d",
+          "dateTime": "2020-12-15T19:16:02.233Z",
+          "__typename": "ActionRecord"
+        },
+        "updated": null,
+        "userLink": {
+          "userName": "8807dc37-546f-40d7-a36f-692b124c99e3@postal.dev",
+          "fullName": "Gustave O'Reilly",
+          "__typename": "UserLink"
+        },
+        "__typename": "MagicLink"
+      },
+      {
+        "id": "5fd90b72310cd0398852e583",
+        "name": "MagicLink 9",
+        "linkUrl": "http://localhost:3000/l/x9LZvTua",
+        "status": "ACTIVE",
+        "expirationDate": null,
+        "maxExecutions": 10,
+        "message": "",
+        "approvedPostalId": "5fd90b674a19281f10436508",
+        "variantId": "5fd86d094a19281f10436341",
+        "distributionChannel": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": null,
+          "linkExpiredViews": null,
+          "linkExecutions": 0,
+          "__typename": "BasicMetrics"
+        },
+        "lastView": null,
+        "lastExecution": null,
+        "created": {
+          "actor": "5fd90b64123e0d4507dcdd9d",
+          "dateTime": "2020-12-15T19:16:02.639Z",
+          "__typename": "ActionRecord"
+        },
+        "updated": null,
+        "userLink": {
+          "userName": "8807dc37-546f-40d7-a36f-692b124c99e3@postal.dev",
+          "fullName": "Gustave O'Reilly",
+          "__typename": "UserLink"
+        },
+        "__typename": "MagicLink"
+      }
+    ]
+  }
+}

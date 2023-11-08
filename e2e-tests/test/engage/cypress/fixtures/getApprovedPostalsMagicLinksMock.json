@@ -1,0 +1,71 @@
+{
+  "data": {
+    "getApprovedPostal": {
+      "id": "61561e16c0d7fa3ae6c96ab5",
+      "name": "Chipotle",
+      "displayName": null,
+      "description": "Chipotle Description",
+      "brandName": "Chipotle",
+      "status": "ACTIVE",
+      "category": "Gift Cards",
+      "type": "Chipotle",
+      "subCategory": ["Popular"],
+      "useCases": null,
+      "teamIds": null,
+      "imageUrls": [
+        {
+          "url": "asset://PMAChipotle",
+          "description": null
+        }
+      ],
+      "marketplaceProductId": "6155607ec0d7fa3ae6c966a2",
+      "variants": [
+        {
+          "id": "6155607ec0d7fa3ae6c9669c",
+          "marketplaceProductId": null,
+          "variantName": "$5",
+          "description": "$5 Gift Card",
+          "imageUrls": null,
+          "status": "ACTIVE",
+          "price": 500,
+          "displayPrice": 500,
+          "displaySubscriberPrice": 500,
+          "giftMessageSupported": null,
+          "physicalMessageSupported": null,
+          "productName": null
+        }
+      ],
+      "designTemplate": null,
+      "variantOrderFlexibility": null,
+      "event": null,
+      "eventDetails": null,
+      "metrics": {
+        "queued": 0,
+        "failed": 0,
+        "sent": 0,
+        "delivered": 0,
+        "bounces": 0,
+        "touches": 0,
+        "costInCents": 0,
+        "date": null,
+        "started": 0,
+        "completed": 0,
+        "cancelled": 0,
+        "successful": 0,
+        "campaignsSent": 0,
+        "playbooksStarted": 0,
+        "triggersExecuted": 0,
+        "linkTotalViews": 1,
+        "linkUniqViews": 0,
+        "linkMaxExeViews": 1,
+        "linkExpiredViews": 0,
+        "linkExecutions": 0
+      },
+      "attribution": null,
+      "collection": false,
+      "currency": "USD",
+      "geographicMarkets": ["US"],
+      "formFieldList": null
+    }
+  }
+}

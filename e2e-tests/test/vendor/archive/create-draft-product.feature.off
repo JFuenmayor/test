@@ -1,0 +1,8 @@
+# @draftProduct @products
+
+# Feature: Create a draft product in Vendor app
+
+#     Scenario: Navigate to products page and manually create, save, and delete a draft product
+#     Given generated user navigates to products page
+#     When user manually creates and saves draft product
+#     Then user should see draft product in products page then delete draft

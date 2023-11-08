@@ -1,0 +1,272 @@
+import { userFactory } from '../../support/factories'
+import { Navbar, Profile, Universal } from '../../support/pageObjects'
+
+describe('New User Tours and Checklist Testing', function () {
+  const navbar = new Navbar()
+  const universal = new Universal()
+  const profile = new Profile()
+  const user = userFactory()
+  before(() => {
+    cy.manageState()
+    cy.programaticSignup(user)
+  })
+  beforeEach(() => cy.restoreLocalStorageCache())
+
+  afterEach(() => cy.saveLocalStorageCache())
+  it(
+    `tests that the new user is directed to the Quick Tour (/tours)`,
+    {
+      retries: {
+        runMode: 0,
+        openMode: 0,
+      },
+    },
+    () => {
+      cy.visit('/')
+      cy.url().should('contain', 'tours')
+      getWelcomeHeading(user.firstName)
+      getSendSomethingCard().within(() => {
+        getSendSomethingImage().should('be.visible')
+        getShowMeHowButton().should('be.visible')
+      })
+      getHostAnEventCard().within(() => {
+        getHostAnEventImage().should('be.visible')
+        getExploreEventsButton().should('be.visible')
+      })
+      getLearnFromExpertCard().within(() => {
+        getLearnFromExpertImage().should('be.visible')
+        getBookTimeButton().should('be.visible')
+      })
+      //})
+      //it(`tests that the 'I'd like to explore products on my own' link navigates to the Resource Checklist`, function () {
+      getExploreOnOwnLink().should('be.visible').click()
+      cy.url().should('contain', 'checklist')
+      getResourceChecklistHeading().should('be.visible')
+      getShowMeHowLink().should('be.visible')
+      getAllChecklistItems().should('have.length.gte', 8)
+      //})
+      //it(`tests completing one checklistItem (Update your profile)`, function () {
+      getUpdateProfileItem().within(() => {
+        getLetsGoLink().click()
+      })
+      cy.url().should('contain', 'profile')
+      universal.getRowByText('Active').should('be.visible')
+      universal.getSideBar().within(() => {
+        profile
+          .getResourceChecklistLink()
+          .should('be.visible')
+          .and('not.have.attr', 'aria-current', 'page')
+          .click({ force: true })
+      })
+      universal.getSideBar().should('not.exist')
+      cy.url().should('contain', 'checklist')
+      getAllCompleteChecklistItems().should('be.visible').and('have.length', 1)
+      //})
+      //it(`tests clicking 'mark all steps complete'`, function () {
+      getMarkAllStepsCompleteLink().should('be.visible').click({ force: true })
+      cy.url().should('not.contain', 'checklist', { timeout: 99000 })
+      //})
+      //it(`tests that a resource checklist menuitem exists in the navbar dropdown`, function () {
+      navbar.getProfileMenuButton().should('be.visible').click()
+      cy.findByRole('menu').within(() => {
+        navbar.getResourceChecklistMenuItem().should('exist')
+      })
+      //})
+      //it(`tests that all checklist items are marked as complete`, function () {
+      visitChecklist()
+      getAllCompleteChecklistItems().should('have.length.gte', 8)
+      //tests signing in as a new user, then clicking 'Start the Tour' link
+      cy.manageState()
+      const userB = userFactory()
+      cy.programaticSignup(userB)
+      cy.visit('/')
+      universal.getSpinner().should('not.exist')
+      navbar.getProfileMenuButton().should('be.visible').click()
+      cy.findByRole('menu').should('contain', userB.firstName)
+      cy.contains(`Welcome to the Postal Offline Marketing Platform, ${userB.firstName}`)
+      cy.wait(300)
+      getShowMeHowButton().should('be.visible').click()
+      //clicks through the send postal tour
+      getModalByHeader(`Let's get started!`).within(() => {
+        getNextButton().should('be.visible').click()
+      })
+
+      cy.wait(1000)
+      getModalByHeader(`Select an Item`)
+        .should('be.visible')
+        .within(() => {
+          getNextButton().should('be.visible').click()
+        })
+
+      cy.wait(1000)
+      getModalByHeader(`Send a Gift Email`)
+        .should('be.visible')
+        .within(() => {
+          getNextButton().should('be.visible').click()
+        })
+
+      cy.wait(2000)
+      getModalByHeader(`Select a Contact`)
+        .scrollIntoView()
+        .should('exist')
+        .within(() => {
+          getNextButton().should('be.exist').click({ force: true })
+        })
+
+      cy.wait(1000)
+      getModalByHeader(`Next`)
+        .should('be.visible')
+        .within(() => {
+          getNextButton().should('be.visible').click()
+        })
+
+      cy.wait(1000)
+      getModalByHeader('Gift Email Message')
+        .should('be.visible')
+        .within(() => {
+          getNextButton().click()
+        })
+
+      cy.wait(1000)
+      getModalByHeader('Select an Option')
+        .should('be.visible')
+        .within(() => {
+          getNextButton().click()
+        })
+
+      cy.wait(1000)
+      getModalByHeader(`Next`)
+        .should('be.visible')
+        .within(() => {
+          getNextButton().click()
+        })
+
+      cy.wait(1000)
+      getModalByHeader(`Review Screen`)
+        .should('be.visible')
+        .within(() => {
+          getNextButton().click()
+        })
+
+      cy.wait(1000)
+      getModalByHeader(`Gift Email`)
+        .should('be.visible')
+        .within(() => {
+          cy.contains('button', 'Next').click()
+        })
+
+      cy.wait(1000)
+      getModalByHeader(`On the Way!`)
+        .should('be.visible')
+        .within(() => {
+          getNextButton().click()
+        })
+
+      cy.wait(1000)
+      getModalByHeader(`You did it!`)
+        .should('be.visible')
+        .within(() => {
+          getCompleteTourButton().click()
+        })
+
+      cy.wait(1000)
+      cy.visit('/checklist')
+      getAllCompleteChecklistItems().should('have.length', 1)
+      //logs back into the first user and tests that quick tours does not appear since it was completed
+      cy.manageState() //
+      cy.programaticLogin({ userName: user.userName, password: user.password })
+      cy.visit('/')
+      navbar.getProfileMenuButton().should('be.visible').click()
+      cy.findByRole('menu').should('contain', user.firstName)
+      cy.url().should('not.contain', 'checklist')
+      //checks that the 'explore events' button navigates to the events page
+      visitTours()
+      universal.getSpinner().should('not.exist')
+      cy.contains(`Welcome to the Postal Offline Marketing Platform, ${user.firstName}`)
+      cy.wait(400)
+      getExploreEventsButton().should('be.visible').click({ force: true })
+      cy.wait(400)
+      cy.url().should('contain', 'events/marketplace')
+    }
+  )
+})
+
+//Headers
+function getWelcomeHeading(name: string) {
+  return cy.findByRole('heading', {
+    name: `Welcome to the Postal Offline Marketing Platform, ${name}!`,
+  })
+}
+function getResourceChecklistHeading() {
+  return cy.findByRole('heading', { name: `Resource Checklist` })
+}
+//Modals
+function getModalByHeader(name: string) {
+  return cy.contains('[role="dialog"]', name, { timeout: 64000 })
+}
+//Cards
+function getSendSomethingCard() {
+  return cy.contains('div', `I'd like to send something`)
+}
+function getHostAnEventCard() {
+  return cy.contains('div', `I'd like to host an event`)
+}
+function getLearnFromExpertCard() {
+  return cy.contains('div', `I'd like to learn from an expert`)
+}
+//Images
+function getSendSomethingImage() {
+  return cy.findByAltText('Send something')
+}
+function getHostAnEventImage() {
+  return cy.findByAltText('Host an event')
+}
+function getLearnFromExpertImage() {
+  return cy.findByAltText('Learn from an expert')
+}
+//Buttons
+function getShowMeHowButton() {
+  return cy.findByRole('button', { name: 'Show me how' })
+}
+function getExploreEventsButton() {
+  return cy.findByRole('button', { name: 'Explore Events' })
+}
+function getBookTimeButton() {
+  return cy.findByRole('button', { name: 'Ask a Question' })
+}
+function getNextButton() {
+  return cy.findByRole('button', { name: 'Next Step' })
+}
+function getCompleteTourButton() {
+  return cy.findByRole('button', { name: 'Complete Tour' })
+}
+//Links
+function getExploreOnOwnLink() {
+  return cy.findByRole('link', { name: `I'd like to explore products on my own` })
+}
+function getShowMeHowLink() {
+  return cy.contains('a', 'Show me how.')
+}
+function getLetsGoLink() {
+  return cy.contains('a', `Let's Go`)
+}
+function getMarkAllStepsCompleteLink() {
+  return cy.contains('a', 'mark all steps complete')
+}
+//Checklist Items
+function getAllChecklistItems() {
+  return cy.findAllByTestId('Checklist_checklistItem')
+}
+function getAllCompleteChecklistItems() {
+  return cy.findAllByTestId('ChecklistItem_icon_complete')
+}
+function getUpdateProfileItem() {
+  return cy.contains('div', 'Update your profile')
+}
+//visits
+function visitChecklist() {
+  return cy.visit('/checklist')
+}
+function visitTours() {
+  return cy.visit('/tours')
+}

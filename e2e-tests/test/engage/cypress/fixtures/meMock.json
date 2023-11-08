@@ -1,0 +1,55 @@
+{
+  "data": {
+    "me": {
+      "id": "5fa09925ee40bf1b3fe30794",
+      "firstName": "Tester",
+      "lastName": "Testy",
+      "emailAddress": "1211de9b-f77c-4b01-a7bf-5432adc87300@postal.dev",
+      "profilePicture": null,
+      "phoneNumber": null,
+      "title": null,
+      "meetingLink": null,
+      "productAccess": [
+        {
+          "id": "5fa099270ebad05ac9d5235e",
+          "accountId": "5fa0992545afa01e9d941731",
+          "teamId": null,
+          "partnerId": null,
+          "product": "POSTAL_IO_APP",
+          "roles": ["USER", "MANAGER", "ADMIN"],
+          "type": "ACCOUNT",
+          "created": {
+            "actor": "5fa09925ee40bf1b3fe30794",
+            "dateTime": "2020-11-02T23:41:27.815Z",
+            "__typename": "ActionRecord"
+          },
+          "__typename": "ProductAccess"
+        }
+      ],
+      "accountName": "Gleichner Group",
+      "authTypes": ["password"],
+      "created": {
+        "actor": "SignupVerticle",
+        "dateTime": "2020-11-02T23:41:25.495Z",
+        "__typename": "ActionRecord"
+      },
+      "updated": null,
+      "handwritingName": null,
+      "completedActions": {},
+      "notifications": {
+        "balanceLowNotificationsOn": false,
+        "balanceLowChannels": ["EMAIL"],
+        "lastBalanceLowNotificationSent": null,
+        "budgetLowNotificationsOn": false,
+        "budgetLowChannels": ["EMAIL"],
+        "lastBudgetLowNotificationSent": null,
+        "giftEmailAcceptedNotificationsOn": true,
+        "giftEmailAcceptedChannels": ["EMAIL"],
+        "magicLinkAcceptedNotificationsOn": true,
+        "magicLinkAcceptedChannels": ["EMAIL"],
+        "__typename": "UserNotifications"
+      },
+      "__typename": "UserAccount"
+    }
+  }
+}

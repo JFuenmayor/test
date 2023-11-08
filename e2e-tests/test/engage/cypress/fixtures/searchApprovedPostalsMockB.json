@@ -1,0 +1,259 @@
+{
+  "data": {
+    "searchApprovedPostals": [
+      {
+        "id": "5ebed962fdc5536a59142542",
+        "name": "Start of Postals Mock B",
+        "description": "This will not be sent to RRD or anyone else. We will create the PDF and store it though. We will also run the usage transaction.",
+        "brandName": "Postal.io",
+        "status": "ACTIVE",
+        "category": "Direct Mail",
+        "type": "Postcards",
+        "subCategory": ["Postcard"],
+        "useCases": null,
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://5ebed964c84af34a22e30cd7",
+            "description": "Preview"
+          },
+          {
+            "url": "asset://5ebed964c84af34a22e30cd8",
+            "description": "Cover"
+          },
+          {
+            "url": "asset://5ebed964c84af34a22e30cd9",
+            "description": "Address"
+          }
+        ],
+        "marketplaceProductId": "5e857c24daa7a70ca5c3fa3e",
+        "variants": [
+          {
+            "id": "5e50b451d04a60333bc1ef4d",
+            "variantName": "Satin #80",
+            "description": "Satin, 80# stock",
+            "imageUrls": [],
+            "status": "ACTIVE",
+            "price": 21,
+            "displayPrice": 101,
+            "displaySubscriberPrice": 28,
+            "giftMessageSupported": true,
+            "priceStructure": null
+          },
+          {
+            "id": "5e7da5b207cb1e0ee66aeb57",
+            "variantName": "Satin #100",
+            "description": "Satin, 100# stock",
+            "imageUrls": null,
+            "status": "ACTIVE",
+            "price": 45,
+            "displayPrice": 74,
+            "displaySubscriberPrice": 54,
+            "giftMessageSupported": true,
+            "priceStructure": null
+          },
+          {
+            "id": "5e7da5b207cb1e0ee66aeb58",
+            "variantName": "Satin #130",
+            "description": "Satin, 130# stock",
+            "imageUrls": null,
+            "status": "ACTIVE",
+            "price": 49,
+            "displayPrice": 78,
+            "displaySubscriberPrice": 58,
+            "giftMessageSupported": true,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": {
+          "front": [
+            {
+              "name": "ReservedArea",
+              "description": null,
+              "hidden": null,
+              "locked": false,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 338,
+                "width": 625,
+                "height": 87
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 0,
+                "minY": 338,
+                "maxX": 0,
+                "maxY": 338
+              },
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "ReservedArea",
+              "description": null,
+              "hidden": null,
+              "locked": false,
+              "noPdfOutput": null,
+              "location": {
+                "x": 238,
+                "y": 113,
+                "width": 387,
+                "height": 300
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 238,
+                "minY": 113,
+                "maxX": 238,
+                "maxY": 113
+              },
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "AddressLabel",
+              "description": null,
+              "hidden": null,
+              "locked": false,
+              "noPdfOutput": null,
+              "location": {
+                "x": 274,
+                "y": 182,
+                "width": 337,
+                "height": 74
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontSize": 18.01,
+                "handwritingName": "${user.handwritingName}",
+                "color": "#000000"
+              },
+              "customizable": null
+            },
+            {
+              "name": "Postage",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 524,
+                "y": 37,
+                "width": 64,
+                "height": 56
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 524,
+                "minY": 37,
+                "maxX": 524,
+                "maxY": 37
+              },
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "Logo",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 21,
+                "y": 21,
+                "width": 150,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 39,
+                "y": 102,
+                "width": 231,
+                "height": 232
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "randomLeftOffset": true,
+                "handwritingName": "${user.handwritingName}",
+                "horizontalAlignment": "LEFT",
+                "verticalAlignment": "TOP",
+                "color": "#000000",
+                "fontSize": 20,
+                "spacingModifier": -8,
+                "sizeToFit": true,
+                "text": "${userMessage}"
+              },
+              "customizable": null
+            },
+            {
+              "name": "UspsImb",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 208,
+                "y": 366,
+                "width": 325,
+                "height": 24
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 208,
+                "minY": 366,
+                "maxX": 208,
+                "maxY": 366
+              },
+              "settings": null,
+              "customizable": null
+            }
+          ],
+          "back": [
+            {
+              "name": "Image",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 1,
+                "y": 1,
+                "width": 622,
+                "height": 422
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN",
+                "assetUrl": "asset://PMA5e61694efdd0534a86761015"
+              },
+              "customizable": null
+            }
+          ],
+          "dpi": 400,
+          "outputSize": {
+            "width": 2500,
+            "height": 1700
+          }
+        },
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": null
+      }
+    ]
+  }
+}

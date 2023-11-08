@@ -1,0 +1,80 @@
+import { Given, Then, When } from '@cucumber/cucumber'
+import { expect } from '@playwright/test'
+import { signUpViaApi } from '../support/apiActions/signup-via-api'
+import { ICustomWorld } from '../support/custom-world'
+import { userFactory } from '../support/factories/user-factory'
+import { Products, SignUpIn } from '../support/pageObjects'
+const user = userFactory()
+
+Given('generated user navigates to products page', async function (this: ICustomWorld) {
+  const page = this.page!
+  const signupIn = new SignUpIn(page)
+  const products = new Products(page)
+  const userAccount = page.locator('[data-testid="profile-data-test"]')
+  await signUpViaApi({ user: user, page })
+  const shopBy = page.locator('text=Shop by category')
+  await expect(shopBy).toBeVisible({ timeout: 90000 })
+  await signupIn.gotoVendor()
+  await signupIn.emailInput.fill(user.userName)
+  await signupIn.passwordInput.fill(user.password)
+  await signupIn.logInButton.click()
+  await expect(userAccount).toBeVisible({ timeout: 60000 })
+  await products.gotoProducts()
+})
+
+When('user manually creates and saves draft product', async function (this: ICustomWorld) {
+  const page = this.page!
+  const products = new Products(page)
+  await page.waitForURL('**/products')
+
+  //Add product
+  await page.evaluate(() => {
+    return new Promise((resolve) => setTimeout(resolve, 500)) //Await needed for if statement
+  })
+
+  //Check to see if products currently exist. If so, delete them
+  if (await products.filterProductsInput.isVisible()) {
+    await products.checkboxSelectAll.check()
+    await products.actionsButton.click()
+    await products.deleteDrafts.click()
+    await products.modalConfirmButton.click()
+    await expect(products.getAlertSuccess).toBeVisible()
+    await products.getAlertClose.click()
+  }
+
+  await products.addManuallyButton.click()
+  await expect(page.url()).toContain('/products/edit')
+
+  //Organization UI Card
+  await expect(products.categoryDropdown).toContainText('Choose a category')
+  await expect(products.subCategoryDropdown).toBeHidden() //Subcategory dropdown should be hidden if category dropdown selection isn't made
+  await products.categoryDropdown.selectOption('Books')
+  await products.subCategoryDropdown.click()
+  await products.subCategoryFirstItem.click() //Anthropology from subcategory dropdown
+  await expect(products.subCategoryDropdown).toHaveText('Anthropology')
+
+  //Fill inputs for draft product creation
+  await products.productBrandNameInput.fill('Generic Brand')
+  await products.productTitleInput.fill('Generic Test Title!')
+  await products.productDescriptionInput.fill('Automated description yo')
+  await expect(products.getAlertProductCreated).toBeHidden()
+  await products.saveAsDraftButton.click()
+  await expect(products.getAlertProductCreated).toBeVisible()
+  await products.getAlertClose.click()
+})
+
+Then('user should see draft product in products page then delete draft', async function (this: ICustomWorld) {
+  const page = this.page!
+  const products = new Products(page)
+  await products.goBackButton.click() //Navigate back to products page
+  await expect(products.actionsButton).toBeHidden()
+  await expect(products.productTableBody).toContainText('Generic Test Title!') //Assertion that correct draft product is visible
+  await products.checkboxSelectAll.check() //Delete product(s)/teardown
+  await products.actionsButton.click()
+  await products.deleteDrafts.click()
+  await expect(products.bulkDeleteProducts).toBeVisible() //Assertion for Bulk Delete Products modal
+  await products.modalConfirmButton.click()
+  await expect(products.getAlertSuccess).toHaveCount(1)
+  await products.getAlertClose.click({ force: true })
+  await expect(products.addProductsQuestionText).toBeVisible() //Assertion that all products are cleared with header "How would you like to add products?"
+})

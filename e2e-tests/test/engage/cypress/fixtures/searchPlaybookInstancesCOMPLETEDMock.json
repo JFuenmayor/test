@@ -1,0 +1,86 @@
+{
+  "data": {
+    "searchPlaybookInstances": [
+      {
+        "id": "5fc66f7f78109c01cc4f65cb",
+        "name": "Updated First",
+        "playbookDefinitionId": "5fc66f7778109c01cc4f65ca",
+        "playbookStatus": "COMPLETED",
+        "contactId": "5fc66f68270ea3193a613f5c",
+        "contactName": "Ines Muller",
+        "triggerId": null,
+        "errMessage": null,
+        "steps": [
+          {
+            "type": "ORDER",
+            "playbookStatus": "ACTIVE",
+            "errMessage": null,
+            "delay": 0,
+            "delayUnit": "DAYS",
+            "approvedPostalId": "5fc66f6725e6bf329023bd50",
+            "variantId": "5fc5f80e25e6bf329023bc8f",
+            "giftMessage": null,
+            "deliveryEmail": true,
+            "fulfillmentId": null,
+            "fulfillmentStatus": null,
+            "__typename": "PlaybookStepInstance"
+          },
+          {
+            "type": "ORDER",
+            "playbookStatus": "ACTIVE",
+            "errMessage": null,
+            "delay": 7,
+            "delayUnit": "DAYS",
+            "approvedPostalId": "5fc66f6725e6bf329023bd52",
+            "variantId": "5fc5f80e25e6bf329023bca0",
+            "giftMessage": "Gift good. For you.",
+            "deliveryEmail": true,
+            "fulfillmentId": null,
+            "fulfillmentStatus": null,
+            "__typename": "PlaybookStepInstance"
+          },
+          {
+            "type": "ORDER",
+            "playbookStatus": "ACTIVE",
+            "errMessage": null,
+            "delay": 1,
+            "delayUnit": "DAYS",
+            "approvedPostalId": "5fc66f6725e6bf329023bd50",
+            "variantId": "5fc5f80e25e6bf329023bc8f",
+            "giftMessage": null,
+            "deliveryEmail": true,
+            "fulfillmentId": null,
+            "fulfillmentStatus": null,
+            "__typename": "PlaybookStepInstance"
+          }
+        ],
+        "nextStepToExecute": 0,
+        "nextExecutionDate": "2020-12-01T16:59:51.665Z",
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 1,
+          "completed": 0,
+          "cancelled": 1,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 1,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": null,
+          "linkExpiredViews": null,
+          "linkExecutions": 0,
+          "__typename": "BasicMetrics"
+        },
+        "__typename": "PlaybookInstance"
+      }
+    ]
+  }
+}

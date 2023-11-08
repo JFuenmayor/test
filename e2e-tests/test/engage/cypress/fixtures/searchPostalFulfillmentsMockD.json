@@ -1,0 +1,98 @@
+{
+  "data": {
+    "searchPostalFulfillments": [
+      {
+        "id": "5f7dffb9f16d1c3f5f04fa2b",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "contactId": "5f7dffb6a4c25321423023fe",
+        "shipTo": {
+          "entryName": null,
+          "address1": "719 Wunsch Crescent",
+          "address2": "Apt. 464",
+          "address3": null,
+          "city": "New Davidtown",
+          "state": "Kentucky",
+          "postalCode": "07999-0095",
+          "country": "USA",
+          "preferred": true,
+          "source": "MANUAL",
+          "status": "INVALID",
+          "statusReason": null,
+          "systems": ["postal.io"],
+          "uspsAddress": {
+            "entryName": null,
+            "address1": "719 Wunsch Crescent",
+            "address2": "Apt. 464",
+            "address3": null,
+            "city": "New Davidtown",
+            "state": "Kentucky",
+            "postalCode": "07999-0095",
+            "country": "USA",
+            "preferred": false,
+            "status": null,
+            "statusReason": null,
+            "__typename": "Address"
+          },
+          "__typename": "Address"
+        },
+        "shipToEmail": "Ozella2@postal.dev",
+        "shipToName": "Erwin Schneider",
+        "campaignName": null,
+        "deliveryEmail": null,
+        "campaignId": "5f7dffb7ba29a6219dfc30bd",
+        "playbookId": null,
+        "triggerId": null,
+        "magicLinkId": null,
+        "magicLinkName": null,
+        "itemName": "Postcard",
+        "previewImage": null,
+        "giftMessage": "",
+        "marketplaceProductId": "5e67e4b5101f664a38bce2cb",
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "fulfillmentPartnerId": "5e67e4b2101f664a38bce2c5",
+        "fulfillmentPartnerOrderId": "e2db7513-35d1-4aca-8e10-4e1587fb067e",
+        "cost": {
+          "subtotal": 71,
+          "shipping": 0,
+          "tax": 0,
+          "thirdPartyFee": null,
+          "postalFee": null,
+          "taxEstimated": null,
+          "budgetExpense": null,
+          "total": 71,
+          "__typename": "OrderCost"
+        },
+        "status": "DELIVERED",
+        "history": [
+          {
+            "status": "PLACED",
+            "notes": "Order Placed",
+            "created": "2020-10-07T17:49:45.411Z",
+            "currentLocation": "null",
+            "__typename": "FulfillmentHistory"
+          }
+        ],
+        "targetDeliveryDate": null,
+        "deliveryDate": null,
+        "deliveryPartner": null,
+        "trackingNumber": null,
+        "attributes": {
+          "postalIoTrackingCode": "906671",
+          "targetPath": "http://localhost:3000/api/printmaker/output/60035443deecd96eb54c6084/600359a133baf60585b99f42.pdf?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYwMDM1OWExMzNiYWY2MDU4NWI5OWY0Mi5wZGYiLCJhY2NvdW50SWQiOiI2MDAzNTQ0M2RlZWNkOTZlYjU0YzYwODQiLCJpYXQiOjE2MTA4MzIyOTAsImV4cCI6MTYxMjA0MTg5MH0.qzOKth3x0lQUQQEkVL9zAI3Co47U2K6XBQuUYj52VGI&file=600359a133baf60585b99f42.pdf"
+        },
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:45.411Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "PostalFulfillment"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "data": {
+    "searchActivityStream": [
+      {
+        "acknowledgedBy": null,
+        "type": "UPDATE",
+        "name": "postal.order.queued",
+        "message": "Placed order for a {itemName} to be sent to {contactName}.",
+        "callouts": [
+          {
+            "targetText": "postalFulfillment",
+            "text": "Postal",
+            "action": null,
+            "dataType": "POSTAL",
+            "dataId": "5fa9afd78f68c704bae781b0",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "itemName",
+            "text": "Brochure",
+            "action": null,
+            "dataType": "POSTAL",
+            "dataId": "5fa9afd681c41e2905599c5d",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "contactName",
+            "text": "Zieme Ambrose",
+            "action": null,
+            "dataType": "CONTACT",
+            "dataId": "5fa9afd6a3fb3d5b6541f453",
+            "__typename": "StreamCallout"
+          }
+        ],
+        "count": 1,
+        "created": {
+          "actor": "5fa9afd2fa00bc14e3acf9c5",
+          "dateTime": "2020-11-09T21:08:43.621Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "ActivityStream"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "data": {
+    "searchContactsV2": {
+      "searchableContacts": [
+        {
+          "id": "5f7dffb6a4c25321423023fe",
+          "firstName": "Erwin",
+          "lastName": "Schneider",
+          "title": "Dynamic Directives Supervisor",
+          "emailAddress": "Ozella2@postal.dev",
+          "city": ["New Davidtown"],
+          "state": ["Kentucky"],
+          "postalCode": ["07999-0095"],
+          "country": ["USA"],
+          "ownerId": "5f7dffaf091fcc12292d7471",
+          "type": "CONTACT",
+          "companyName": "Marquardt - Hammes",
+          "lastSend": null,
+          "itemsSent": 0,
+          "costInCents": 400,
+          "lists": ["5f7dffb1ba29a6219dfc30b3"],
+          "campaigns": [
+            "5f7dffb7ba29a6219dfc30bd",
+            "5f7dffb78febb71d3309842c",
+            "5f7dfff0ba29a6219dfc30c8"
+          ],
+          "campaignStatus": [
+            "5f7dffb7ba29a6219dfc30bd_PLACED",
+            "5f7dffb78febb71d3309842c_DELIVERED",
+            "5f7dfff0ba29a6219dfc30c8_null"
+          ],
+          "playbooks": null,
+          "tags": ["i2vgt"],
+          "created": "2020-10-07T17:49:42.046Z",
+          "updated": "2020-10-07T17:50:42.197Z"
+        }
+      ],
+      "resultsSummary": {
+        "hasMore": false,
+        "currentPage": 1,
+        "totalPages": 1,
+        "totalRecords": 1
+      }
+    }
+  }
+}

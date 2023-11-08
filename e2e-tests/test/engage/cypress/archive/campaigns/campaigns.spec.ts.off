@@ -1,0 +1,782 @@
+import { addDays, format, subDays } from 'date-fns'
+import { CampaignType, SearchCampaignsDocument, SearchContactsV2Document } from '../../support/api'
+import { userFactory } from '../../support/factories'
+import {
+  Billing,
+  Campaigns,
+  Contacts,
+  Marketplace,
+  Navbar,
+  SendItem,
+  SidePanel,
+  Universal,
+} from '../../support/pageObjects'
+
+const today = new Date()
+const tomorrow = addDays(today, 1)
+const inTwoDays = addDays(today, 2)
+const twoDaysAgo = subDays(today, 2)
+
+const dateFormatTable = (date: Date) => date.toLocaleDateString()
+const dateFormatInput = (date: Date) => format(date, 'MMMM d, yyyy')
+
+let createdId: string
+
+describe.skip('Campaigns Testing', function () {
+  const user = userFactory()
+  const marketplace = new Marketplace()
+  const campaigns = new Campaigns()
+  const universal = new Universal()
+  const navbar = new Navbar()
+  const sendItem = new SendItem()
+  const contacts = new Contacts()
+  const billing = new Billing()
+  const sidePanel = new SidePanel()
+
+  let id: string
+  const firstName: string = user.firstName
+  const email: string = user.userName
+  const company: string = user.company
+  let approvedPostalId: string
+  let variantId: string
+
+  before(() => {
+    cy.manageState()
+    cy.programaticSignup(user).then((res) => {
+      id = res.id
+    })
+    cy.createApprovedPostcard().then((postcard) => {
+      approvedPostalId = postcard.id
+      variantId = postcard.variants?.[0].id as string
+    })
+    cy.createChipotlePostal()
+    cy.contactsSeed()
+    cy.campaignsSeed({
+      approvedPostalId,
+      variantId,
+    })
+  })
+  beforeEach(() => {
+    cy.restoreLocalStorageCache()
+    cy.intercept('/engage/api/graphql', (req) => {
+      if (req.body.operationName === 'searchContactsV2') {
+        req.alias = 'searchContactsV2'
+      }
+      if (req.body.operationName === 'getBackgroundTaskById') {
+        req.alias = 'getBackgroundTaskById'
+      }
+      if (req.body.operationName === 'searchCampaigns') {
+        req.alias = 'searchCampaigns'
+      }
+    })
+  })
+
+  afterEach(() => cy.saveLocalStorageCache())
+
+  it(`tests that the sidebar and campaigns page renders appropriately (the latter via mock)`, function () {
+    campaigns.visitCampaigns()
+    universal.waitForProgressBar()
+    universal.getSpinner().should('not.exist')
+    //preps favorites for the following tests since api call doesn't work on e2e server
+    cy.addToFavorites(id).then((res) => {
+      cy.log(`bulkContactAddToList Status:${res.status}`)
+    })
+    //tests that the campaigns side bar renders appropriately
+    cy.url().should('contain', '/campaigns')
+    campaigns.getCampaignsHeader().should('be.visible')
+    campaigns.getMyCampaignsLink().should('be.visible')
+    campaigns.getAllCampaignsLink().should('have.attr', 'aria-current', 'page')
+
+    //tests that the campaigns page renders appropriately
+    //mocks completed Campaign Stats
+
+    cy.graphqlMockSet({
+      operationName: 'objectAnalytics',
+      count: 2,
+      fixture: 'objectAnalyticsMock.json',
+    })
+
+    cy.graphqlMockStart()
+
+    campaigns.visitCampaigns()
+    universal.getSpinner().should('not.exist')
+    universal
+      .getStatsCard()
+      .should('be.visible')
+      .within(() => {
+        campaigns.getSentStats().should('contain', '2')
+        campaigns.getCostStats().should('contain', '4.00')
+        campaigns.getCostPerTouchStats().should('contain', '2.00')
+      })
+    cy.graphqlMockDelete({ operationName: 'objectAnalytics' })
+  })
+
+  it(`tests that the navbar renders appropriately and the side bar toggle button`, function () {
+    //tests that the navbar renders appropriately
+    campaigns.visitCampaigns()
+    universal.waitForProgressBar()
+    navbar.getContactsLink().should('be.visible')
+    navbar.getCampaignsLink().should('have.attr', 'aria-current', 'page')
+    navbar.getMarketplaceLink().should('be.visible')
+    navbar.getEventsLink().should('be.visible')
+    navbar.getReportingLink().should('be.visible')
+    universal.getSpinner().should('not.exist')
+    navbar.getAutomationLink().click({ force: true })
+    navbar.getMagicLinkMenuItem().should('be.visible')
+    navbar.getTriggersMenuItem().should('exist')
+    navbar.getSubscriptionsMenuItem().should('exist')
+
+    //tests the sidebar toggle button
+    universal.getSideBarToggle().click({ force: true })
+    campaigns.getSidebarHeading().should('not.exist')
+    campaigns.getMyCampaignsLink().should('not.exist')
+    campaigns.getAllCampaignsLink().should('not.exist')
+  })
+
+  it(`tests the campaigns table sorting, pagination, and searching for a campaign`, function () {
+    //tests Sort By Name
+    //^
+    campaigns.visitCampaigns()
+    universal.waitForProgressBar()
+    universal.getNoItemsMessage().should('not.exist')
+    campaigns.getNameFilter().as('Name').should('be.visible').click()
+    cy.saveText({ rowNumber: 1, element: 'td' }).then((txt) => {
+      cy.get('@Name').click()
+      universal.getRowsInATableBody().eq(1).should('not.contains.text', txt)
+    })
+
+    //tests Sort By Status
+    //v
+    campaigns.getStatusFilter().click()
+    universal.getRowsInATableBody().eq(0).should('contain', 'Scheduled')
+
+    //^
+    campaigns.getStatusFilter().click()
+    universal.getRowsInATableBody().eq(0).should('contain', 'Cancelled')
+
+    //tests Sort By Start Date
+    //^
+    campaigns.getStartDateFilter().click()
+    universal.getRowsInATableBody().eq(0).should('contain', dateFormatTable(today))
+
+    //v
+    campaigns.getStartDateFilter().click()
+    universal.getRowsInATableBody().eq(0).should('contain', dateFormatTable(tomorrow))
+
+    //tests Sort By Created
+    //v
+    campaigns.getCreatedFilter().click()
+    universal.getRowsInATableBody().eq(0).should('contain', dateFormatTable(tomorrow))
+
+    //^
+    campaigns.getCreatedFilter().click()
+    universal.getRowsInATableBody().eq(0).should('contain', dateFormatTable(today))
+
+    //tests Sort By Sent
+    //^
+    campaigns.getSentFilter().click({ force: true })
+    universal.getRowsInATableBody().should('contain', '2')
+
+    //v
+    campaigns.getSentFilter().click({ force: true })
+    universal.getRowsInATableBody().should('contain', '0')
+
+    //tests Sort By Cost
+    cy.graphqlMockSet({
+      operationName: 'searchCampaigns',
+      count: 4,
+      fixture: 'searchCampaignsMock.json',
+    })
+    cy.graphqlMockStart()
+
+    campaigns.visitCampaigns()
+    universal.progressBarZero()
+    campaigns.getCreatedFilter().click({ force: true })
+    universal.getRowsInATableBody().should('contain', '4.00')
+
+    //^
+    campaigns.getCreatedFilter().click({ force: true })
+    universal.getRowsInATableBody().should('contain', '0.00')
+
+    cy.graphqlMockDelete({ operationName: 'searchCampaignsMock' })
+
+    //tests campaigns' table's pagination
+    //^
+    campaigns.getNameFilter().click()
+    //1
+    universal.getPaginationPages('1 / 3')
+    universal.getDoubleLeftButton().should('be.disabled')
+    universal.getLeftButton().should('be.disabled')
+    universal.getRightButton().should('not.be.disabled')
+    universal.getDoubleRightButton().click()
+    // >>  -  3
+    universal.getPaginationPages('3 / 3')
+    universal.getLeftButton().should('not.be.disabled')
+    universal.getRightButton().should('be.disabled')
+    universal.getDoubleRightButton().should('be.disabled')
+    universal.getDoubleLeftButton().should('not.be.disabled').click()
+    // <<  -  1
+    universal.getRowsInATableBody().should('have.length', '10')
+    universal.getPaginationPages('1 / 3')
+    universal.getDoubleLeftButton().should('be.disabled')
+    universal.getLeftButton().should('be.disabled')
+    universal.getDoubleRightButton().should('not.be.disabled')
+    universal.getRightButton().should('not.be.disabled').click()
+    // >  -  2
+    universal.getRowsInATableBody().should('have.length', '10')
+    universal.getPaginationPages('2 / 3')
+    universal.getDoubleLeftButton().should('not.be.disabled')
+    universal.getDoubleRightButton().should('not.be.disabled')
+    universal.getRightButton().should('not.be.disabled')
+    universal.getLeftButton().should('not.be.disabled').click()
+    // <  -  1
+
+    //tests searching for a campaign
+    campaigns.getSearchCampaignsInput().fill('sec')
+    universal.getRowByText('Second Campaign').should('be.visible')
+  })
+
+  it(`tests creating campaigns and adding funds`, function () {
+    //Create Campaign - tests select contacts
+    //the filter here is the same component on the Contacts table - so no need to repeat testing
+    //The data table is also the same component with a few different attributes and less columns
+    //tests that filter renders
+    //tests that the 4 columns and some data fed to them render when sorted in a certain way but doesn't test all the sorts
+    //doesn't test pagination
+    //tests the selecting the favorites list as this does not show up on the contacts table.
+    //tests that the tags show up
+    campaigns.visitCampaigns()
+    universal.waitForProgressBar()
+    campaigns.getCreateCampaignButton().click()
+    sendItem
+      .getSelectContactsDrawer()
+      .should('be.visible')
+      .within(() => {
+        universal.getTableHeader().should('contain', contacts.contactsTableHeaderText())
+        universal.getNoItemsMessage().should('not.exist')
+        universal.getRowsInATableBody().should('have.length', '10')
+        contacts.getShowFiltersButton().should('be.visible').click({ force: true })
+        contacts.getCreateDateFilter().should('be.visible').should('exist')
+        contacts.getFirstNameFilter().should('exist')
+        contacts.getCompanyFilter().should('exist')
+        contacts.getLastSendFilter().should('exist')
+        contacts.getLastNameFilter().should('exist')
+        contacts.getTitleFilter().should('exist')
+        contacts.getEmailAddressFilter().should('exist')
+        contacts.getCityFilter().should('exist')
+        contacts.getStateFilter().should('exist')
+        contacts.getPostalCodeFilter().should('exist')
+        contacts.getContactOwnerFilter().should('exist')
+        contacts.getSavedListFilter().should('exist')
+        contacts.getTagsFilter().should('exist')
+        contacts.getSavedListFilter().select('Favorites', { force: true })
+        universal.waitForProgressBar()
+        universal.getRowsInATableBody().should('have.length', '2')
+        universal.getCheckboxForAllItems().scrollIntoView().click({ force: true })
+        universal.allCheckboxesAreChecked()
+        sendItem.checkForBackButton().should('not.exist')
+        sendItem.getNextButton().click()
+      })
+
+    //Create Campaign - tests select postals
+    sendItem.getSelectItemDrawer().within(() => {
+      sendItem.getBackButton().should('be.visible')
+      marketplace.getPostcardButton().should('be.visible')
+      // test the filter sidebar - this might be the same component from market place
+      sidePanel.getToggle().should('be.visible').click()
+      sidePanel.getTitle().should('not.exist')
+      sidePanel.getToggle().click()
+      sidePanel.getTitle().should('exist')
+      sidePanel.getFilterHeader('Search').should('exist')
+      sidePanel.getFilterHeader('Categories').should('exist')
+      sidePanel.getFilterHeader('Price Range').should('exist')
+      sidePanel.getFilterHeader('Ship To').should('exist')
+      sidePanel.getFilterHeader('Currency').should('exist')
+      sidePanel.selectFilter('Categories', 'Direct Mail')
+      universal.waitForSpinner()
+      sidePanel.getFilterHeader('Orientation').should('exist')
+      sidePanel.selectFilter('Orientation', 'Portrait')
+      marketplace.getClearAllFilters().click()
+      sidePanel.getFilterHeader('Orientation').should('not.exist')
+      marketplace.chooseItemByName('Postcard')
+    })
+    //Create Campaign - tests customizing your Postal
+    sendItem.getCustomizeDrawer().within(() => {
+      sendItem.getBackButton().should('be.visible').click()
+    })
+    sendItem.getSelectItemDrawer().within(() => {
+      sendItem.getNextButton().should('be.visible').click()
+    })
+    sendItem.getCustomizeDrawer().within(() => {
+      sendItem.getRecipientNotifications().should('not.exist')
+      campaigns.getCampaignNameInput().clear().fill('Create Campaign AutoTest')
+      campaigns.getNowButton().should('not.exist')
+      campaigns.getTomorrowMorningButton().should('not.exist')
+      campaigns.getDatePickerInput().fill(dateFormatInput(tomorrow))
+      campaigns.getCampaignNameInput().click({ force: true })
+      sendItem.getSendAsSelect().should('have.value', 'Self')
+      sendItem.getSpendAsCard().within(() => {
+        cy.findByRole('combobox').type(`${user.userName}`)
+      })
+      sendItem.getNextButton().should('be.visible').click()
+    })
+    //Create Campaign - tests Review and Send
+    sendItem.getReviewDrawer().within(() => {
+      sendItem.waitForReviewToLoad()
+      sendItem.getReviewItemSection().within(() => {
+        sendItem.getReviewItem().contains('Postcard')
+        sendItem.getReviewOption().contains('Postcard 4"x6"')
+      })
+
+      sendItem.getReviewCampaignSection().within(() => {
+        campaigns.getReviewCampaignName().contains('Create Campaign AutoTest')
+        campaigns.getReviewSendOn().contains(dateFormatTable(tomorrow))
+      })
+
+      sendItem.getReviewContactsSection().within(() => {
+        sendItem.getReviewContacts().contains('2').find('a').trigger('click', { force: true })
+        contacts
+          .getContactsTable()
+          .should('exist')
+          .within(() => {
+            universal.getNoItemsMessage().should('not.exist')
+            universal.getTableHeader().should('contain.text', sendItem.getReviewContactsTableHeaderText())
+            universal.getRowsInATableBody().should('have.length', 2)
+          })
+      })
+
+      sendItem.getReviewCostSection().within(() => {
+        sendItem.getReviewItemCosts().should('contain', '$0.44')
+        sendItem.getReviewEstimatedVendorSalesTax().should('not.contain', '$0.00')
+        sendItem.getReviewTransactionFee().should('not.exist')
+        sendItem.getReviewShippingAndPostage().should('contain', '$0.58')
+        sendItem.getReviewTotal().should('not.contain', '$0.00')
+      })
+
+      sendItem.getAddFundsToSendItemButton().click()
+    })
+
+    sendItem.getAddFundsDrawer().within(() => {
+      billing.getChangePaymentMethodButton().should('be.visible').click()
+    })
+
+    billing.getChangePaymentModal().within(() => {
+      billing.getCardNumberInput().should('have.attr', 'placeholder', '0000 0000 0000 0000')
+      billing.getExpirationDateInput().should('be.visible').and('have.attr', 'placeholder', 'MM/YY')
+      billing.getSecurityCodeInput().should('have.attr', 'placeholder', '-- --')
+      billing.getPostalCodeInput().should('have.attr', 'placeholder', '00000')
+      billing.getAddCardButton().should('be.visible')
+      universal.getCloseButtonByLabelText().should('be.visible').click({ force: true })
+    })
+    sendItem.getAddFundsDrawer().within(() => {
+      billing.getCurrentBalance().should('be.visible')
+      billing.getPaymentMethodText().should('be.visible')
+      billing.getVisaText().should('be.visible')
+      billing.getCardNumberHint().should('be.visible')
+      billing.getAddFundsButton().should('be.disabled')
+      //Tests varies amount of input
+      billing.getAddFundsInput().type('10101010')
+      billing.getAddFundsButton().should('be.enabled').click({ force: true })
+    })
+    billing.getAmountLessAlert()
+    billing.getAddFundsInput().clear().fill('60.00')
+    billing.getAddFundsButton().click()
+    billing.getConfirmFundsModal().within(() => {
+      cy.contains(
+        `By clicking confirm, you acknowledge that you are adding $60.00 to your ${company}'s Fund Management Billing Account. A confirmation email will be sent to: ${email}`
+      )
+      universal.getCancelButton().click()
+    })
+    billing.getAddFundsButton().click()
+    billing.getConfirmFundsModal().within(() => {
+      universal.getConfirmButton().click({ force: true })
+    })
+    billing.getConfirmFundsModal().should('not.exist')
+    cy.findAllByText('$60.00').should('exist')
+    billing.getAccountUpdatedAlert()
+    sendItem.getSaveAndSendButton().should('not.be.disabled').click()
+    sendItem.getConfirmSendModal().within(() => {
+      sendItem.getConfirmSendModalText()
+      universal.getCancelButton().click()
+    })
+    sendItem.getConfirmSendModal().should('not.exist')
+    sendItem.getSendItemButton().click()
+    sendItem.getConfirmSendModal().within(() => {
+      sendItem.getSendButton().click({ force: true })
+    })
+    sendItem.getConfirmSendModal().should('not.exist')
+    campaigns.getCampaignCreatedAlert()
+    cy.catchCallsRecurse({
+      operationName: 'getBackgroundTaskById',
+      key: 'successCount',
+      value: 2,
+    })
+    cy.graphqlRequest(SearchCampaignsDocument, {
+      filter: { name: { eq: 'Create Campaign AutoTest' }, campaignType: { in: [CampaignType.Engage, null] } },
+    }).then((res) => {
+      createdId = res.searchCampaigns?.[0].id as string
+    })
+  })
+  it(`tests the new Campaign profile`, function () {
+    //Review Campaign profiles - tests a new Campaign profile
+    // remove a contact
+    // adds a contact
+    // tests pagination of contacts
+    // tests that the postal preview buttons show up
+    // tests a "completed" Campaigns Profile via mocks
+    campaigns.visitCampaigns()
+    universal.waitForProgressBar()
+    cy.queryForUpdateRecurse({
+      request: SearchContactsV2Document,
+      options: { filter: { campaigns: { eq: createdId } } },
+      operationName: 'searchContactsV2',
+      key: 'resultsSummary',
+      value: 2,
+      key2: 'totalRecords',
+    })
+    campaigns.getSearchCampaignsInput().should('be.visible').clear().fill('Create')
+    universal.getRowByText('Create Campaign AutoTest').should('be.visible').click()
+    universal.getSpinner().should('not.exist')
+    universal.progressBarZero()
+    universal
+      .getStatsCard()
+      .should('be.visible')
+      .within(() => {
+        campaigns.getSentStats().should('contain', '0')
+        campaigns.getCostStats().should('contain', '0.00')
+        campaigns.getCostPerTouchStats().should('contain', '0.00')
+      })
+    campaigns.getCampaignDetailsCard().within(() => {
+      campaigns.getDetailsHeadingByName('Create Campaign AutoTest').should('be.visible')
+      campaigns.getOwner().should('contain', firstName)
+      campaigns.getStatus().should('contain', 'SCHEDULED')
+      campaigns.getScheduledDate().within(() => {
+        cy.findByText(RegExp(dateFormatTable(tomorrow) + '|' + dateFormatTable(inTwoDays))).should('exist')
+      })
+      campaigns.getCompletedDate().should('exist').and('contain', 'N/A')
+    })
+    universal.getPostalCard().within(() => {
+      universal.getPostalCardImage().should('be.visible').click({ force: true })
+    })
+    campaigns.getPostalReviewModal().within(() => {
+      //slide buttons
+      cy.findByText('❮').click()
+      cy.findByText('❯').click()
+      universal.getCloseButton().click({ force: true })
+    })
+    campaigns.getContactsCard().within(() => {
+      universal.getTableHeader().should('contain.text', campaigns.contactsTableHeaderText())
+      universal
+        .getRowsInATableBody()
+        .should('have.length', '2')
+        .and('contain', 'Status Unknown')
+        .and('contain', dateFormatTable(today))
+      universal.getCheckboxForAllItems().click({ force: true })
+      universal.allCheckboxesAreChecked()
+      universal.getPaginationPages(/^1 \/ 1$/).should('be.visible')
+      universal.getAngleLeftButton().should('be.disabled')
+      universal.getAngleRightButton().should('be.disabled')
+      campaigns.getRemoveFromCampaignButton().click({ force: true })
+    })
+    campaigns.getRemoveContactsModal().within(() => {
+      campaigns.getRemoveContactsModalText('2')
+      universal.getCancelButton().should('be.visible').click({ force: true })
+    })
+    campaigns.getRemoveContactsModal().should('not.exist')
+    campaigns.getContactsCard().within(() => {
+      cy.clickCheckboxByRowNumber({ num: 1, not: 'not' })
+      universal.getCheckboxForAllItems().should('not.be.checked')
+      campaigns.getRemoveFromCampaignButton().should('be.visible').click({ force: true })
+    })
+    campaigns.getRemoveContactsModal().within(() => {
+      campaigns.getRemoveContactsModalText('1')
+      universal.getRemoveButton().should('be.visible').click()
+    })
+    campaigns.getContactsRemovedAlert()
+    campaigns.getRemoveContactsModal().should('not.exist')
+    cy.catchCallsRecurse({
+      operationName: 'searchContactsV2',
+      key: 'resultsSummary',
+      value: 1,
+      key2: 'totalRecords',
+    })
+    universal.progressBarZero()
+    campaigns
+      .getContactsCard()
+      .should('be.visible')
+      .within(() => {
+        universal.getRowsInATableBody().should('be.visible').and('have.length', 1).and('contain', 'Status Unknown')
+      })
+    //tests the Back to Campaigns button
+    campaigns.getBackToCampaignsButton().click()
+    campaigns.getSearchCampaignsInput().fill('create')
+    universal.getRowByText('Create Campaign AutoTest').click()
+    //adds a contact to a campaign
+    campaigns.getAddContactsButton().scrollIntoView().click({ force: true })
+    campaigns
+      .getAddContactsDrawer()
+      .should('be.visible')
+      .within(() => {
+        universal.getCloseButtonByLabelText().should('be.visible')
+        campaigns.getContactsSelectedText('0').should('be.visible')
+        cy.catchCallsRecurse({
+          operationName: 'searchContactsV2',
+          key: 'resultsSummary',
+          value: 21,
+          key2: 'totalRecords',
+        })
+        universal.progressBarZero()
+        cy.clickCheckboxByRowNumber({ num: 1 })
+        cy.clickCheckboxByRowNumber({ num: 2 })
+        campaigns.getContactsSelectedText('2').scrollIntoView().should('be.visible')
+        universal.getCancelButton().click()
+      })
+    campaigns.getAddContactsDrawer().should('not.exist')
+    campaigns
+      .getContactsCard()
+      .should('be.visible')
+      .within(() => {
+        cy.findAllByText('Status Unknown').should('have.length', '1')
+      })
+    campaigns.getAddContactsButton().click()
+    campaigns.getAddContactsDrawer().within(() => {
+      universal.getCloseButtonByLabelText().should('be.visible')
+      cy.clickCheckboxByRowNumber({ num: 2 })
+      campaigns.getAddContactsButton().click({ force: true })
+    })
+    campaigns.getContactsAddedAlert()
+    cy.queryForUpdateRecurse({
+      request: SearchContactsV2Document,
+      options: { filter: { campaigns: { eq: createdId } } },
+      operationName: 'searchContactsV2',
+      key: 'resultsSummary',
+      value: 2,
+      key2: 'totalRecords',
+    })
+    cy.reload()
+    universal.getSpinner().should('not.exist')
+    universal.progressBarZero()
+    campaigns
+      .getContactsCard()
+      .should('be.visible')
+      .within(() => {
+        universal.getRowsInATableBody().should('have.length', '2').and('contain', 'Status Unknown')
+      })
+    //Review Campaign profiles - tests editing a new Campaign profile
+    campaigns.getEditCampaignButton().should('be.visible').click()
+    campaigns
+      .getUpdateCampaignDrawer()
+      .should('be.visible')
+      .within(() => {
+        universal.getCloseButtonByLabelText().should('be.visible')
+        campaigns.getStartDateText().should('be.visible')
+        campaigns.getEditStatusSelect().should('have.value', 'SCHEDULED')
+        campaigns
+          .getEditNameInput()
+          .and('have.value', 'Create Campaign AutoTest')
+          .clear({ force: true })
+          .fill('Create Campaign AutoTest Up')
+        campaigns.getUpdateCampaignButton()
+        universal.getCancelButton().click()
+      })
+    campaigns.getUpdateCampaignDrawer().should('not.exist')
+    navbar.getNavbarCenter().should('not.contain', 'Create Campaign AutoTest Up')
+    campaigns.getEditCampaignButton().should('be.visible').click({ force: true })
+    campaigns.getUpdateCampaignDrawer().within(() => {
+      campaigns
+        .getEditNameInput()
+        .and('have.value', 'Create Campaign AutoTest')
+        .clear({ force: true })
+        .fill('Create Campaign AutoTest Up')
+        .and('have.value', 'Create Campaign AutoTest Up')
+      campaigns
+        .getStartDatePickerInput()
+        .clear()
+        .type(`${dateFormatInput(twoDaysAgo)}`)
+      campaigns.getEditNameInput().click()
+    })
+    campaigns.getUpdateCampaignDrawer().within(() => {
+      campaigns
+        .getStartDatePickerInput()
+        .clear()
+        .type(`${dateFormatInput(inTwoDays)}`)
+      campaigns.getEditStatusSelect().focus().should('have.value', 'SCHEDULED')
+      campaigns.getEditStatusSelect().select('Canceled', { force: true }).should('have.value', 'CANCELLED')
+      campaigns.getEditStatusSelect().select('Pending', { force: true }).should('have.value', 'PENDING')
+      campaigns.getUpdateCampaignButton().click()
+    })
+    campaigns.getUpdateCampaignDrawer().should('not.exist')
+    campaigns.getCampaignDataUpdatedAlert()
+    campaigns.getCampaignDetailsCard().should('contain', 'Create Campaign AutoTest Up')
+    campaigns.getStatus().should('contain', 'PENDING')
+    campaigns.getScheduledDate().should('contain', dateFormatTable(inTwoDays))
+  })
+  it(`Review Campaign profiles - tests a MOCKED completed Campaign profile`, function () {
+    campaigns.visitCampaigns()
+    campaigns.getSearchCampaignsInput().fill('sec')
+    universal.waitForProgressBar()
+
+    //Monitors and Mocks the following requests
+    cy.graphqlMockSet({ operationName: 'getCampaign', fixture: 'getCampaignMock.json' })
+    cy.graphqlMockSet({
+      operationName: 'searchCampaignStatusContacts',
+      fixture: 'searchCampaignStatusContactsMock.json',
+    })
+    cy.graphqlMockSet({
+      operationName: 'getApprovedPostal',
+      fixture: 'getApprovedPostalMock.json',
+    })
+    cy.graphqlMockSet({
+      operationName: 'searchContactsV2',
+      fixture: 'searchContactsMock.json',
+      count: 4,
+    })
+    cy.graphqlMockSet({
+      operationName: 'searchPostalFulfillments',
+      fixture: 'searchPostalFulfillmentsMockD.json',
+      count: 3,
+    })
+    cy.graphqlMockStart()
+
+    cy.contains('Second Campaign').click()
+    universal.waitForProgressBar()
+    //tests Contacts card
+    campaigns
+      .getContactsCard()
+      .should('be.visible')
+      .within(() => {
+        //Harcoded via mocks
+        const contacts = 'Erwin SchneiderDynamic Directives Supervisor10/7/2020Delivered'
+        universal.getRowsInATableBody().should('have.length', 1).and('contain.text', contacts)
+        universal.getPaginationPages(/^1 \/ 1$/).should('be.visible')
+        universal.getAngleLeftButton().should('be.disabled')
+        universal.getAngleRightButton().should('be.disabled')
+      })
+    //tests stats card
+    universal
+      .getStatsCard()
+      .should('be.visible')
+      .within(() => {
+        campaigns.getSentStats().should('contain', '2')
+        campaigns.getCostStats().should('contain', '4.00')
+        campaigns.getCostPerTouchStats().scrollIntoView().should('contain', '2.00')
+      })
+    //tests campaign stats card
+    campaigns.getCampaignDetailsCard().within(() => {
+      campaigns.getDetailsHeadingByName('Second Campaign').should('be.visible')
+      campaigns.getOwner().should('contain', 'Isom Hoeger')
+      campaigns.getStatus().should('contain', 'COMPLETE')
+      campaigns.getScheduledDate().should('contain', '10/7/2020')
+      campaigns.getCompletedDate().should('exist').and('contain', '10/7/2020')
+    })
+    campaigns.getRemoveFromCampaignButton().should('not.exist')
+    campaigns.getEditCampaignButton().should('not.exist')
+    //tests orders card
+    //Harcoded via mocks
+    const order = '10/7/2020PostcardErwin Schneider$0.71DELIVERED'
+    const orderHeader = 'DateItemContactCostStatus'
+    universal.getOrdersCard().within(() => {
+      universal.getTableHeader().should('contain.text', orderHeader)
+      universal.getRowsInATableBody().should('have.length', 1).and('contain.text', order)
+    })
+    cy.graphqlMockClear()
+  })
+  it(`Re-send a Campaign`, function () {
+    campaigns.visitCampaigns()
+    universal.waitForProgressBar()
+    campaigns.getSearchCampaignsInput().fill('error')
+    universal.getRowByText('Error').should('be.visible').click()
+    universal.waitForProgressBar()
+    universal.getActionsMenuButton().should('not.be.disabled').click()
+    campaigns.getResendCampaignMenuitem().click()
+    universal
+      .getItemUnavailableModal()
+      .should('be.visible')
+      .within(() => {
+        universal.getItemUnavailableModalText().should('exist')
+        universal.getCloseButtonByLabelText().click()
+      })
+    marketplace.chooseItemByName('Postcard')
+    sendItem.getCustomizeDrawer().within(() => {
+      campaigns
+        .getCampaignNameInput()
+        .should('be.visible')
+        .then(($name: any) => {
+          expect($name.attr('value')).to.contain('- COPY')
+        })
+      sendItem.getNextButton().should('be.visible').click()
+    })
+    sendItem.getSendItemButton().click()
+    sendItem.getSendButton().click()
+    sendItem.getReviewDrawer().should('not.exist')
+    universal.getThingSpinner().should('not.exist')
+    cy.catchCallsRecurse({
+      operationName: 'searchCampaigns',
+      key: '0',
+      value: 'SCHEDULED',
+      key2: 'status',
+    })
+    universal.getRowByText('- COPY').should('be.visible').and('contain', 'Scheduled').click()
+    universal.waitForProgressBar()
+    campaigns
+      .getContactsCard()
+      .should('be.visible')
+      .within(() => {
+        universal.getNoItemsMessage().should('not.exist')
+        universal.getRowByText(dateFormatTable(today)).should('be.visible')
+      })
+    campaigns.getStatus().should('contain', 'SCHEDULED')
+    campaigns.getScheduledDate().should('contain', dateFormatTable(tomorrow))
+    //test creating a campaign with a chipotle gift card
+    campaigns.visitCampaigns()
+    universal.waitForProgressBar()
+    campaigns.getCreateCampaignButton().click()
+    sendItem
+      .getSelectContactsDrawer()
+      .should('be.visible')
+      .within(() => {
+        universal.getCheckboxForAllItems().scrollIntoView().click({ force: true })
+        universal.allCheckboxesAreChecked()
+        sendItem.checkForBackButton().should('not.exist')
+        sendItem.getNextButton().click()
+      })
+    universal.getCheckboxForAllItems().should('not.exist')
+    sendItem.getSelectItemDrawer().within(() => {
+      marketplace.chooseItemByName('Chipotle')
+    })
+    marketplace.getChipotleButton().should('not.exist')
+    sendItem.getCustomizeDrawer().within(() => {
+      sendItem.getGiftEmailMessageHeader().should('exist')
+      sendItem.getGiftEmailMessageInput().type('campaign with gift email')
+      sendItem.getLandingPageHeaderInput().should('exist')
+      sendItem.getLandingPageMessageInput().should('exist')
+      sendItem
+        .getRecipientNotifications()
+        .scrollIntoView()
+        .within(() => {
+          sendItem
+            .getSendShippedEmailCheckbox()
+            .should('be.checked')
+            .uncheck({ force: true })
+            .should('not.be.checked')
+            .check({ force: true })
+            .should('be.checked')
+          sendItem
+            .getSendDeliveredEmailCheckbox()
+            .should('be.checked')
+            .uncheck({ force: true })
+            .should('not.be.checked')
+            .check({ force: true })
+            .should('be.checked')
+        })
+      campaigns.getCampaignNameInput().clear().fill('Create Campaign AutoTest')
+      campaigns.getNowButton().click({ force: true })
+      campaigns.getTomorrowMorningButton().should('exist')
+      campaigns.getCampaignNameInput().should('exist')
+      sendItem.getSendAsSelect().should('have.value', 'Self')
+      sendItem.getSpendAsCard().within(() => {
+        cy.findByRole('combobox').should('exist')
+      })
+    })
+  })
+})

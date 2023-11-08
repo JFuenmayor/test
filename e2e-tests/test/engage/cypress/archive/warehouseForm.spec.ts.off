@@ -1,0 +1,46 @@
+import { userFactory } from '../../support/factories'
+import { Warehousing } from '../../support/pageObjects'
+
+describe('Warehousing page testing', function () {
+  // const universal = new Universal()
+  const warehousing = new Warehousing()
+  const user = userFactory()
+  // const today = new Date()
+  // const dateFormatInput = (date: Date) => format(date, 'MMMM d, yyyy')
+
+  before(function () {
+    cy.manageState()
+    cy.programaticSignup(user)
+  })
+
+  beforeEach(() => {
+    cy.restoreLocalStorageCache()
+  })
+
+  afterEach(() => {
+    cy.saveLocalStorageCache()
+  })
+
+  it(`Form should work`, function () {
+    warehousing.visitWarehousing()
+
+    cy.url().should('contain', 'account/warehousing')
+
+    // not sure how to get these permissions?
+    cy.findByText('Warehousing is an add-on feature. Please contact your CSM for details and to learn more.').should(
+      'exist'
+    )
+
+    // warehousing.getWarehousingSendSelect().select('Send over time')
+    // warehousing.getWarehousingDateInput().type(`${dateFormatInput(today)}{enter}`)
+    // warehousing.getWarehousingHowManyInput().type('10')
+    // warehousing.getWarehousingPackagingOption().click()
+    // warehousing.getWarehousingTellUsMoreInput().type(faker.lorem.paragraph(2))
+    // warehousing.getSendRequestButton().click()
+
+    // warehousing.getRequestSentModal().within(() => {
+    //   cy.findByText('Your information was sent to our concierge. We will reach out to you within 48 hours.')
+    //   universal.getCloseButton().click()
+    // })
+  })
+})

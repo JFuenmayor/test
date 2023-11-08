@@ -1,0 +1,688 @@
+{
+  "data": {
+    "searchCampaigns": [
+      {
+        "id": "5f7dfff0ba29a6219dfc30c8",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Create Campaign AutoTest",
+        "status": "SCHEDULED",
+        "scheduleDate": "2020-10-08T07:00:00Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:50:40.893Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb9ba29a6219dfc30c6",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Generic Fresh Bike",
+        "status": "SCHEDULED",
+        "scheduleDate": "2020-10-08T17:49:43.496Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:45.005Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb88febb71d33098436",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Practical Plastic Tuna",
+        "status": "SCHEDULED",
+        "scheduleDate": "2020-10-07T17:54:44.935Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.935Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb88febb71d33098435",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Tasty Steel Shoes",
+        "status": "CANCELLED",
+        "scheduleDate": "2020-10-08T17:49:43.496Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.868Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb8ba29a6219dfc30c5",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Tasty Soft Bike",
+        "status": "PROCESSING",
+        "scheduleDate": "2020-10-07T17:54:44.805Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.805Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb88febb71d33098434",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Gorgeous Plastic Pizza",
+        "status": "ERROR",
+        "scheduleDate": "2020-10-08T17:49:43.496Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.744Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb88febb71d33098433",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Intelligent Rubber Tuna",
+        "status": "PENDING",
+        "scheduleDate": "2020-10-07T17:54:44.668Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.668Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb8ba29a6219dfc30c4",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Handmade Concrete Pants",
+        "status": "ERROR",
+        "scheduleDate": "2020-10-08T17:49:43.496Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.599Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb88febb71d33098432",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Unbranded Wooden Keyboard",
+        "status": "SCHEDULED",
+        "scheduleDate": "2020-10-07T17:54:44.535Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.535Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb8ba29a6219dfc30c3",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Awesome Rubber Fish",
+        "status": "PENDING",
+        "scheduleDate": "2020-10-08T17:49:43.496Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.447Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb8ba29a6219dfc30c2",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Small Cotton Pizza",
+        "status": "SCHEDULED",
+        "scheduleDate": "2020-10-07T17:54:44.340Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.340Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb88febb71d33098431",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Handcrafted Wooden Tuna",
+        "status": "ERROR",
+        "scheduleDate": "2020-10-08T17:49:43.496Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.278Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb88febb71d33098430",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Unbranded Frozen Car",
+        "status": "ERROR",
+        "scheduleDate": "2020-10-07T17:54:44.212Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.212Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb88febb71d3309842f",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Fantastic Fresh Shoes",
+        "status": "ERROR",
+        "scheduleDate": "2020-10-08T17:49:43.496Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.150Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb88febb71d3309842e",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Unbranded Soft Keyboard",
+        "status": "SCHEDULED",
+        "scheduleDate": "2020-10-07T17:54:44.094Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.094Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb8ba29a6219dfc30c1",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Handmade Soft Chair",
+        "status": "PROCESSING",
+        "scheduleDate": "2020-10-08T17:49:43.496Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:44.029Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb7ba29a6219dfc30c0",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Refined Metal Bike",
+        "status": "PROCESSING",
+        "scheduleDate": "2020-10-07T17:54:43.966Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:43.966Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb7ba29a6219dfc30bf",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Unbranded Concrete Sausages",
+        "status": "CANCELLED",
+        "scheduleDate": "2020-10-08T17:49:43.496Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:43.906Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb78febb71d3309842d",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Tasty Wooden Salad",
+        "status": "SCHEDULED",
+        "scheduleDate": "2020-10-07T17:54:43.851Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:43.851Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb7ba29a6219dfc30be",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Sleek Granite Keyboard",
+        "status": "SCHEDULED",
+        "scheduleDate": "2020-10-08T17:49:43.495Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:43.801Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb78febb71d3309842c",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "Second Campaign",
+        "status": "COMPLETE",
+        "scheduleDate": "2020-10-07T17:54:43.747Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": "2020-10-07T17:49:45.147Z",
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": {
+          "queued": null,
+          "failed": null,
+          "sent": null,
+          "delivered": null,
+          "bounces": null,
+          "touches": 2,
+          "costInCents": 400,
+          "date": null,
+          "started": null,
+          "completed": null,
+          "cancelled": null,
+          "successful": null,
+          "campaignsSent": null,
+          "playbooksStarted": null,
+          "triggersExecuted": null,
+          "linkTotalViews": null,
+          "linkUniqViews": null,
+          "linkMaxExeViews": null,
+          "linkExpiredViews": null,
+          "linkExecutions": null,
+          "__typename": "BasicMetrics"
+        },
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:43.747Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      },
+      {
+        "id": "5f7dffb7ba29a6219dfc30bd",
+        "userId": "5f7dffaf091fcc12292d7471",
+        "userLink": {
+          "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+          "fullName": "Isom Hoeger",
+          "__typename": "UserLink"
+        },
+        "name": "First Campaign",
+        "status": "SCHEDULED",
+        "scheduleDate": "2020-10-08T17:49:43.495Z",
+        "cancelDate": null,
+        "errorDate": null,
+        "completeDate": null,
+        "giftMessage": null,
+        "backgroundTaskId": null,
+        "playbookId": null,
+        "approvedPostalId": "5f7dffb230139b30f070eb47",
+        "variantId": "5f3d58d3fd6ec76fc7d85cae",
+        "designTemplate": null,
+        "totalContactsAttempted": null,
+        "deliveryEmail": true,
+        "metrics": null,
+        "created": {
+          "actor": "5f7dffaf091fcc12292d7471",
+          "dateTime": "2020-10-07T17:49:43.561Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Campaign"
+      }
+    ]
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "data": {
+    "searchPostalFulfillments": [
+      {
+        "id": "6002181d78c5920cafc1594f",
+        "userId": "6002174fd5e9cc2637e9b28d",
+        "userLink": {
+          "userName": "15a3b2f4-27a5-4dd2-884f-c3260c940676@postal.dev",
+          "fullName": "Dedrick Renner",
+          "__typename": "UserLink"
+        },
+        "contactId": "6002181cb68a98598e4d763b",
+        "shipTo": {
+          "entryName": "Home",
+          "address1": "1241 Johnson Ave",
+          "address2": null,
+          "address3": null,
+          "city": "San Luis Obispo",
+          "state": "CA",
+          "postalCode": "93401",
+          "country": "USA",
+          "preferred": true,
+          "source": null,
+          "status": "MATCHED",
+          "statusReason": null,
+          "systems": ["postal.io"],
+          "uspsAddress": {
+            "entryName": null,
+            "address1": "1241 Johnson Ave",
+            "address2": null,
+            "address3": null,
+            "city": "San Luis Obispo",
+            "state": "CA",
+            "postalCode": "93401",
+            "country": "USA",
+            "preferred": false,
+            "status": null,
+            "statusReason": null,
+            "__typename": "Address"
+          },
+          "__typename": "Address"
+        },
+        "shipToEmail": "sally@postal.dev",
+        "shipToName": "Sally Manning",
+        "campaignName": null,
+        "deliveryEmail": false,
+        "campaignId": null,
+        "playbookId": null,
+        "triggerId": null,
+        "magicLinkId": "600217598bd1a07fee759502",
+        "magicLinkName": "Updated Postcard MagicLink",
+        "itemName": "Postcard",
+        "previewImage": "asset://6002175272b4e73c27567c43",
+        "giftMessage": null,
+        "marketplaceProductId": "60014b8bd895194787758484",
+        "approvedPostalId": "60021752b248ec4e0c6e4554",
+        "variantId": "60014b8bd89519478775847e",
+        "fulfillmentPartnerId": "000000000000000000000002",
+        "fulfillmentPartnerOrderId": "19a0d96f-1c99-437d-9823-2ca358c52eb1",
+        "cost": {
+          "subtotal": 22,
+          "shipping": 29,
+          "tax": 2,
+          "thirdPartyFee": 0,
+          "postalFee": 0,
+          "taxEstimated": null,
+          "budgetExpense": null,
+          "total": 53,
+          "__typename": "OrderCost"
+        },
+        "status": "CONFIRMED",
+        "history": [
+          {
+            "status": "CONFIRMED",
+            "notes": "Order Confirmed",
+            "created": "2021-01-15T22:33:02.466Z",
+            "currentLocation": null,
+            "__typename": "FulfillmentHistory"
+          }
+        ],
+        "targetDeliveryDate": "2021-01-21T22:33:00.942Z",
+        "deliveryDate": null,
+        "deliveryPartner": null,
+        "trackingNumber": null,
+        "attributes": {
+          "postalIoTrackingCode": "996708",
+          "targetPath": "http://localhost:3000/api/printmaker/output/6002174f9b6c7638080ee123/6002181d78c5920cafc1594f.pdf?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYwMDIxODFkNzhjNTkyMGNhZmMxNTk0Zi5wZGYiLCJhY2NvdW50SWQiOiI2MDAyMTc0ZjliNmM3NjM4MDgwZWUxMjMiLCJpYXQiOjE2MTA3NDk5ODIsImV4cCI6MTYxMTk1OTU4Mn0.zhsc9QxRbfkUC9IUrUvmB1Oeb4bs_V4fFIQQDaeCRvc&file=6002181d78c5920cafc1594f.pdf"
+        },
+        "created": {
+          "actor": "6002174fd5e9cc2637e9b28d",
+          "dateTime": "2021-01-15T22:33:01.043Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "PostalFulfillment"
+      },
+      {
+        "id": "6002178478c5920cafc1594a",
+        "userId": "6002174fd5e9cc2637e9b28d",
+        "userLink": {
+          "userName": "15a3b2f4-27a5-4dd2-884f-c3260c940676@postal.dev",
+          "fullName": "Dedrick Renner",
+          "__typename": "UserLink"
+        },
+        "contactId": "60021784b68a98598e4d763a",
+        "shipTo": {
+          "entryName": "Home",
+          "address1": "89075 562 Ave",
+          "address2": null,
+          "address3": null,
+          "city": "Hartington",
+          "state": "NE",
+          "postalCode": "68739",
+          "country": "USA",
+          "preferred": true,
+          "source": null,
+          "status": "MATCHED",
+          "statusReason": null,
+          "systems": ["postal.io"],
+          "uspsAddress": {
+            "entryName": null,
+            "address1": "89075 562 Ave",
+            "address2": null,
+            "address3": null,
+            "city": "Hartington",
+            "state": "NE",
+            "postalCode": "68739",
+            "country": "USA",
+            "preferred": false,
+            "status": null,
+            "statusReason": null,
+            "__typename": "Address"
+          },
+          "__typename": "Address"
+        },
+        "shipToEmail": "bbece1d1-240b-4b97-97a7-7ad2d313a405@postal.dev",
+        "shipToName": "Gabe Lubowitz",
+        "campaignName": null,
+        "deliveryEmail": false,
+        "campaignId": null,
+        "playbookId": null,
+        "triggerId": null,
+        "magicLinkId": "600217598bd1a07fee759502",
+        "magicLinkName": "Updated Postcard MagicLink",
+        "itemName": "Postcard",
+        "previewImage": "asset://6002175272b4e73c27567c43",
+        "giftMessage": null,
+        "marketplaceProductId": "60014b8bd895194787758484",
+        "approvedPostalId": "60021752b248ec4e0c6e4554",
+        "variantId": "60014b8bd89519478775847e",
+        "fulfillmentPartnerId": "000000000000000000000002",
+        "fulfillmentPartnerOrderId": "c75dc554-b296-48a0-9538-e985bef89a77",
+        "cost": {
+          "subtotal": 22,
+          "shipping": 29,
+          "tax": 0,
+          "thirdPartyFee": 0,
+          "postalFee": 0,
+          "taxEstimated": null,
+          "budgetExpense": null,
+          "total": 51,
+          "__typename": "OrderCost"
+        },
+        "status": "CONFIRMED",
+        "history": [
+          {
+            "status": "CONFIRMED",
+            "notes": "Order Confirmed",
+            "created": "2021-01-14T22:30:29.961Z",
+            "currentLocation": null,
+            "__typename": "FulfillmentHistory"
+          }
+        ],
+        "targetDeliveryDate": "2021-01-21T22:30:28.242Z",
+        "deliveryDate": null,
+        "deliveryPartner": null,
+        "trackingNumber": null,
+        "attributes": {
+          "postalIoTrackingCode": "944012",
+          "targetPath": "http://localhost:3000/api/printmaker/output/6002174f9b6c7638080ee123/6002178478c5920cafc1594a.pdf?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYwMDIxNzg0NzhjNTkyMGNhZmMxNTk0YS5wZGYiLCJhY2NvdW50SWQiOiI2MDAyMTc0ZjliNmM3NjM4MDgwZWUxMjMiLCJpYXQiOjE2MTA3NDk4MjksImV4cCI6MTYxMTk1OTQyOX0.0v1Urumk5yJww8xXP9RyBb0FVVJUtGq8h25uDID69YM&file=6002178478c5920cafc1594a.pdf"
+        },
+        "created": {
+          "actor": "6002174fd5e9cc2637e9b28d",
+          "dateTime": "2021-01-14T22:30:28.347Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "PostalFulfillment"
+      }
+    ]
+  }
+}

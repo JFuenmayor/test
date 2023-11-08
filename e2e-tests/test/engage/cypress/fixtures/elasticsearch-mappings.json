@@ -1,0 +1,101 @@
+{
+  "settings": {
+    "analysis": {
+      "normalizer": {
+        "lower": {
+          "type": "custom",
+          "char_filter": [],
+          "filter": ["lowercase"]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "dynamic_templates": [
+      {
+        "strings": {
+          "match_mapping_type": "string",
+          "mapping": {
+            "type": "keyword",
+            "normalizer": "lower"
+          }
+        }
+      }
+    ],
+    "properties": {
+      "autocomplete": {
+        "type": "completion",
+        "contexts": {
+          "name": "accountId",
+          "type": "category"
+        }
+      },
+      "created": {
+        "type": "nested"
+      },
+      "phones": {
+        "type": "nested"
+      },
+      "lists": {
+        "type": "nested"
+      },
+      "campaigns": {
+        "type": "nested"
+      },
+      "playbooks": {
+        "type": "nested"
+      },
+      "addresses": {
+        "type": "nested"
+      },
+      "mappings": {
+        "type": "nested"
+      },
+      "lastSend": {
+        "properties": {
+          "$date": {
+            "type": "date"
+          }
+        }
+      },
+      "metrics": {
+        "type": "nested",
+        "properties": {
+          "bounces": {
+            "type": "long"
+          },
+          "cancelled": {
+            "type": "long"
+          },
+          "completed": {
+            "type": "long"
+          },
+          "costInCents": {
+            "type": "long"
+          },
+          "delivered": {
+            "type": "long"
+          },
+          "failed": {
+            "type": "long"
+          },
+          "queued": {
+            "type": "long"
+          },
+          "sent": {
+            "type": "long"
+          },
+          "started": {
+            "type": "long"
+          },
+          "successful": {
+            "type": "long"
+          },
+          "touches": {
+            "type": "long"
+          }
+        }
+      }
+    }
+  }
+}

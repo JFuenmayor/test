@@ -1,0 +1,61 @@
+{
+  "data": {
+    "searchActivityStream": [
+      {
+        "acknowledgedBy": null,
+        "type": "ACTION",
+        "name": "postal.order.failed",
+        "message": "There was a problem while placing an order for a {itemName} to be sent to {contactName}. The contact record does not have a verified address. Please {errorDesc} the contact and retry your order. Once you have fixed the issue, {retryPostalFulfillmentId}.",
+        "callouts": [
+          {
+            "targetText": "postalFulfillment",
+            "text": "Postal",
+            "action": null,
+            "dataType": "POSTAL",
+            "dataId": "5fb5a778740818101c7ee6ef",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "itemName",
+            "text": "Postcard",
+            "action": null,
+            "dataType": "POSTAL",
+            "dataId": "5fb59fc8dbbce145477c892e",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "contactName",
+            "text": "Lorena Tillman",
+            "action": null,
+            "dataType": "CONTACT",
+            "dataId": "5fb59fcca3fb3d5b6543ebaa",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "errorDesc",
+            "text": "update",
+            "action": "update.contact",
+            "dataType": "CONTACT",
+            "dataId": "5fb59fcca3fb3d5b6543ebaa",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "retryPostalFulfillmentId",
+            "text": "retry your order",
+            "action": "postalFulfillment.retryOrder",
+            "dataType": "POSTAL",
+            "dataId": "5fb5a778740818101c7ee6ef",
+            "__typename": "StreamCallout"
+          }
+        ],
+        "count": 1,
+        "created": {
+          "actor": "5fb59fc45570e80ce94c274c",
+          "dateTime": "2020-11-18T23:00:09.142Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "ActivityStream"
+      }
+    ]
+  }
+}

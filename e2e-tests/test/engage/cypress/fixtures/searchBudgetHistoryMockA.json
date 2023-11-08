@@ -1,0 +1,293 @@
+{
+  "data": {
+    "searchBudgetHistory": {
+      "data": [
+        {
+          "id": "6125466189b3003a02685450",
+          "accountId": "5eb89c1bf64b04041e893c7e",
+          "teamId": null,
+          "userId": "5eb89c0d98d2911e65386fbb",
+          "billingAccountId": "5eb89c1e7a183454f49837c6",
+          "created": {
+            "actor": "5eb89c0d98d2911e65386fbb",
+            "dateTime": "2021-08-24T19:20:01.011Z"
+          },
+          "type": "REMAINING_REDUCED",
+          "oldBudget": null,
+          "newBudget": null,
+          "oldRemaining": null,
+          "amount": 77,
+          "currentBudget": {
+            "amount": 50000,
+            "mode": "UNLIMITED",
+            "duration": "MONTHLY"
+          },
+          "usageTransactionId": "6125466089b3003a0268544e",
+          "relatedId": "6125465f19a0e558b7fc3849",
+          "relatedType": "POSTAL_FULFILLMENT",
+          "drawdownRefundId": null
+        },
+        {
+          "id": "6125457f89b3003a0268544d",
+          "accountId": "5eb89c1bf64b04041e893c7e",
+          "teamId": null,
+          "userId": "5eb89c0d98d2911e65386fbb",
+          "billingAccountId": "5eb89c1e7a183454f49837c6",
+          "created": {
+            "actor": "5eb89c0d98d2911e65386fbb",
+            "dateTime": "2021-08-24T19:16:15.201Z"
+          },
+          "type": "REMAINING_REDUCED",
+          "oldBudget": null,
+          "newBudget": null,
+          "oldRemaining": null,
+          "amount": 85,
+          "currentBudget": {
+            "amount": 50000,
+            "mode": "UNLIMITED",
+            "duration": "MONTHLY"
+          },
+          "usageTransactionId": "6125457f89b3003a0268544b",
+          "relatedId": "6125457e19a0e558b7fc3846",
+          "relatedType": "POSTAL_FULFILLMENT",
+          "drawdownRefundId": null
+        },
+        {
+          "id": "6125455c32486e5849aa24d7",
+          "accountId": "5eb89c1bf64b04041e893c7e",
+          "teamId": null,
+          "userId": "5eb89c0d98d2911e65386fbb",
+          "billingAccountId": "5eb89c1e7a183454f49837c6",
+          "created": {
+            "actor": "5eb89c0d98d2911e65386fbb",
+            "dateTime": "2021-08-24T19:15:40.115Z"
+          },
+          "type": "REMAINING_REDUCED",
+          "oldBudget": null,
+          "newBudget": null,
+          "oldRemaining": null,
+          "amount": 85,
+          "currentBudget": {
+            "amount": 50000,
+            "mode": "UNLIMITED",
+            "duration": "MONTHLY"
+          },
+          "usageTransactionId": "6125455b32486e5849aa24d5",
+          "relatedId": "6125455aab8fd672c7d32a3e",
+          "relatedType": "POSTAL_FULFILLMENT",
+          "drawdownRefundId": null
+        },
+        {
+          "id": "60c10d1479b13f1a68a79ae8",
+          "accountId": "5eb89c1bf64b04041e893c7e",
+          "teamId": null,
+          "userId": "5eb89c0d98d2911e65386fbb",
+          "billingAccountId": "5eb89c1e7a183454f49837c6",
+          "created": {
+            "actor": "5eb89c0d98d2911e65386fbb",
+            "dateTime": "2021-06-09T18:48:52.322Z"
+          },
+          "type": "REMAINING_INCREASED",
+          "oldBudget": null,
+          "newBudget": null,
+          "oldRemaining": null,
+          "amount": 8250,
+          "currentBudget": {
+            "amount": 50000,
+            "mode": "UNLIMITED",
+            "duration": "MONTHLY"
+          },
+          "usageTransactionId": "60be6a101d4636461bdec709",
+          "relatedId": "60be6a0eadf27a3549ea2f8e",
+          "relatedType": "POSTAL_FULFILLMENT",
+          "drawdownRefundId": "60c10d1479b13f1a68a79ae7"
+        },
+        {
+          "id": "60be6a101d4636461bdec70a",
+          "accountId": "5eb89c1bf64b04041e893c7e",
+          "teamId": null,
+          "userId": "5eb89c0d98d2911e65386fbb",
+          "billingAccountId": "5eb89c1e7a183454f49837c6",
+          "created": {
+            "actor": "5eb89c0d98d2911e65386fbb",
+            "dateTime": "2021-06-07T18:48:48.482Z"
+          },
+          "type": "REMAINING_REDUCED",
+          "oldBudget": null,
+          "newBudget": null,
+          "oldRemaining": null,
+          "amount": 8250,
+          "currentBudget": {
+            "amount": 50000,
+            "mode": "UNLIMITED",
+            "duration": "MONTHLY"
+          },
+          "usageTransactionId": "60be6a101d4636461bdec709",
+          "relatedId": "60be6a0eadf27a3549ea2f8e",
+          "relatedType": "POSTAL_FULFILLMENT",
+          "drawdownRefundId": null
+        },
+        {
+          "id": "60a2facec0b571341e75461d",
+          "accountId": "5eb89c1bf64b04041e893c7e",
+          "teamId": null,
+          "userId": "5eb89c0d98d2911e65386fbb",
+          "billingAccountId": "5eb89c1e7a183454f49837c6",
+          "created": {
+            "actor": "5eb89c0d98d2911e65386fbb",
+            "dateTime": "2021-05-17T23:22:54.900Z"
+          },
+          "type": "REMAINING_REDUCED",
+          "oldBudget": null,
+          "newBudget": null,
+          "oldRemaining": null,
+          "amount": 85,
+          "currentBudget": {
+            "amount": 50000,
+            "mode": "UNLIMITED",
+            "duration": "MONTHLY"
+          },
+          "usageTransactionId": "60a2facec0b571341e75461c",
+          "relatedId": "60a2face107ab40ba8884259",
+          "relatedType": "POSTAL_FULFILLMENT",
+          "drawdownRefundId": null
+        },
+        {
+          "id": "60786d4d904e855cce63cab7",
+          "accountId": "5eb89c1bf64b04041e893c7e",
+          "teamId": null,
+          "userId": null,
+          "billingAccountId": "5eb89c1e7a183454f49837c6",
+          "created": {
+            "actor": "5eb89c0d98d2911e65386fbb",
+            "dateTime": "2021-04-15T16:43:57.263Z"
+          },
+          "type": "CHANGED",
+          "oldBudget": {
+            "amount": 50000,
+            "mode": "POOLED",
+            "duration": "MONTHLY"
+          },
+          "newBudget": {
+            "amount": 50000,
+            "mode": "UNLIMITED",
+            "duration": "MONTHLY"
+          },
+          "oldRemaining": null,
+          "amount": null,
+          "currentBudget": null,
+          "usageTransactionId": null,
+          "relatedId": null,
+          "relatedType": null,
+          "drawdownRefundId": null
+        },
+        {
+          "id": "606caa7049d8972fe166e401",
+          "accountId": "5eb89c1bf64b04041e893c7e",
+          "teamId": null,
+          "userId": "5eb89c0d98d2911e65386fbb",
+          "billingAccountId": "5eb89c1e7a183454f49837c6",
+          "created": {
+            "actor": "5eb89c0d98d2911e65386fbb",
+            "dateTime": "2021-04-06T18:37:36.661Z"
+          },
+          "type": "REMAINING_REDUCED",
+          "oldBudget": null,
+          "newBudget": null,
+          "oldRemaining": 46000,
+          "amount": 599,
+          "currentBudget": {
+            "amount": 50000,
+            "mode": "POOLED",
+            "duration": "MONTHLY"
+          },
+          "usageTransactionId": "606caa7049d8972fe166e400",
+          "relatedId": "606caa6f450ad37ad2875f1d",
+          "relatedType": "POSTAL_FULFILLMENT",
+          "drawdownRefundId": null
+        },
+        {
+          "id": "60673f8b0cb741428cd59f5f",
+          "accountId": "5eb89c1bf64b04041e893c7e",
+          "teamId": null,
+          "userId": "5eb89c0d98d2911e65386fbb",
+          "billingAccountId": "5eb89c1e7a183454f49837c6",
+          "created": {
+            "actor": "5eb89c0d98d2911e65386fbb",
+            "dateTime": "2021-04-02T16:00:11.824Z"
+          },
+          "type": "REMAINING_REDUCED",
+          "oldBudget": null,
+          "newBudget": null,
+          "oldRemaining": 48000,
+          "amount": 2000,
+          "currentBudget": {
+            "amount": 50000,
+            "mode": "POOLED",
+            "duration": "MONTHLY"
+          },
+          "usageTransactionId": "60673f8b0cb741428cd59f5e",
+          "relatedId": "60673f86128b9214580b6f75",
+          "relatedType": "POSTAL_FULFILLMENT",
+          "drawdownRefundId": null
+        },
+        {
+          "id": "606649f9d7bd797a87be5962",
+          "accountId": "5eb89c1bf64b04041e893c7e",
+          "teamId": null,
+          "userId": "5eb89c0d98d2911e65386fbb",
+          "billingAccountId": "5eb89c1e7a183454f49837c6",
+          "created": {
+            "actor": "5eb89c0d98d2911e65386fbb",
+            "dateTime": "2021-04-01T22:32:25.107Z"
+          },
+          "type": "REMAINING_REDUCED",
+          "oldBudget": null,
+          "newBudget": null,
+          "oldRemaining": 50000,
+          "amount": 2000,
+          "currentBudget": {
+            "amount": 50000,
+            "mode": "POOLED",
+            "duration": "MONTHLY"
+          },
+          "usageTransactionId": "606649f9d7bd797a87be5961",
+          "relatedId": "606649f8e1b8ed235322a557",
+          "relatedType": "POSTAL_FULFILLMENT",
+          "drawdownRefundId": null
+        },
+        {
+          "id": "60656fe3c4440b13e5de954b",
+          "accountId": "5eb89c1bf64b04041e893c7e",
+          "teamId": null,
+          "userId": null,
+          "billingAccountId": "5eb89c1e7a183454f49837c6",
+          "created": {
+            "actor": "DataManagementSvc",
+            "dateTime": "2021-03-31T15:01:30Z"
+          },
+          "type": "RESET",
+          "oldBudget": null,
+          "newBudget": null,
+          "oldRemaining": null,
+          "amount": null,
+          "currentBudget": {
+            "amount": 50000,
+            "mode": "POOLED",
+            "duration": "MONTHLY"
+          },
+          "usageTransactionId": null,
+          "relatedId": null,
+          "relatedType": null,
+          "drawdownRefundId": null
+        }
+      ],
+      "resultsSummary": {
+        "hasMore": false,
+        "currentPage": 1,
+        "totalPages": 1,
+        "totalRecords": 11
+      }
+    }
+  }
+}

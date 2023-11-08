@@ -1,0 +1,239 @@
+{
+  "data": {
+    "teams": [
+      {
+        "id": "5f74d335269c6f169ab99ea2",
+        "name": "HEYmock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": {
+          "billingAccountId": "5f74d306a8b96a027e89911f",
+          "budget": {
+            "amount": 0,
+            "mode": "UNLIMITED",
+            "duration": "MONTHLY",
+            "__typename": "Budget"
+          },
+          "__typename": "Settings"
+        },
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-29T18:49:25.306Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30d269c6f169ab99e98",
+        "name": "pjjkn0pgMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:45.556Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30d269c6f169ab99e97",
+        "name": "zi31qrfcMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:45.416Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30d269c6f169ab99e96",
+        "name": "zx51sjk1Mock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:45.275Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30d269c6f169ab99e95",
+        "name": "dnndemuuMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:45.220Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30d269c6f169ab99e94",
+        "name": "4io4m36iMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:45.110Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30d269c6f169ab99e93",
+        "name": "d4j7d0aqMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:45.052Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30d0e9b86156fee9157",
+        "name": "fs1cmjiiMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:45.621Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30d0e9b86156fee9156",
+        "name": "svwkq6l4Mock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:45.498Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30d0e9b86156fee9155",
+        "name": "hihh6arqMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:45.333Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30d0e9b86156fee9154",
+        "name": "z6zigynaMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:45.172Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30c269c6f169ab99e92",
+        "name": "d94mq3fzMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:44.981Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30c269c6f169ab99e91",
+        "name": "zzzTeamMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:44.848Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30c269c6f169ab99e90",
+        "name": "1(aaaTeamMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": null,
+          "dateTime": "2020-08-11T07:00:00Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30c0e9b86156fee9153",
+        "name": "dcl9fysoMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:44.921Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      },
+      {
+        "id": "5f74d30c0e9b86156fee9152",
+        "name": "JerseyMock",
+        "status": "ACTIVE",
+        "accountId": "5f74d3067eb5206dbdcd282b",
+        "parentTeamId": null,
+        "settings": null,
+        "created": {
+          "actor": "5f74d305b1cd8648d8976acd",
+          "dateTime": "2020-09-30T18:48:44.692Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "Team"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "data": {
+    "postalAnalytics": [
+      {
+        "queued": 1,
+        "failed": 0,
+        "sent": 0,
+        "delivered": 0,
+        "bounces": 0,
+        "touches": 2,
+        "costInCents": 400,
+        "date": "2020-01-01T00:00:00Z",
+        "started": 0,
+        "completed": 0,
+        "cancelled": 0,
+        "successful": 0,
+        "campaignsSent": 0,
+        "playbooksStarted": 0,
+        "triggersExecuted": 0,
+        "linkTotalViews": 0,
+        "linkUniqViews": 0,
+        "linkMaxExeViews": null,
+        "linkExpiredViews": null,
+        "linkExecutions": 0,
+        "__typename": "BasicMetrics"
+      }
+    ]
+  }
+}

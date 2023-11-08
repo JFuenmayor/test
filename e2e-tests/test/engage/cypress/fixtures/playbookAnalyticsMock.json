@@ -1,0 +1,29 @@
+{
+  "data": {
+    "playbookAnalytics": [
+      {
+        "queued": 1,
+        "failed": 24,
+        "sent": 0,
+        "delivered": 0,
+        "bounces": 0,
+        "touches": 2,
+        "costInCents": 99,
+        "date": "2020-12-01T00:00:00Z",
+        "started": 24,
+        "completed": 2,
+        "cancelled": 13,
+        "successful": 0,
+        "campaignsSent": 0,
+        "playbooksStarted": 24,
+        "triggersExecuted": 0,
+        "linkTotalViews": 0,
+        "linkUniqViews": 0,
+        "linkMaxExeViews": 0,
+        "linkExpiredViews": 0,
+        "linkExecutions": 0,
+        "__typename": "BasicMetrics"
+      }
+    ]
+  }
+}

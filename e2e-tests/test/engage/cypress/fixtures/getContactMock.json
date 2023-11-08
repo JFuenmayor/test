@@ -1,0 +1,138 @@
+{
+  "data": {
+    "getContact": {
+      "id": "5f7dffb6a4c25321423023fe",
+      "firstName": "Erwin",
+      "lastName": "Schneider",
+      "title": "Dynamic Directives Supervisor",
+      "phones": [
+        {
+          "phoneNumber": "(814) 576-4780 x441",
+          "type": "OTHER",
+          "created": {
+            "actor": "5f7dffaf091fcc12292d7471",
+            "dateTime": "2020-10-07T17:49:42.046Z",
+            "__typename": "ActionRecord"
+          },
+          "__typename": "PhoneMap"
+        }
+      ],
+      "emailAddress": "Ozella2@hotmail.com",
+      "addresses": [
+        {
+          "entryName": "Work",
+          "address1": "719 Wunsch Crescent",
+          "address2": "Apt. 464",
+          "address3": null,
+          "city": "New Davidtown",
+          "state": "Kentucky",
+          "postalCode": "07999-0095",
+          "country": "USA",
+          "preferred": true,
+          "source": "MANUAL",
+          "status": "INVALID",
+          "statusReason": "Can't match street to city/state/ZIP combination.",
+          "systems": ["postal.io"],
+          "uspsAddress": {
+            "entryName": null,
+            "address1": "719 Wunsch Crescent",
+            "address2": "Apt. 464",
+            "address3": null,
+            "city": "New Davidtown",
+            "state": "CA",
+            "postalCode": "07999-0095",
+            "country": "USA",
+            "preferred": false,
+            "status": null,
+            "statusReason": null,
+            "__typename": "Address"
+          },
+          "__typename": "Address"
+        }
+      ],
+      "ownerId": "5f7dffaf091fcc12292d7471",
+      "ownerLink": {
+        "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+        "fullName": "Isom Hoeger",
+        "__typename": "UserLink"
+      },
+      "type": "CONTACT",
+      "companyName": "Marquardt - Hammes",
+      "lastSend": null,
+      "lastActivity": null,
+      "metrics": {
+        "queued": 0,
+        "failed": 0,
+        "sent": 0,
+        "delivered": 0,
+        "bounces": 0,
+        "touches": 2,
+        "costInCents": 400,
+        "date": null,
+        "started": 0,
+        "completed": 0,
+        "cancelled": 0,
+        "successful": 0,
+        "campaignsSent": 0,
+        "playbooksStarted": 0,
+        "triggersExecuted": 0,
+        "linkTotalViews": 0,
+        "linkUniqViews": 0,
+        "linkMaxExeViews": null,
+        "linkExpiredViews": null,
+        "linkExecutions": 0,
+        "__typename": "BasicMetrics"
+      },
+      "lists": [
+        {
+          "name": "Favorites",
+          "userId": "5f7dffaf091fcc12292d7471",
+          "listId": "5f7dffb1ba29a6219dfc30b3",
+          "__typename": "ContactListMap"
+        }
+      ],
+      "campaigns": [
+        {
+          "campaignId": "5f7dffb7ba29a6219dfc30bd",
+          "campaignName": "First Campaign",
+          "postalFulfillmentId": "5f7dffb9f16d1c3f5f04fa2b",
+          "processed": null,
+          "status": "PLACED",
+          "__typename": "CampaignContact"
+        },
+        {
+          "campaignId": "5f7dffb78febb71d3309842c",
+          "campaignName": "Second Campaign",
+          "postalFulfillmentId": null,
+          "processed": null,
+          "status": null,
+          "__typename": "CampaignContact"
+        },
+        {
+          "campaignId": "5f7dfff0ba29a6219dfc30c8",
+          "campaignName": "Create Campaign AutoTest",
+          "postalFulfillmentId": null,
+          "processed": null,
+          "status": null,
+          "__typename": "CampaignContact"
+        }
+      ],
+      "playbooks": null,
+      "tags": ["i2vgt"],
+      "hasActivePlaybooks": false,
+      "created": {
+        "actor": "5f7dffaf091fcc12292d7471",
+        "dateTime": "2020-10-07T17:49:42.046Z",
+        "__typename": "ActionRecord"
+      },
+      "updated": {
+        "actor": "5f7dffaf091fcc12292d7471",
+        "dateTime": "2020-10-07T17:50:42.197Z",
+        "__typename": "ActionRecord"
+      },
+      "deleted": null,
+      "mappings": null,
+      "__typename": "Contact"
+    }
+  }
+}

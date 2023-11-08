@@ -1,0 +1,65 @@
+import { userFactory } from '../support/factories'
+
+describe('SwagUp landing page test suite', () => {
+  const user = userFactory()
+
+  before(() => {
+    cy.manageState()
+    cy.programaticSignup(user)
+  })
+
+  beforeEach(() => {
+    cy.restoreLocalStorageCache()
+  })
+
+  afterEach(() => {
+    cy.saveLocalStorageCache()
+  })
+
+  it('renders a swagup landing page', () => {
+    visitSwag()
+    //Gets the "Steps" grid container and renders the steps
+    getSwagSteps().should('be.visible').children().should('have.length', 4)
+
+    //Step 4 has an integration link
+    getSwagSteps().within(() => {
+      getIntegrationsLink().should('be.visible')
+    })
+    //})
+    //it('has a "Learn More" button that scrolls', () => {
+    getLearnMoreButton().click({ force: true })
+    getHowItWorksHeader().should('be.visible')
+    getSwagSteps().should('be.visible')
+    //})
+    //it('has an "Get Started" link that navigates to the SwagUp page', () => {
+    getStartedButton().should('be.visible').and('have.attr', 'href', swagUpLink())
+    //})
+    //it('has an "Integrations" link that navigates to the integrations page', () => {
+    getSwagSteps().within(() => {
+      getIntegrationsLink().should('be.visible').click()
+    })
+    cy.url().should('include', '/integrations')
+  })
+})
+
+function visitSwag() {
+  return cy.visit('/items/swagup')
+}
+function getSwagSteps() {
+  return cy.findByTestId('SwagUp-Grid-Steps')
+}
+function getIntegrationsLink() {
+  return cy.contains('a', 'Integrations')
+}
+function getLearnMoreButton() {
+  return cy.contains('a', 'Learn More')
+}
+function getHowItWorksHeader() {
+  return cy.findByRole('heading', { name: 'How it Works' })
+}
+function getStartedButton() {
+  return cy.contains('a', 'Get Started')
+}
+function swagUpLink() {
+  return 'https://www.swagup.com/dashboard/product-onboarding?affiliate_id=postal.io'
+}

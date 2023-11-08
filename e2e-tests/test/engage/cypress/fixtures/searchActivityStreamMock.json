@@ -1,0 +1,180 @@
+{
+  "data": {
+    "searchActivityStream": [
+      {
+        "acknowledgedBy": null,
+        "type": "DELIVERED",
+        "name": "postal.order.queued",
+        "message": "Placed order for a {itemName} to be sent to {contactName}.",
+        "callouts": [
+          {
+            "targetText": "postalFulfillment",
+            "text": "Postal",
+            "action": null,
+            "dataType": "POSTAL",
+            "dataId": "5fa9afd78f68c704bae781b2",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "itemName",
+            "text": "Notecard",
+            "action": null,
+            "dataType": "POSTAL",
+            "dataId": "5fa9afd681c41e2905599c5f",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "contactName",
+            "text": "Zieme Ambrose",
+            "action": null,
+            "dataType": "CONTACT",
+            "dataId": "5fa9afd6a3fb3d5b6541f453",
+            "__typename": "StreamCallout"
+          }
+        ],
+        "count": 1,
+        "created": {
+          "actor": "5fa9afd2fa00bc14e3acf9c5",
+          "dateTime": "2020-11-09T21:08:45.657Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "ActivityStream"
+      },
+      {
+        "acknowledgedBy": null,
+        "type": "ACTION",
+        "name": "postal.order.failed",
+        "message": "There was a problem while placing an order for a {itemName} to be sent to {contactName}. The contact record does not have a verified address. Please {errorDesc} the contact and retry your order. Once you have fixed the issue, {retryPostalFulfillmentId}.",
+        "callouts": [
+          {
+            "targetText": "postalFulfillment",
+            "text": "Postal",
+            "action": null,
+            "dataType": "POSTAL",
+            "dataId": "5fb5a778740818101c7ee6ef",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "itemName",
+            "text": "Postcard",
+            "action": null,
+            "dataType": "POSTAL",
+            "dataId": "5fb59fc8dbbce145477c892e",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "contactName",
+            "text": "Lorena Tillman",
+            "action": null,
+            "dataType": "CONTACT",
+            "dataId": "5fb59fcca3fb3d5b6543ebaa",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "errorDesc",
+            "text": "update",
+            "action": "update.contact",
+            "dataType": "CONTACT",
+            "dataId": "5fb59fcca3fb3d5b6543ebaa",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "retryPostalFulfillmentId",
+            "text": "retry your order",
+            "action": "postalFulfillment.retryOrder",
+            "dataType": "POSTAL",
+            "dataId": "5fb5a778740818101c7ee6ef",
+            "__typename": "StreamCallout"
+          }
+        ],
+        "count": 1,
+        "created": {
+          "actor": "5fb59fc45570e80ce94c274c",
+          "dateTime": "2020-11-18T23:00:09.142Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "ActivityStream"
+      },
+      {
+        "acknowledgedBy": null,
+        "type": "UPDATE",
+        "name": "postal.order.queued",
+        "message": "Placed order for a {itemName} to be sent to {contactName}.",
+        "callouts": [
+          {
+            "targetText": "postalFulfillment",
+            "text": "Postal",
+            "action": null,
+            "dataType": "POSTAL",
+            "dataId": "5fa9afd78f68c704bae781b0",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "itemName",
+            "text": "Brochure",
+            "action": null,
+            "dataType": "POSTAL",
+            "dataId": "5fa9afd681c41e2905599c5d",
+            "__typename": "StreamCallout"
+          },
+          {
+            "targetText": "contactName",
+            "text": "Zieme Ambrose",
+            "action": null,
+            "dataType": "CONTACT",
+            "dataId": "5fa9afd6a3fb3d5b6541f453",
+            "__typename": "StreamCallout"
+          }
+        ],
+        "count": 1,
+        "created": {
+          "actor": "5fa9afd2fa00bc14e3acf9c5",
+          "dateTime": "2020-11-09T21:08:43.621Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "ActivityStream"
+      },
+      {
+        "acknowledgedBy": null,
+        "type": "ACTION",
+        "name": "postal.order.thank_you_message.submitted",
+        "message": "{contactName} sent you a thank you message for the {itemName} - \"{message}\"",
+        "callouts": [
+          {
+            "targetText": "postalFulfillment",
+            "text": "Postal",
+            "action": null,
+            "dataType": "POSTAL",
+            "dataId": "61df34f16c80795c458d17c6"
+          },
+          {
+            "targetText": "contactName",
+            "text": "Ashley Smith",
+            "action": null,
+            "dataType": "CONTACT",
+            "dataId": "60f723925fd18c630cee2f8e"
+          },
+          {
+            "targetText": "message",
+            "text": "thanks",
+            "action": null,
+            "dataType": null,
+            "dataId": null
+          },
+          {
+            "targetText": "itemName",
+            "text": "Personalized Cutting Board",
+            "action": null,
+            "dataType": "POSTAL",
+            "dataId": "61df342e111bb761019afc2e"
+          }
+        ],
+        "count": 1,
+        "created": {
+          "actor": "5eb89c0d98d2911e65386fbb",
+          "dateTime": "2022-01-12T20:07:34.960Z"
+        }
+      }
+    ]
+  }
+}

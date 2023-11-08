@@ -1,0 +1,142 @@
+import { addDays, format } from 'date-fns'
+import { Campaigns, Marketplace, Navbar, SendItem, Universal } from '../../pageObjects'
+
+export interface crudCampaignsProps {
+  name: string
+  postalName: string
+}
+Cypress.Commands.add('crudCampaigns', (args: crudCampaignsProps) => {
+  const campaigns = new Campaigns()
+  const sendItem = new SendItem()
+  const universal = new Universal()
+  const marketplace = new Marketplace()
+  const navbar = new Navbar()
+  const name = args.name
+  const postalName = args.postalName
+  cy.log(`🏕️ Start | CRUD Campaigns`)
+  //Create
+  campaigns.getCreateCampaignButton().should('be.visible').click()
+  sendItem.getSelectContactsDrawer().within(() => {
+    universal.getCloseButtonByLabelText().should('be.visible')
+    universal.getCheckboxForAllItems().scrollIntoView().click({ force: true })
+    universal.allCheckboxesAreChecked()
+    sendItem.clickNextButton()
+  })
+  sendItem.getSelectItemDrawer().within(() => {
+    universal.getCloseButtonByLabelText().should('be.visible')
+    marketplace.chooseItemByName(postalName)
+  })
+  sendItem.getCustomizeDrawer().within(() => {
+    universal.getCloseButtonByLabelText().should('be.visible')
+    campaigns.getCampaignNameInput().clear().type(name)
+    sendItem.clickNextButton()
+  })
+  sendItem.getReviewDrawer().within(() => {
+    universal.getCloseButtonByLabelText().should('be.visible')
+    sendItem.getReviewTotal().should('not.contain', '$0.00')
+    sendItem.getSendItemButton().click()
+  })
+  sendItem.getConfirmSendModal().within(() => {
+    sendItem.getSendButton().click()
+  })
+  campaigns.getCampaignCreatedAlert()
+  universal.progressBarZero()
+  universal.getRowByText(name).should('exist')
+  //Edit
+  campaigns.getSearchCampaignsInput().fill(name)
+  universal.getSpinner().should('not.exist')
+  universal.getRowByText(name).click()
+  universal.waitForProgressBar()
+  campaigns.getEditCampaignButton().click({ force: true })
+  const tomorrow = addDays(new Date(), 1)
+  const dateFormatInput = (date: Date) => format(date, 'MMMM d, yyyy')
+  campaigns.getUpdateCampaignDrawer().within(() => {
+    universal.getCloseButtonByLabelText().should('be.visible')
+    campaigns.getEditNameInput().clear().fill(`${name}UP`)
+    campaigns
+      .getStartDatePickerInput()
+      .clear()
+      .type(`${dateFormatInput(tomorrow)}`)
+    campaigns.getEditNameInput().click()
+    campaigns.getEditStatusSelect().select('SCHEDULED')
+    campaigns.getUpdateCampaignButton().click()
+  })
+  campaigns.getCampaignDataUpdatedAlert()
+  navbar.getNavbarCenter().should('contain.text', `${name}UP`)
+  cy.log(`🏕️ End | CRUD Campaigns`)
+})
+
+export interface contactsAndCampaignsProps {
+  contact: string
+  campaign: string
+}
+
+Cypress.Commands.add('contactsAndCampaigns', (args: contactsAndCampaignsProps) => {
+  const campaigns = new Campaigns()
+  const universal = new Universal()
+  const navbar = new Navbar()
+  const contact = args.contact
+  const campaign = args.campaign
+
+  cy.log(`🏕️ Start | Campaign Contacts`)
+  //remove
+  cy.intercept('/engage/api/graphql', (req) => {
+    if (req.body.operationName === 'getCampaign') {
+      req.alias = 'getCampaign'
+    }
+    if (req.body.operationName === 'getBudgetRemaining') {
+      req.alias = 'getBudgetRemaining'
+    }
+  })
+  universal.getPostalCard().within(() => {
+    universal.getPostalCardImage().should('be.visible').and('have.attr', 'src')
+  })
+  campaigns.getContactsCard().within(() => {
+    universal.getNoItemsMessage().should('not.exist')
+    cy.findAllByRole('checkbox').eq(1).scrollIntoView().should('be.visible')
+    cy.clickCheckbox({ name: contact })
+  })
+  campaigns.getRemoveFromCampaignButton().click({ force: true })
+  campaigns.getRemoveContactsModal().within(() => {
+    universal.getRemoveButton().click()
+  })
+  campaigns.getRemoveContactsModal().should('not.exist')
+  campaigns.visitOrders()
+  universal.getSpinner().should('not.exist')
+  universal.getNoItemsMessage().should('not.exist')
+  universal.getRowByText(campaign).click()
+  universal.getSpinner().should('not.exist')
+  campaigns
+    .getContactsCard()
+    .should('be.visible')
+    .within(() => {
+      universal.getNoItemsMessage().should('not.exist')
+      universal.getRowByText(RegExp('\\b' + contact + '\\b', 'g')).should('not.exist')
+    })
+
+  //add
+  navbar.getCampaignsLink().click()
+  universal.getSpinner().should('not.exist')
+  universal.getRowByText(campaign).should('be.visible').click()
+  campaigns.getAddContactsButton().scrollIntoView().click({ force: true })
+  campaigns.getAddContactsDrawer().within(() => {
+    universal.getCloseButtonByLabelText().should('be.visible')
+    universal.getNoItemsMessage().should('not.exist')
+    cy.clickCheckbox({ name: contact })
+    campaigns.getAddContactsButton().click({ force: true })
+  })
+  campaigns.getAddContactsDrawer().should('not.exist')
+  campaigns.getContactsAddedAlert()
+  cy.catchCallsRecurse({
+    operationName: 'getBackgroundTaskById',
+    key: 'successCount',
+    value: 1,
+  })
+  universal.getThingSpinner().should('not.exist')
+  universal.progressBarZero()
+  campaigns.getContactsCard().within(() => {
+    universal.getNoItemsMessage().should('not.exist')
+    universal.getRowByText(contact).should('exist')
+  })
+  cy.log(`🏕️ End | Campaign Contacts`)
+})

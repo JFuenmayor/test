@@ -1,0 +1,8 @@
+{
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
+  "extends": "@postal-io/ts-config/react-library.json",
+  "compilerOptions": {
+    "types": ["cypress", "@testing-library/cypress", "cypress-real-events", "node"]
+  }
+}

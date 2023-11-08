@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["cypress", "@testing-library/cypress", "cypress-real-events"],
+    "jsx": "react"
+  },
+  "include": ["**/*.ts"]
+}

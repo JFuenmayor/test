@@ -1,0 +1,62 @@
+{
+  "data": {
+    "searchContactsV2": {
+      "searchableContacts": [
+        {
+          "id": "61ba8bb0ad0d2e2b89c5be49",
+          "firstName": "Jones",
+          "lastName": "Jersey",
+          "title": "Central Identity Orchestrator",
+          "companyName": "Quitzon, Hagenes and Purdy",
+          "ownerId": "61ba8baeb104e4342c3da018",
+          "emailAddress": "9991840a-9f0c-4114-82ae-13555fd083a3@postal.dev",
+          "verifiedAddress": true,
+          "lastSend": "2021-11-17T07:00:00Z",
+          "created": "2021-11-16T07:00:00Z",
+          "updated": null,
+          "itemsSent": 0,
+          "costInCents": 0,
+          "tags": [],
+          "campaigns": null,
+          "campaignStatus": null,
+          "playbooks": null,
+          "lists": null,
+          "city": ["San Luis Obispo"],
+          "state": ["CA"],
+          "postalCode": ["93401"],
+          "country": ["USA"]
+        },
+        {
+          "id": "61ba8bb7ad0d2e2b89c5be4a",
+          "firstName": "Maria",
+          "lastName": "Lara",
+          "title": "QA Engineer",
+          "companyName": "Maria's Place",
+          "ownerId": "61ba8babe46dac49ed8403f9",
+          "emailAddress": "maria@postal.dev",
+          "verifiedAddress": true,
+          "lastSend": "2021-12-15T07:00:00Z",
+          "created": "2021-12-14T07:00:00Z",
+          "updated": null,
+          "itemsSent": 0,
+          "costInCents": 0,
+          "tags": ["cat"],
+          "campaigns": null,
+          "campaignStatus": null,
+          "playbooks": null,
+          "lists": null,
+          "city": ["San Diego"],
+          "state": ["California"],
+          "postalCode": ["93405"],
+          "country": ["USA"]
+        }
+      ],
+      "resultsSummary": {
+        "hasMore": false,
+        "currentPage": 1,
+        "totalPages": 1,
+        "totalRecords": 2
+      }
+    }
+  }
+}

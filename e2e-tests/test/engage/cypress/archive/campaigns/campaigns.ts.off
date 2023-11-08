@@ -1,0 +1,186 @@
+export default class Campaigns {
+  visitOrders() {
+    return cy.visit('/orders/all')
+  }
+  visitCampaigns() {
+    return cy.visit('/campaigns')
+  }
+  //Buttons
+  getCreateCampaignButton() {
+    return cy.findByRole('button', { name: 'Create a Campaign' })
+  }
+  getNextButton() {
+    return cy.findByRole('button', { name: 'Next' })
+  }
+  getNowButton() {
+    return cy.findByRole('button', { name: 'Now' })
+  }
+  getTomorrowMorningButton() {
+    return cy.findByRole('button', { name: 'Tomorrow Morning' })
+  }
+  getBackToCampaignsButton() {
+    return cy.findByRole('button', { name: 'Back to Campaigns' })
+  }
+  getRemoveFromCampaignButton() {
+    return cy.findByTestId('deleteIcon')
+  }
+  getAddContactsButton() {
+    return cy.findByRole('button', { name: 'Add Contacts' })
+  }
+  getEditCampaignButton() {
+    return cy.findByLabelText('SubNavbar Title')
+  }
+  getUpdateCampaignButton() {
+    return cy.findByRole('button', { name: 'Update Campaign' })
+  }
+  //Drawers
+  getAddContactsDrawer() {
+    return cy.findByRole('dialog', { name: 'Add Contacts' })
+  }
+  getUpdateCampaignDrawer() {
+    return cy.findByRole('dialog', { name: 'Update Campaign Info' })
+  }
+  //Text Elements
+  getSendOnText() {
+    return cy.findByText('Send On')
+  }
+  getStartDateText() {
+    return cy.findByText('Start Date')
+  }
+  contactsTableHeaderText() {
+    return 'NameTitleCreatedStatus'
+  }
+  getScheduledForNowHelper() {
+    return cy.contains('The campaign will be queued up and sent in a few minutes')
+  }
+  getContactsSelectedText(numberOfContacts: string) {
+    return cy.contains(`${numberOfContacts} contacts have been selected`)
+  }
+  //Headings
+  getCampaignsHeader() {
+    return cy.findByRole('heading', { name: 'Campaigns' })
+  }
+  getSidebarHeading() {
+    return cy.findByRole('heading', { name: 'Campaigns' })
+  }
+  getSelectAnOptionHeading() {
+    return cy.contains('Select an Option')
+  }
+  getDetailsHeadingByName(campaignName: string) {
+    return cy.findByRole('heading', { name: campaignName })
+  }
+  //Inputs
+  getCampaignNameInput() {
+    return cy.findByPlaceholderText('Set the Campaign Name')
+  }
+  getSearchCampaignsInput() {
+    return cy.findByPlaceholderText('Search Campaigns')
+  }
+  getDatePickerInput() {
+    return cy.get('[name="date"]').next()
+  }
+  getStartDatePickerInput() {
+    return cy.get('[name="scheduleDate"]').next()
+  }
+  getEditNameInput() {
+    return cy.findByRole('textbox', { name: 'Name' })
+  }
+  //links
+  getMyCampaignsLink() {
+    return cy.findByRole('link', { name: 'My Campaigns' })
+  }
+  getAllCampaignsLink() {
+    return cy.findByRole('link', { name: 'All Campaigns' })
+  }
+  //Cards
+  getStatsCard() {
+    return cy.contains('[data-testid="ui-card"]', 'Stats')
+  }
+  getCampaignDetailsCard() {
+    return cy.findByTestId('campaignHeader')
+  }
+  getContactsCard() {
+    return cy.contains('[data-testid="ui-card"]', 'Contacts')
+  }
+  //Stats elements
+  getSentStats() {
+    return cy.contains('div', 'Sent')
+  }
+  getCostStats() {
+    return cy.contains('div', 'Cost')
+  }
+  getCostPerTouchStats() {
+    return cy.contains('div', 'Cost Per Touch')
+  }
+  //Filters
+  getNameFilter() {
+    return cy.contains('th', 'Name')
+  }
+  getStatusFilter() {
+    return cy.contains('th', 'Status')
+  }
+  getStartDateFilter() {
+    return cy.contains('th', 'Start Date')
+  }
+  getCreatedFilter() {
+    return cy.contains('th', 'Created')
+  }
+  getSentFilter() {
+    return cy.contains('th', 'Sent')
+  }
+  getCostFilter() {
+    return cy.contains('th', 'Cost')
+  }
+  //Details Elements
+  getStatus() {
+    return cy.contains('div', 'Status')
+  }
+  getScheduledDate() {
+    return cy.contains('div', 'Scheduled for')
+  }
+  getOwner() {
+    return cy.contains('div', 'Owner')
+  }
+  getCompletedDate() {
+    return cy.contains('div', 'Completed Date')
+  }
+  //Review Elements
+  getReviewCampaignName() {
+    return cy.contains('div', 'Campaign Name').parent('div')
+  }
+  getReviewSendOn() {
+    return cy.contains('div', 'Send On').parent('div')
+  }
+  //Alerts
+  getCampaignCreatedAlert() {
+    return cy.getAlert({ message: 'Campaign Created!', close: 'close' })
+  }
+  getContactsRemovedAlert() {
+    return cy.getAlert({ message: 'Contacts removed', close: 'close' })
+  }
+  getContactsAddedAlert() {
+    return cy.getAlert({ message: 'Contacts added to Campaign', close: 'close' })
+  }
+  getCampaignDataUpdatedAlert() {
+    return cy.getAlert({ message: 'Campaign data updated', close: 'close' })
+  }
+  //Modals
+  getPostalReviewModal() {
+    return cy.findByRole('alertdialog', { name: 'Postcard' })
+  }
+  getRemoveContactsModal() {
+    return cy.findByRole('alertdialog', { name: 'Remove Contacts' })
+  }
+  //Modal Text
+  getRemoveContactsModalText(numberOfContacts: string) {
+    return cy.contains(`Are you sure you want to Remove these ${numberOfContacts} contacts from this campaign?`)
+  }
+  //Selects
+  getEditStatusSelect() {
+    return cy.findByRole('combobox', { name: 'Status' })
+  }
+  //MenuItems
+  getResendCampaignMenuitem() {
+    return cy.findByRole('menuitem', { name: 'Re-send campaign' })
+  }
+}

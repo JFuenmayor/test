@@ -1,0 +1,33 @@
+import { Campaigns, Marketplace, SendItem, Universal } from '../../support/pageObjects'
+
+Cypress.Commands.add('createCampaignB', (campaignName) => {
+  const campaigns = new Campaigns()
+  const sendItem = new SendItem()
+  const universal = new Universal()
+  const marketplace = new Marketplace()
+  cy.log(`🏕️ Start | Create Campaign clickthrough (elasticsearch)`)
+  campaigns.visitOrders()
+  campaigns.getCreateCampaignButton().click()
+  sendItem.getSelectContactsDrawer().within(() => {
+    universal.getCheckboxForAllItems().scrollIntoView().click({ force: true })
+    sendItem.getNextButton().click()
+  })
+  sendItem.getSelectItemDrawer().within(() => {
+    marketplace.chooseItemByName('Postcard')
+  })
+  sendItem.getCustomizeDrawer().within(() => {
+    campaigns.getCampaignNameInput().clear().fill(campaignName)
+    sendItem.getNextButton().should('be.visible').click()
+  })
+  sendItem.getReviewDrawer().within(() => {
+    sendItem.getSendItemButton().should('be.visible').click()
+  })
+  sendItem.getConfirmSendModal().within(() => {
+    sendItem.getSendButton().click()
+  })
+  sendItem.getReviewDrawer().should('not.exist')
+  universal.getNoItemsMessage().should('not.exist')
+  universal.getRowByText(campaignName).should('exist')
+  campaigns.getCampaignCreatedAlert()
+  cy.log(`🏕️ End | Create Campaign clickthrough (elasticsearch)`)
+})

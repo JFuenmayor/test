@@ -1,0 +1,21 @@
+import { SignUpIn } from '../../support/pageObjects'
+
+describe('SSO Login Testing', function () {
+  const signin = new SignUpIn()
+  // beforeEach(() => {
+  //   cy.visit('/', { log: false })
+  // })
+  it('tests sso login attempts redirect properly', function () {
+    //it('tests that google redirects properly', function () {
+    cy.visit('/', { log: false })
+    signin.testProvider('google')
+    //})
+    //it('tests that salesforce redirects properly', function () {
+    cy.visit('/', { log: false })
+    signin.testProvider('sfdc')
+    //})
+    //it('tests that microsoft redirects properly', function () {
+    cy.visit('/', { log: false })
+    signin.testProvider('azuread')
+  })
+})

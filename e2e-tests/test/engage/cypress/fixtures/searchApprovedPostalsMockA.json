@@ -1,0 +1,2358 @@
+{
+  "data": {
+    "searchApprovedPostals": [
+      {
+        "id": "601b39b7f7bc06347bd8eaf8",
+        "name": "Holiday - Seasons Greetings",
+        "description": "Provide your own design on this 8\"x6\" Notecard that folds once into two 4\"x6\" panels.",
+        "brandName": "Postal.io",
+        "status": "ACTIVE",
+        "category": "Direct Mail",
+        "type": "Notecards",
+        "subCategory": ["Bi-fold", "8x6"],
+        "useCases": null,
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://601b39b9fb946056cb06403d",
+            "description": "Preview"
+          },
+          {
+            "url": "asset://601b39b9fb946056cb06403e",
+            "description": "Cover"
+          },
+          {
+            "url": "asset://601b39b9fb946056cb06403f",
+            "description": "Inside Bottom"
+          },
+          {
+            "url": "asset://601b39b9fb946056cb064040",
+            "description": "Inside Top"
+          },
+          {
+            "url": "asset://601b39b9fb946056cb064041",
+            "description": "Address"
+          }
+        ],
+        "marketplaceProductId": "5f5bc5b8d7033a45b4193eff",
+        "variants": [
+          {
+            "id": "5f31a2cb2fb46d0e47e1f143",
+            "variantName": "Glossy",
+            "description": "",
+            "imageUrls": [],
+            "status": "ACTIVE",
+            "price": 163,
+            "displayPrice": 163,
+            "displaySubscriberPrice": 117,
+            "giftMessageSupported": true,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": {
+          "front": [
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": true,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 25,
+                "y": 794,
+                "width": 350,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontName": "Muli-Bold",
+                "fontSize": 16,
+                "text": "COVER PANEL - 4\"x6\""
+              },
+              "customizable": true
+            },
+            {
+              "name": "Image",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 11,
+                "y": 412,
+                "width": 603,
+                "height": 402
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN",
+                "assetUrl": "asset://PMA5f5bc5b6d7033a45b4193ef9"
+              },
+              "customizable": null
+            },
+            {
+              "name": "Logo",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 40,
+                "y": 39,
+                "width": 168,
+                "height": 76
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN"
+              },
+              "customizable": null
+            },
+            {
+              "name": "ReservedArea",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 326,
+                "width": 625,
+                "height": 87
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 0,
+                "minY": 326,
+                "maxX": 0,
+                "maxY": 326
+              },
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "ReservedArea",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 238,
+                "y": 113,
+                "width": 387,
+                "height": 300
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 238,
+                "minY": 113,
+                "maxX": 238,
+                "maxY": 113
+              },
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "FoldLine",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 412,
+                "width": 625,
+                "height": 0
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "UspsBlock",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 271,
+                "y": 163,
+                "width": 354,
+                "height": 250
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 271,
+                "minY": 163,
+                "maxX": 271,
+                "maxY": 163
+              },
+              "settings": null,
+              "customizable": null
+            }
+          ],
+          "back": [
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": false,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 25,
+                "y": 375,
+                "width": 350,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontName": "Muli-Bold",
+                "fontSize": 16,
+                "text": "INSIDE TOP PANEL - 4\"x6\""
+              },
+              "customizable": true
+            },
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": false,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 20,
+                "y": 794,
+                "width": 350,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontName": "Muli-Bold",
+                "fontSize": 16,
+                "text": "INSIDE BOTTOM PANEL - 4\"x6\""
+              },
+              "customizable": true
+            },
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 83,
+                "y": 479,
+                "width": 461,
+                "height": 200
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "randomLeftOffset": true,
+                "handwritingName": "felicia",
+                "horizontalAlignment": "LEFT",
+                "verticalAlignment": "TOP",
+                "color": "#000000",
+                "fontSize": 20,
+                "spacingModifier": -8,
+                "sizeToFit": true,
+                "text": "Example text. We recommend you keep your messaging simple, so that it looks clean and authentic.\n\nPostal.io"
+              },
+              "customizable": null
+            },
+            {
+              "name": "Logo",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 186,
+                "y": 151,
+                "width": 250,
+                "height": 115
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN"
+              },
+              "customizable": null
+            },
+            {
+              "name": "FoldLine",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 412,
+                "width": 625,
+                "height": 0
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": null,
+              "customizable": null
+            }
+          ],
+          "dpi": 400,
+          "outputSize": {
+            "width": 2500,
+            "height": 3300
+          }
+        },
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b39a7f7bc06347bd8eaf6",
+        "name": "Holiday - Vintage",
+        "description": "Provide your own design on this 8\"x6\" Notecard that folds once into two 4\"x6\" panels.",
+        "brandName": "Postal.io",
+        "status": "ACTIVE",
+        "category": "Direct Mail",
+        "type": "Notecards",
+        "subCategory": ["Bi-fold", "8x6"],
+        "useCases": null,
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://601b39a8fb946056cb064038",
+            "description": "Preview"
+          },
+          {
+            "url": "asset://601b39a8fb946056cb064039",
+            "description": "Cover"
+          },
+          {
+            "url": "asset://601b39a8fb946056cb06403a",
+            "description": "Inside Bottom"
+          },
+          {
+            "url": "asset://601b39a8fb946056cb06403b",
+            "description": "Inside Top"
+          },
+          {
+            "url": "asset://601b39a8fb946056cb06403c",
+            "description": "Address"
+          }
+        ],
+        "marketplaceProductId": "5f5bc7e0d7033a45b4193f97",
+        "variants": [
+          {
+            "id": "5f31a2cb2fb46d0e47e1f143",
+            "variantName": "Glossy",
+            "description": "",
+            "imageUrls": [],
+            "status": "ACTIVE",
+            "price": 163,
+            "displayPrice": 163,
+            "displaySubscriberPrice": 117,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": {
+          "front": [
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": true,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 25,
+                "y": 794,
+                "width": 350,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontName": "Muli-Bold",
+                "fontSize": 16,
+                "text": "COVER PANEL - 4\"x6\""
+              },
+              "customizable": true
+            },
+            {
+              "name": "Image",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 11,
+                "y": 412,
+                "width": 603,
+                "height": 402
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN",
+                "assetUrl": "asset://PMA5f5bc7ded7033a45b4193f91"
+              },
+              "customizable": null
+            },
+            {
+              "name": "Logo",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 40,
+                "y": 39,
+                "width": 168,
+                "height": 76
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN"
+              },
+              "customizable": null
+            },
+            {
+              "name": "ReservedArea",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 326,
+                "width": 625,
+                "height": 87
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 0,
+                "minY": 326,
+                "maxX": 0,
+                "maxY": 326
+              },
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "ReservedArea",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 238,
+                "y": 113,
+                "width": 387,
+                "height": 300
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 238,
+                "minY": 113,
+                "maxX": 238,
+                "maxY": 113
+              },
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "FoldLine",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 412,
+                "width": 625,
+                "height": 0
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "UspsBlock",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 271,
+                "y": 163,
+                "width": 354,
+                "height": 250
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 271,
+                "minY": 163,
+                "maxX": 271,
+                "maxY": 163
+              },
+              "settings": null,
+              "customizable": null
+            }
+          ],
+          "back": [
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": false,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 25,
+                "y": 375,
+                "width": 350,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontName": "Muli-Bold",
+                "fontSize": 16,
+                "text": "INSIDE TOP PANEL - 4\"x6\""
+              },
+              "customizable": true
+            },
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": false,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 20,
+                "y": 794,
+                "width": 350,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontName": "Muli-Bold",
+                "fontSize": 16,
+                "text": "INSIDE BOTTOM PANEL - 4\"x6\""
+              },
+              "customizable": true
+            },
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 83,
+                "y": 479,
+                "width": 461,
+                "height": 200
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "randomLeftOffset": true,
+                "handwritingName": "felicia",
+                "horizontalAlignment": "LEFT",
+                "verticalAlignment": "TOP",
+                "color": "#000000",
+                "fontSize": 20,
+                "spacingModifier": -8,
+                "sizeToFit": true,
+                "text": "Example text. We recommend you keep your messaging simple, so that it looks clean and authentic.\n\nPostal.io"
+              },
+              "customizable": null
+            },
+            {
+              "name": "Logo",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 186,
+                "y": 151,
+                "width": 250,
+                "height": 115
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN"
+              },
+              "customizable": null
+            },
+            {
+              "name": "FoldLine",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 412,
+                "width": 625,
+                "height": 0
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": null,
+              "customizable": null
+            }
+          ],
+          "dpi": 400,
+          "outputSize": {
+            "width": 2500,
+            "height": 3300
+          }
+        },
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b3975f7bc06347bd8eaf5",
+        "name": "Bed, Bath & Beyond",
+        "description": "Bed, Bath & Beyond Gift Card Description",
+        "brandName": "Bed, Bath & Beyond",
+        "status": "ACTIVE",
+        "category": "Gift Cards",
+        "type": "Bed, Bath & Beyond",
+        "subCategory": null,
+        "useCases": ["Thank You", "Meeting Request"],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5e7da148c5e3c10e3d3e7774",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5e7da149c5e3c10e3d3e778c",
+        "variants": [
+          {
+            "id": "5e7da149c5e3c10e3d3e7786",
+            "variantName": "Bed, Bath & Beyond $5",
+            "description": "Bed, Bath & Beyond $5 Description",
+            "imageUrls": null,
+            "status": "ACTIVE",
+            "price": 500,
+            "displayPrice": 500,
+            "displaySubscriberPrice": 500,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b3958f7bc06347bd8eaf3",
+        "name": "Thank-You Depth",
+        "description": "Provide your own design on this 8\"x6\" Notecard that folds once into two 4\"x6\" panels.",
+        "brandName": "Postal.io",
+        "status": "ACTIVE",
+        "category": "Direct Mail",
+        "type": "Notecards",
+        "subCategory": ["Bi-fold", "8x6"],
+        "useCases": null,
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://601b3959fb946056cb064033",
+            "description": "Preview"
+          },
+          {
+            "url": "asset://601b3959fb946056cb064034",
+            "description": "Cover"
+          },
+          {
+            "url": "asset://601b3959fb946056cb064035",
+            "description": "Inside Bottom"
+          },
+          {
+            "url": "asset://601b3959fb946056cb064036",
+            "description": "Inside Top"
+          },
+          {
+            "url": "asset://601b3959fb946056cb064037",
+            "description": "Address"
+          }
+        ],
+        "marketplaceProductId": "5f5bca32d7033a45b419401f",
+        "variants": [
+          {
+            "id": "5f31a2cb2fb46d0e47e1f143",
+            "variantName": "Glossy",
+            "description": "",
+            "imageUrls": [],
+            "status": "ACTIVE",
+            "price": 163,
+            "displayPrice": 163,
+            "displaySubscriberPrice": 117,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": {
+          "front": [
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": true,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 25,
+                "y": 794,
+                "width": 350,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontName": "Muli-Bold",
+                "fontSize": 16,
+                "text": "COVER PANEL - 4\"x6\""
+              },
+              "customizable": true
+            },
+            {
+              "name": "Image",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 11,
+                "y": 412,
+                "width": 603,
+                "height": 402
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN",
+                "assetUrl": "asset://PMA5f5bca30d7033a45b4194019"
+              },
+              "customizable": null
+            },
+            {
+              "name": "Logo",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 40,
+                "y": 39,
+                "width": 168,
+                "height": 76
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN"
+              },
+              "customizable": null
+            },
+            {
+              "name": "ReservedArea",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 326,
+                "width": 625,
+                "height": 87
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 0,
+                "minY": 326,
+                "maxX": 0,
+                "maxY": 326
+              },
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "ReservedArea",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 238,
+                "y": 113,
+                "width": 387,
+                "height": 300
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 238,
+                "minY": 113,
+                "maxX": 238,
+                "maxY": 113
+              },
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "FoldLine",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 412,
+                "width": 625,
+                "height": 0
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "UspsBlock",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 271,
+                "y": 163,
+                "width": 354,
+                "height": 250
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 271,
+                "minY": 163,
+                "maxX": 271,
+                "maxY": 163
+              },
+              "settings": null,
+              "customizable": null
+            }
+          ],
+          "back": [
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": false,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 25,
+                "y": 375,
+                "width": 350,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontName": "Muli-Bold",
+                "fontSize": 16,
+                "text": "INSIDE TOP PANEL - 4\"x6\""
+              },
+              "customizable": true
+            },
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": false,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 20,
+                "y": 794,
+                "width": 350,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontName": "Muli-Bold",
+                "fontSize": 16,
+                "text": "INSIDE BOTTOM PANEL - 4\"x6\""
+              },
+              "customizable": true
+            },
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 83,
+                "y": 479,
+                "width": 461,
+                "height": 200
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "randomLeftOffset": true,
+                "handwritingName": "felicia",
+                "horizontalAlignment": "LEFT",
+                "verticalAlignment": "TOP",
+                "color": "#000000",
+                "fontSize": 20,
+                "spacingModifier": -8,
+                "sizeToFit": true,
+                "text": "Example text. We recommend you keep your messaging simple, so that it looks clean and authentic.\n\nPostal.io"
+              },
+              "customizable": null
+            },
+            {
+              "name": "Logo",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 186,
+                "y": 151,
+                "width": 250,
+                "height": 115
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN"
+              },
+              "customizable": null
+            },
+            {
+              "name": "FoldLine",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 412,
+                "width": 625,
+                "height": 0
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": null,
+              "customizable": null
+            }
+          ],
+          "dpi": 400,
+          "outputSize": {
+            "width": 2500,
+            "height": 3300
+          }
+        },
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b3944f7bc06347bd8eaf1",
+        "name": "Thank-You Big Red",
+        "description": "Provide your own design on this 8\"x6\" Notecard that folds once into two 4\"x6\" panels.",
+        "brandName": "Postal.io",
+        "status": "ACTIVE",
+        "category": "Direct Mail",
+        "type": "Notecards",
+        "subCategory": ["Bi-fold", "8x6"],
+        "useCases": null,
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://601b3946fb946056cb06402e",
+            "description": "Preview"
+          },
+          {
+            "url": "asset://601b3946fb946056cb06402f",
+            "description": "Cover"
+          },
+          {
+            "url": "asset://601b3946fb946056cb064030",
+            "description": "Inside Bottom"
+          },
+          {
+            "url": "asset://601b3946fb946056cb064031",
+            "description": "Inside Top"
+          },
+          {
+            "url": "asset://601b3946fb946056cb064032",
+            "description": "Address"
+          }
+        ],
+        "marketplaceProductId": "5f5bca7ed7033a45b419406f",
+        "variants": [
+          {
+            "id": "5f31a2cb2fb46d0e47e1f143",
+            "variantName": "Glossy",
+            "description": "",
+            "imageUrls": [],
+            "status": "ACTIVE",
+            "price": 163,
+            "displayPrice": 163,
+            "displaySubscriberPrice": 117,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": {
+          "front": [
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": true,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 25,
+                "y": 794,
+                "width": 350,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontName": "Muli-Bold",
+                "fontSize": 16,
+                "text": "COVER PANEL - 4\"x6\""
+              },
+              "customizable": true
+            },
+            {
+              "name": "Image",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 11,
+                "y": 412,
+                "width": 603,
+                "height": 402
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN",
+                "assetUrl": "asset://PMA5f5bca7cd7033a45b4194069"
+              },
+              "customizable": null
+            },
+            {
+              "name": "Logo",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 40,
+                "y": 39,
+                "width": 168,
+                "height": 76
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN"
+              },
+              "customizable": null
+            },
+            {
+              "name": "ReservedArea",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 326,
+                "width": 625,
+                "height": 87
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 0,
+                "minY": 326,
+                "maxX": 0,
+                "maxY": 326
+              },
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "ReservedArea",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 238,
+                "y": 113,
+                "width": 387,
+                "height": 300
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 238,
+                "minY": 113,
+                "maxX": 238,
+                "maxY": 113
+              },
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "FoldLine",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 412,
+                "width": 625,
+                "height": 0
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": null,
+              "customizable": null
+            },
+            {
+              "name": "UspsBlock",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 271,
+                "y": 163,
+                "width": 354,
+                "height": 250
+              },
+              "resize": null,
+              "boundary": {
+                "minX": 271,
+                "minY": 163,
+                "maxX": 271,
+                "maxY": 163
+              },
+              "settings": null,
+              "customizable": null
+            }
+          ],
+          "back": [
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": false,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 25,
+                "y": 375,
+                "width": 350,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontName": "Muli-Bold",
+                "fontSize": 16,
+                "text": "INSIDE TOP PANEL - 4\"x6\""
+              },
+              "customizable": true
+            },
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": false,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 20,
+                "y": 794,
+                "width": 350,
+                "height": 50
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "fontName": "Muli-Bold",
+                "fontSize": 16,
+                "text": "INSIDE BOTTOM PANEL - 4\"x6\""
+              },
+              "customizable": true
+            },
+            {
+              "name": "Text",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 83,
+                "y": 479,
+                "width": 461,
+                "height": 200
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "randomLeftOffset": true,
+                "handwritingName": "felicia",
+                "horizontalAlignment": "LEFT",
+                "verticalAlignment": "TOP",
+                "color": "#000000",
+                "fontSize": 20,
+                "spacingModifier": -8,
+                "sizeToFit": true,
+                "text": "Example text. We recommend you keep your messaging simple, so that it looks clean and authentic.\n\nPostal.io"
+              },
+              "customizable": null
+            },
+            {
+              "name": "Logo",
+              "description": null,
+              "hidden": null,
+              "locked": null,
+              "noPdfOutput": null,
+              "location": {
+                "x": 186,
+                "y": 151,
+                "width": 250,
+                "height": 115
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": {
+                "drawMode": "SCALE_DOWN"
+              },
+              "customizable": null
+            },
+            {
+              "name": "FoldLine",
+              "description": null,
+              "hidden": null,
+              "locked": true,
+              "noPdfOutput": null,
+              "location": {
+                "x": 0,
+                "y": 412,
+                "width": 625,
+                "height": 0
+              },
+              "resize": null,
+              "boundary": null,
+              "settings": null,
+              "customizable": null
+            }
+          ],
+          "dpi": 400,
+          "outputSize": {
+            "width": 2500,
+            "height": 3300
+          }
+        },
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b3920f7bc06347bd8eaf0",
+        "name": "Everybody Lies: Big Data, New Data, and What the Internet Can Tell Us About Who We Really Are",
+        "description": "Everybody Lies: Big Data, New Data, and What the Internet Can Tell Us About Who We Really Are Description",
+        "brandName": "HarperCollins",
+        "status": "ACTIVE",
+        "category": "Books",
+        "type": "Computers",
+        "subCategory": [],
+        "useCases": ["Birthday", "Holiday"],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5e9a3f99299c531be0107254",
+            "description": ""
+          },
+          {
+            "url": "asset://PMA5e7da14ac5e3c10e3d3e779f",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5e7da14dc5e3c10e3d3e77f6",
+        "variants": [
+          {
+            "id": "5e7da14dc5e3c10e3d3e77f2",
+            "variantName": "Paperback",
+            "description": "Paperback Description",
+            "imageUrls": null,
+            "status": "ACTIVE",
+            "price": 939,
+            "displayPrice": 939,
+            "displaySubscriberPrice": 939,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b3903f7bc06347bd8eaef",
+        "name": "Pucky Badger",
+        "description": "The one and only Pucky Badger",
+        "brandName": "Puck's",
+        "status": "ACTIVE",
+        "category": "Sports",
+        "type": "",
+        "subCategory": [],
+        "useCases": [],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5f22315bb03ea3726a675b7c",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5f2230707a0f08005c63cbfb",
+        "variants": [
+          {
+            "id": "5f22311b7a0f08005c63cbfc",
+            "variantName": "Pucky Badger!",
+            "description": "",
+            "imageUrls": [],
+            "status": "ACTIVE",
+            "price": 2800,
+            "displayPrice": 2800,
+            "displaySubscriberPrice": 2800,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b38ebf7bc06347bd8eaee",
+        "name": "Sick Sticker",
+        "description": "SWEET",
+        "brandName": "Sick Stickers, Inc.",
+        "status": "ACTIVE",
+        "category": "Everything Else",
+        "type": "Stickers",
+        "subCategory": [],
+        "useCases": [],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5f2217c98278f33d7439afde",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5f2217ca8278f33d7439afdf",
+        "variants": [
+          {
+            "id": "5f221c7df0829e4d727fc97c",
+            "variantName": "Small",
+            "description": "",
+            "imageUrls": [],
+            "status": "ACTIVE",
+            "price": 5000,
+            "displayPrice": 5000,
+            "displaySubscriberPrice": 5000,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          },
+          {
+            "id": "5f221c7df0829e4d727fc97d",
+            "variantName": "Medium",
+            "description": null,
+            "imageUrls": null,
+            "status": "ACTIVE",
+            "price": 5000,
+            "displayPrice": 5000,
+            "displaySubscriberPrice": 5000,
+            "giftMessageSupported": null,
+            "priceStructure": null
+          },
+          {
+            "id": "5f221c7df0829e4d727fc97e",
+            "variantName": "Large",
+            "description": null,
+            "imageUrls": null,
+            "status": "ACTIVE",
+            "price": 5000,
+            "displayPrice": 5000,
+            "displaySubscriberPrice": 5000,
+            "giftMessageSupported": null,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b38daf7bc06347bd8eaed",
+        "name": "Champagne & Sparkling Wines",
+        "description": "* Exact brand may vary depending on availability by location.\n* Cannot ship to: Alabama, Delaware, South Dakota, Utah. \n* Alcohol delivery is regulated differently by state and zip code.  If there is a delivery issue, we will notify you in a timely fashion.",
+        "brandName": "Champagne",
+        "status": "ACTIVE",
+        "category": "Drink",
+        "type": "Alcohol",
+        "subCategory": ["Drinks", "Alcohol", "Champagne", "Sparkling Wine"],
+        "useCases": [],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5f1875f9a7b783349ea87fcb",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5f177769a7b783349ea87fa9",
+        "variants": [
+          {
+            "id": "5f177808a7b783349ea87faa",
+            "variantName": "Mumm Napa Blanc de Blancs",
+            "description": "* Exact brand may vary depending on availability by location.\n* Cannot ship to: Alabama, Delaware, South Dakota, Utah. \n* Alcohol delivery is regulated differently by state and zip code.  If there is a delivery issue, we will notify you in a timely fashion.",
+            "imageUrls": [
+              {
+                "url": "asset://PMA5f17780448388c3b29afa7c9",
+                "description": ""
+              }
+            ],
+            "status": "ACTIVE",
+            "price": 2499,
+            "displayPrice": 2499,
+            "displaySubscriberPrice": 2499,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b38c0f7bc06347bd8eaec",
+        "name": "Fujifilm instax Mini Instant Camera with Film Twin...",
+        "description": "BUNDLE INCLUDES: Fujifilm instax Mini 9 Instant Camera (Dark Black) and one Mini Film Twin Pack (20 Sheets)",
+        "brandName": "Fujifilm",
+        "status": "ACTIVE",
+        "category": "Electronics",
+        "type": "Camera",
+        "subCategory": ["Popular"],
+        "useCases": [],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5efba949a8db512352e0892c",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5efba94ea8db512352e0892d",
+        "variants": [
+          {
+            "id": "5efbd81375211c3d53919e96",
+            "variantName": "Fujifilm instax Mini 9 Instant Camera and instax Film Twin Pack",
+            "description": "BUNDLE INCLUDES: Fujifilm instax Mini 9 Instant Camera (Smokey White) and one Mini Film Twin Pack (20 Sheets)",
+            "imageUrls": [],
+            "status": "ACTIVE",
+            "price": 8000,
+            "displayPrice": 8000,
+            "displaySubscriberPrice": 8000,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b3899f7bc06347bd8eaeb",
+        "name": "Charity On Top",
+        "description": "Charity On Top Description",
+        "brandName": "Charity On Top",
+        "status": "ACTIVE",
+        "category": "Charities",
+        "type": "Charity On Top",
+        "subCategory": null,
+        "useCases": ["Thank You", "Meeting Request"],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5e94970c1214bd3e736b95a4",
+            "description": "General"
+          }
+        ],
+        "marketplaceProductId": "5e7da148c5e3c10e3d3e776b",
+        "variants": [
+          {
+            "id": "5e7da148c5e3c10e3d3e7765",
+            "variantName": "$10",
+            "description": "$10 Description",
+            "imageUrls": [],
+            "status": "ACTIVE",
+            "price": 1000,
+            "displayPrice": 1000,
+            "displaySubscriberPrice": 1000,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          },
+          {
+            "id": "5e7da148c5e3c10e3d3e7767",
+            "variantName": "$20",
+            "description": "$20 Description",
+            "imageUrls": [],
+            "status": "ACTIVE",
+            "price": 2000,
+            "displayPrice": 2000,
+            "displaySubscriberPrice": 2000,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          },
+          {
+            "id": "5e7da148c5e3c10e3d3e7769",
+            "variantName": "$50",
+            "description": "$50 Description",
+            "imageUrls": [],
+            "status": "ACTIVE",
+            "price": 5000,
+            "displayPrice": 5000,
+            "displaySubscriberPrice": 5000,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b386ff7bc06347bd8eaea",
+        "name": "Dozen Roses",
+        "description": "Dozen Roses Description",
+        "brandName": "FTD",
+        "status": "ACTIVE",
+        "category": "Flowers",
+        "type": "Small",
+        "subCategory": null,
+        "useCases": ["Thank You"],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5e7da14ac5e3c10e3d3e7795",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5e7da14bc5e3c10e3d3e77c3",
+        "variants": [
+          {
+            "id": "5e7da14bc5e3c10e3d3e77bf",
+            "variantName": "Red",
+            "description": "Red Description",
+            "imageUrls": null,
+            "status": "ACTIVE",
+            "price": 5500,
+            "displayPrice": 5500,
+            "displaySubscriberPrice": 5500,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": false,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b3857f7bc06347bd8eae9",
+        "name": "Dozen Roses",
+        "description": "Dozen Roses Description",
+        "brandName": "FTD",
+        "status": "ACTIVE",
+        "category": "Flowers",
+        "type": "Small",
+        "subCategory": null,
+        "useCases": ["Thank You"],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5e7da14ac5e3c10e3d3e7795",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5e7da14bc5e3c10e3d3e77c3",
+        "variants": [
+          {
+            "id": "5e7da14bc5e3c10e3d3e77c1",
+            "variantName": "Yellow",
+            "description": "Yellow Description",
+            "imageUrls": [
+              {
+                "url": "asset://PMA5e7da149c5e3c10e3d3e777c",
+                "description": ""
+              }
+            ],
+            "status": "ACTIVE",
+            "price": 5100,
+            "displayPrice": 5100,
+            "displaySubscriberPrice": 5100,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": false,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b3820f7bc06347bd8eae8",
+        "name": "Other Flower 1",
+        "description": "Other Flower 1 Description",
+        "brandName": "FTD",
+        "status": "ACTIVE",
+        "category": "Flowers",
+        "type": "Medium",
+        "subCategory": null,
+        "useCases": ["Thank You"],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5e7da14ac5e3c10e3d3e779d",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5e7da14bc5e3c10e3d3e77d6",
+        "variants": [
+          {
+            "id": "5e7da14bc5e3c10e3d3e77d4",
+            "variantName": "Purple",
+            "description": "Purple Description",
+            "imageUrls": null,
+            "status": "ACTIVE",
+            "price": 6000,
+            "displayPrice": 6000,
+            "displaySubscriberPrice": 6000,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b3796f7bc06347bd8eae7",
+        "name": "Artisan hand-painted Belgian Chocolate Truffles - 24pc",
+        "description": "Artisan hand-painted Belgian Chocolate Truffles - 24pc Description",
+        "brandName": "FTD",
+        "status": "ACTIVE",
+        "category": "Treats",
+        "type": "Chocolates",
+        "subCategory": null,
+        "useCases": ["Thank You"],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5e7da14ac5e3c10e3d3e77a0",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5e7da14cc5e3c10e3d3e77d9",
+        "variants": [
+          {
+            "id": "5e7da14cc5e3c10e3d3e77d7",
+            "variantName": "Truffles",
+            "description": "Truffles Description",
+            "imageUrls": null,
+            "status": "ACTIVE",
+            "price": 6200,
+            "displayPrice": 6200,
+            "displaySubscriberPrice": 6200,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b3785f7bc06347bd8eae6",
+        "name": "Golden Tower of Godiva Gift Tower",
+        "description": "Golden Tower of Godiva Gift Tower Description",
+        "brandName": "FTD",
+        "status": "ACTIVE",
+        "category": "Treats",
+        "type": "Gift Baskets",
+        "subCategory": null,
+        "useCases": ["Thank You"],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5e7da14ac5e3c10e3d3e779e",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5e7da14cc5e3c10e3d3e77e3",
+        "variants": [
+          {
+            "id": "5e7da14cc5e3c10e3d3e77e1",
+            "variantName": "Chocolate Tower",
+            "description": "Chocolate Tower Description",
+            "imageUrls": null,
+            "status": "ACTIVE",
+            "price": 6900,
+            "displayPrice": 6900,
+            "displaySubscriberPrice": 6900,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b3776f7bc06347bd8eae5",
+        "name": "Classic Fresh Fruit Basket Gift with Crackers, Cheese and Nuts",
+        "description": "Cheese and Nuts for Christmas, Holiday, Birthday, Corporate",
+        "brandName": "Fresh Fruit",
+        "status": "ACTIVE",
+        "category": "Treats",
+        "type": "Treats",
+        "subCategory": ["Treats", "Nuts", "Variety", "Fruit"],
+        "useCases": [],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5f187577a7b783349ea87fc7",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5f1783e3a7b783349ea87fc5",
+        "variants": [
+          {
+            "id": "5f17844f48388c3b29afa7db",
+            "variantName": "Classic Fresh Fruit Basket Gift with Crackers, Cheese and Nuts",
+            "description": "Cheese and Nuts for Christmas, Holiday, Birthday, Corporate",
+            "imageUrls": [
+              {
+                "url": "asset://PMA5f17840fa7b783349ea87fc6",
+                "description": ""
+              }
+            ],
+            "status": "ACTIVE",
+            "price": 3800,
+            "displayPrice": 3800,
+            "displaySubscriberPrice": 3800,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b3767f7bc06347bd8eae4",
+        "name": "Oh! Nuts 12 Variety Mixed Nut Gift Basket",
+        "description": "This signature Oh! Nuts rustic wooden tray is filled to the brim with healthy goodies. The lidded container is neatly divided into 12 compartments featuring an assortment of HIGH-QUALITY GRADE A FRESH NUTS. Replace the traditional candy, chocolates, and baked goods with healthier, trendier vegan treats.",
+        "brandName": "Oh! Nuts",
+        "status": "ACTIVE",
+        "category": "Treats",
+        "type": "Treats",
+        "subCategory": ["Treats", "Nuts", "Variety"],
+        "useCases": [],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5f1875a2a7b783349ea87fc8",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5f178275a7b783349ea87fc0",
+        "variants": [
+          {
+            "id": "5f1782eaa7b783349ea87fc3",
+            "variantName": "Oh! Nuts 12 Variety Mixed Nut Gift Basket",
+            "description": "This signature Oh! Nuts rustic wooden tray is filled to the brim with healthy goodies. The lidded container is neatly divided into 12 compartments featuring an assortment of HIGH-QUALITY GRADE A FRESH NUTS. Replace the traditional candy, chocolates, and baked goods with healthier, trendier vegan treats.",
+            "imageUrls": [
+              {
+                "url": "asset://PMA5f1782c3a7b783349ea87fc1",
+                "description": ""
+              },
+              {
+                "url": "asset://PMA5f1782cda7b783349ea87fc2",
+                "description": ""
+              }
+            ],
+            "status": "ACTIVE",
+            "price": 4000,
+            "displayPrice": 4000,
+            "displaySubscriberPrice": 4000,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b374df7bc06347bd8eae3",
+        "name": "Ultimate Belgian Chocolate Dipped Pretzel Rods",
+        "description": "Ultimate Belgian Chocolate Dipped Pretzel Rods Description",
+        "brandName": "FTD",
+        "status": "ACTIVE",
+        "category": "Treats",
+        "type": "Perishables",
+        "subCategory": null,
+        "useCases": ["Thank You"],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5e7da14ac5e3c10e3d3e77a1",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5e7da14cc5e3c10e3d3e77e6",
+        "variants": [
+          {
+            "id": "5e7da14cc5e3c10e3d3e77e4",
+            "variantName": "Dipped Pretzels",
+            "description": "Dipped Pretzels Description",
+            "imageUrls": null,
+            "status": "ACTIVE",
+            "price": 3500,
+            "displayPrice": 3500,
+            "displaySubscriberPrice": 3500,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      },
+      {
+        "id": "601b372cf7bc06347bd8eae2",
+        "name": "End of Postals Mock A",
+        "description": "Get Clean!",
+        "brandName": "Lever ",
+        "status": "ACTIVE",
+        "category": "Health and Wellness",
+        "type": "Soap",
+        "subCategory": [],
+        "useCases": [],
+        "teamIds": null,
+        "imageUrls": [
+          {
+            "url": "asset://PMA5eecf75a34615976bd0ba3f7",
+            "description": ""
+          }
+        ],
+        "marketplaceProductId": "5eecf75d34615976bd0ba3f8",
+        "variants": [
+          {
+            "id": "5eecf77fcef47c3bce977372",
+            "variantName": "Pink Bomb!",
+            "description": "It's the bomb!",
+            "imageUrls": [],
+            "status": "ACTIVE",
+            "price": 1000,
+            "displayPrice": 1000,
+            "displaySubscriberPrice": 1000,
+            "giftMessageSupported": false,
+            "priceStructure": null
+          }
+        ],
+        "designTemplate": null,
+        "variantOrderFlexibility": null,
+        "event": null,
+        "eventDetails": null,
+        "metrics": {
+          "queued": 0,
+          "failed": 0,
+          "sent": 0,
+          "delivered": 0,
+          "bounces": 0,
+          "touches": 0,
+          "costInCents": 0,
+          "date": null,
+          "started": 0,
+          "completed": 0,
+          "cancelled": 0,
+          "successful": 0,
+          "campaignsSent": 0,
+          "playbooksStarted": 0,
+          "triggersExecuted": 0,
+          "linkTotalViews": 0,
+          "linkUniqViews": 0,
+          "linkMaxExeViews": 0,
+          "linkExpiredViews": 0,
+          "linkExecutions": 0
+        }
+      }
+    ]
+  }
+}

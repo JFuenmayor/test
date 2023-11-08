@@ -1,0 +1,187 @@
+import { format } from 'date-fns'
+import { AddFundsV2Document, BillingAccountsDocument, PaymentPartnerType } from '../../support/api'
+import { userFactory } from '../../support/factories'
+import {
+  Campaigns,
+  Contacts,
+  CustomFormFields,
+  Marketplace,
+  SavedMessages,
+  SendItem,
+  Universal,
+} from '../../support/pageObjects'
+
+describe.skip('Campaigns Testing: Non-Direct Mail', function () {
+  const campaigns = new Campaigns()
+  const contacts = new Contacts()
+  const customFormFields = new CustomFormFields()
+  const sendItem = new SendItem()
+  const marketplace = new Marketplace()
+  const savedMessages = new SavedMessages()
+  const universal = new Universal()
+  const user = userFactory()
+  const today = new Date()
+  const dateFormatInput = (date: Date) => format(date, 'MMMM d, yyyy')
+  before(() => {
+    cy.manageState()
+    cy.programaticSignup(user)
+    cy.log(user.userName)
+    cy.log(user.password)
+    cy.createChipotlePostal()
+    cy.contactsSeed(3)
+    cy.graphqlRequest(BillingAccountsDocument, { filter: { type: { eq: 'FUNDS' } } }).then((res) => {
+      cy.graphqlRequest(AddFundsV2Document, {
+        input: {
+          billingAccountId: res.billingAccounts?.[0]?.id ?? '',
+          amount: 30000,
+          partnerPaymentMethodId: res.billingAccounts?.[0].paymentPartners?.[0].paymentMethods?.[0].partnerId,
+          paymentPartnerType: PaymentPartnerType.Mock,
+        },
+      })
+    })
+    cy.messagesSeed()
+    campaigns.visitCampaigns()
+  })
+
+  beforeEach(() => cy.restoreLocalStorageCache())
+
+  afterEach(() => cy.saveLocalStorageCache())
+
+  it(`tests sending non-direct mail for campaigns`, function () {
+    campaigns.getCreateCampaignButton().click()
+    sendItem.getSelectContactsDrawer().within(() => {
+      contacts.getCheckboxForAllContacts().scrollIntoView().click({ force: true })
+      cy.findAllByRole('checkbox').should('be.checked')
+    })
+    universal
+      .getAllUITags()
+      .eq(0)
+      .then(($name) => {
+        const name = $name.text()
+        campaigns.getNextButton().click()
+        sendItem.getSelectItemDrawer().within(() => {
+          marketplace.chooseItemByName('Chipotle')
+        })
+        sendItem.getSelectItemDrawer().should('not.exist')
+        sendItem.getCustomizeDrawer().within(() => {
+          universal.getCloseButtonByLabelText().should('be.visible')
+          //tests gift email toggle
+          sendItem.getGiftEmailMessageInput().should('exist')
+          sendItem
+            .getIncludeGiftEmailMessageCheckbox()
+            .should('be.checked')
+            .click({ force: true })
+            .should('not.be.checked')
+          sendItem.getSubjectLineInput().should('not.exist')
+          sendItem.getGiftEmailMessageInput().should('not.exist')
+          sendItem.getIncludeGiftEmailMessageCheckbox().click({ force: true }).should('be.checked')
+          //
+          sendItem.getSubjectLineInput().fill('Camp Gift Email Message Header')
+          sendItem.getLandingPageHeaderInput(user.firstName, user.company).fill('Camp sent you something')
+          sendItem.getLandingPageMessageInput().type('Camp chip lP message')
+          sendItem.getLandingPageFormFieldsSection().within(() => {
+            sendItem.getCustomizeFieldsButton().should('exist')
+            const defaultFields = ['First Name', 'Last Name', 'Email Address', 'Title', 'Company']
+            defaultFields.forEach((field) => {
+              sendItem.getCustomizeFieldsTagByName(field).should('exist')
+            })
+            sendItem.getCustomizeFieldsButton().click()
+          })
+        })
+        customFormFields.getCustomizeFormSettingsModal().within(() => {
+          //default fields should exist
+          customFormFields.getCustomFieldFirstName().should('exist')
+          customFormFields.getCustomFieldLastName().should('exist')
+          customFormFields.getCustomFieldEmailAddress().should('exist')
+          customFormFields.getCustomFieldTitle().should('exist')
+          customFormFields.getCustomFieldCompany().should('exist')
+          //extensive testing of the Customize Form Settings Modal done on events.spec
+          //will add just a single choice field
+          customFormFields.getAddCustomFieldSingleChoiceButton().click()
+          customFormFields.getNewCustomFieldQuestion().type('Choose a P@stry')
+          customFormFields
+            .getSingleChoiceAddAnswers()
+            .click({ force: true })
+            .get('.UiSelectTypeaheadCreatable__input')
+            .type(`Pam's Bear Claw!{enter}Kanelbull@r{enter}Kouign (Amann){enter}`)
+          customFormFields.getNewCustomFieldIsRequiredSwitch().check({ force: true })
+          customFormFields.getSaveCustomFieldButton().click()
+          customFormFields.getAddedTextFieldByLabel('Choose a P@stry*').should('exist')
+          customFormFields.getApplyFormSettingsButton().click()
+        })
+        customFormFields.getCustomizeFormSettingsModal().should('not.exist')
+        sendItem.getCustomizeDrawer().within(() => {
+          sendItem.getLandingPageFormFieldsSection().within(() => {
+            sendItem.getCustomizeFieldsTagByName('Choose a P@stry').should('exist')
+          })
+          sendItem.getSendAsSelect().select('Contact Owner')
+          sendItem.getSpendAsCard().within(() => {
+            cy.findByRole('combobox').type(`${user.userName}`)
+          })
+          //tests toggling Send On buttons
+          campaigns.getSendOnText().scrollIntoView().should('exist')
+          campaigns.getScheduledForNowHelper().should('not.exist')
+          campaigns.getNowButton().click({ force: true })
+          campaigns.getDatePickerInput().invoke('val').should('include', dateFormatInput(today))
+          campaigns.getScheduledForNowHelper().should('exist')
+          campaigns.getTomorrowMorningButton().click({ force: true })
+          campaigns.getScheduledForNowHelper().should('not.exist')
+          campaigns.getNowButton().click({ force: true })
+          //completes create and tests that '5 mins from now
+          campaigns.getCampaignNameInput().clear({ force: true }).fill('Chipotle')
+          campaigns.getSelectAnOptionHeading().should('exist')
+          cy.getAllSelectedVariants().should('have.length', 1)
+          sendItem
+            .getGiftEmailMessageInput()
+            .fill('Hi ${contact.firstName}, I just wanted to drop a quick old fashioned note.')
+          sendItem.getNextButton().click({ force: true })
+        })
+        sendItem.getReviewDrawer().within(() => {
+          sendItem.getSendItemButton().should('be.visible')
+          sendItem.getReviewMeetingRequest().should('contain', 'No')
+          sendItem.getReviewSubjectLineSection().should('contain', 'Camp Gift Email Message Header')
+          sendItem
+            .getReviewGiftMessageSection()
+            .contains(`Hi ${name}, I just wanted to drop a quick old fashioned note.`)
+          sendItem.getReviewLandingPageTitle().should('contain', 'Camp sent you something')
+          sendItem.getReviewLandingPageMessage().should('contain', 'Camp chip lP message')
+          sendItem.getReviewSendAsSection().should('contain', 'Contact Owner')
+          campaigns.getSendOnText().should('exist')
+          cy.contains(new Date().toLocaleDateString('en-US')).scrollIntoView().should('be.visible')
+          sendItem.getSendItemButton().click({ force: true })
+        })
+        sendItem.getConfirmSendModal().within(() => {
+          sendItem.getSendButton().click()
+        })
+        sendItem.getReviewDrawer().should('not.exist')
+        cy.contains('tr', 'Chipotle').should('contain', '5 minutes from now')
+        //Note: editing the Landing Page and Gift Email headers is tested in the postals.spec via the View Order modal
+        //tests using a Saved Message
+        campaigns.visitCampaigns()
+        campaigns.getCreateCampaignButton().click()
+        sendItem
+          .getSelectContactsDrawer()
+          .should('be.visible')
+          .within(() => {
+            contacts.getCheckboxForAllContacts().scrollIntoView().click({ force: true })
+            cy.findAllByRole('checkbox').should('be.checked')
+          })
+        campaigns.getNextButton().click()
+        sendItem.getSelectItemDrawer().within(() => {
+          marketplace.chooseItemByName('Chipotle')
+        })
+        savedMessages.getSavedMessageButton().click({ force: true })
+        savedMessages
+          .getSavedMessagesDrawer()
+          .should('be.visible')
+          .within(() => {
+            savedMessages.getNoMessagesHelper().should('not.exist')
+            savedMessages.getWelcomeSavedMessage().scrollIntoView().should('be.visible').click({ force: true })
+          })
+        sendItem.getGiftEmailMessageInput().should('contain', 'so glad to be working with you')
+        sendItem.getNextButton().click({ force: true })
+        sendItem.getGiftEmailMessageHeader().should('exist')
+        cy.contains('so glad to be working with you').should('exist')
+      })
+  })
+})

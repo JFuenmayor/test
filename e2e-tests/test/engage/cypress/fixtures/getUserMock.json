@@ -1,0 +1,69 @@
+{
+  "data": {
+    "getUser": {
+      "id": "5f7f7cf2091fcc12292d7af2",
+      "firstName": "Billie",
+      "lastName": "Tester",
+      "userName": "35456a00-d184-4ddb-b7cc-4f2622ef9c67@postal.dev",
+      "emailAddress": "35456a00-d184-4ddb-b7cc-4f2622ef9c67@postal.dev",
+      "profilePicture": null,
+      "phoneNumber": "7605576358",
+      "title": "Automated Tester",
+      "meetingLink": "www.meetingLink.com",
+      "status": "ACTIVE",
+      "accountLockedUntil": null,
+      "authenticationFailures": 1,
+      "auth": [
+        {
+          "method": "password",
+          "version": "BC-SP12",
+          "expires": "2021-01-06T20:56:40.585Z",
+          "updated": "2020-10-08T20:56:40.585Z",
+          "created": "2020-10-08T20:56:18.553Z",
+          "__typename": "AuthenticationMethod"
+        }
+      ],
+      "created": {
+        "actor": "SignupVerticle",
+        "dateTime": "2020-10-08T20:56:18.950Z",
+        "__typename": "ActionRecord"
+      },
+      "productAccess": [
+        {
+          "id": "5f7f7cf54c32b65480eba5bb",
+          "accountId": "5f7f7cf3275dba4c1d118e37",
+          "teamId": null,
+          "partnerId": null,
+          "product": "POSTAL_IO_APP",
+          "roles": ["USER", "MANAGER", "ADMIN"],
+          "type": "ACCOUNT",
+          "created": {
+            "actor": "5f7f7cf2091fcc12292d7af2",
+            "dateTime": "2020-10-08T20:56:21.146Z",
+            "__typename": "ActionRecord"
+          },
+          "__typename": "ProductAccess"
+        }
+      ],
+      "handwritingName": null,
+      "crmUserMap": null,
+      "notifications": {
+        "notificationsOn": false,
+        "balanceLowNotificationsOn": false,
+        "balanceLowChannels": ["EMAIL"],
+        "lastBalanceLowNotificationSent": null,
+        "budgetLowNotificationsOn": false,
+        "budgetLowChannels": ["EMAIL"],
+        "lastBudgetLowNotificationSent": null,
+        "giftEmailAcceptedNotificationsOn": true,
+        "giftEmailAcceptedChannels": ["EMAIL"],
+        "magicLinkAcceptedNotificationsOn": true,
+        "magicLinkAcceptedChannels": ["EMAIL"],
+        "orderDeliveredNotificationsOn": false,
+        "orderDeliveredChannels": ["EMAIL"],
+        "__typename": "UserNotifications"
+      },
+      "__typename": "User"
+    }
+  }
+}

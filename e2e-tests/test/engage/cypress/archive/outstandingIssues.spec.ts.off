@@ -1,0 +1,272 @@
+import { addDays, format } from 'date-fns'
+import { userFactory } from '../../support/factories'
+import { Universal } from '../../support/pageObjects'
+
+describe('Outstanding issues test suite', () => {
+  const user = userFactory()
+  const universal = new Universal()
+
+  const today = new Date()
+  const inTwoDays = addDays(today, 2)
+  const dateFormatInput = (date: Date) => format(date, 'MMMM d, yyyy')
+
+  before(() => {
+    cy.manageState()
+    cy.programaticSignup(user)
+  })
+
+  it(`tests the outstanding issues page's rendering via mocks`, () => {
+    //notes: sharing this fixture with the Budget History mocks, I edited the data to include failureReasons where before
+    //they were null. this isn't causing any issue with rendering in either specs but noted it here in case that changes.
+    cy.graphqlMockSet({
+      operationName: 'searchPostalFulfillments',
+      count: 3,
+      fixture: 'searchBudgetHistoryMockB.json',
+    })
+    cy.graphqlMockStart()
+    //tests rendering of  table header text, mocked rows, and edit menu buttons
+    visitOutstandingIssues()
+    universal.getTableHeader().should('have.text', getIssuesTableHeaderText())
+    universal.getRowsInATableBody().should('be.visible').and('have.length', 8)
+    universal.getRowByText('Budget Issue').within(() => {
+      cy.findByText('8/24/2021').should('exist')
+      getSingleSendText().should('exist')
+      //not tetsing the ui-tag for status because the new update of this page won't include it
+      universal.getAllGridCellsByText('1783 Southwood Dr San Luis Obispo, CA 93401').should('have.length', 1)
+      getPostcard6x9Text().should('exist')
+      cy.findByText('Mark Mallady').should('exist')
+      getEditButton().scrollIntoView().click({ force: true })
+    })
+    getEditMenu()
+      .should('be.visible')
+      .within(() => {
+        getRetryOrderButton().should('exist')
+        getUpdateBudgetButton().should('be.visible')
+        getCancelOrderButton().should('be.visible').click()
+      })
+    getCancelOrderModal().within(() => {
+      getCancelOrderModalText().should('exist')
+      cy.contains('button', 'Confirm').should('exist')
+      cy.contains('button', 'Cancel').click({ force: true })
+    })
+    cy.contains('header', 'Cancel Order').should('not.exist')
+    universal.getRowByText('Subscription').within(() => {
+      //clicking here will remove the previous edit menu and reduce flake
+      cy.findByText('5/17/2021').should('exist').click()
+      cy.findByText('Unknown Address').should('exist')
+      //not tetsing the ui-tag for status because the new update of this page won't include it
+      cy.findByText('Ship-to address not availible').should('exist')
+      getPostcard6x9Text().should('exist')
+      cy.findByText('fred frank').should('exist')
+      getEditButton().scrollIntoView().click({ force: true })
+    })
+    getRetryOrderButton().should('not.exist')
+    getEditMenu()
+      .should('be.visible')
+      .within(() => {
+        getCancelOrderButton().should('be.visible')
+        getSendWithCurrentAddressButton().should('be.visible')
+        getUpdateAddressButton().should('be.visible').click()
+      })
+    getVerifyAddressDrawer().within(() => {
+      universal.getCloseButtonByLabelText().click({ force: true })
+    })
+    universal.getRowByText('Sally Manning').within(() => {
+      cy.findByText('4/2/2021').should('exist').click()
+      cy.findByText('Campaign').should('exist')
+      cy.findByText('Budget Issue').should('exist')
+      //not tetsing the ui-tag for status because the new update of this page won't include it
+      universal.getAllGridCellsByText('145 South St Apt 1 San Luis Obispo, CA 93401').should('have.length', 1)
+      cy.findByText('Blitzscaling').should('exist')
+      getEditButton().scrollIntoView().click({ force: true })
+    })
+    getEditMenu()
+      .should('be.visible')
+      .within(() => {
+        getRetryOrderButton().should('exist')
+        getCancelOrderButton().should('be.visible')
+        getUpdateBudgetButton().should('be.visible').click()
+      })
+    cy.url().should('contain', 'teams/default')
+    cy.graphqlMockSet({
+      operationName: 'searchPostalFulfillments',
+      count: 3,
+      fixture: 'searchBudgetHistoryMockB.json',
+    })
+    visitOutstandingIssues()
+    universal.getSpinner().should('not.exist')
+    universal.getRowsInATableBody().should('have.length', 8)
+    //test filtering by failure reason via mocking
+    cy.fixture('searchBudgetHistoryMockB.json').then((json) => {
+      cy.graphqlMockSet({
+        operationName: 'searchPostalFulfillments',
+        count: 2,
+        response: filterIt('BUDGET', json),
+      })
+      getFailureReasonSelect('-- Failure Reason --').select('Budget')
+      universal.progressBarZero()
+      universal.getRowsInATableBody().should('have.length', 3)
+      getBudgetIssueText().should('have.length', 3)
+      cy.graphqlMockSet({
+        operationName: 'searchPostalFulfillments',
+        count: 2,
+        response: filterIt('CONTACT_BAD_ADDRESS', json),
+      })
+      getFailureReasonSelect('Budget').select('CONTACT_BAD_ADDRESS')
+      universal.progressBarZero()
+      getBudgetIssueText().should('not.exist')
+      universal.getRowsInATableBody().should('have.length', 3)
+      getUnknownAddressText().should('have.length', 3)
+      cy.graphqlMockSet({
+        operationName: 'searchPostalFulfillments',
+        count: 2,
+        response: filterIt('FUNDS', json),
+      })
+      getFailureReasonSelect('Contact Bad Address').select('FUNDS')
+      universal.progressBarZero()
+      getUnknownAddressText().should('not.exist')
+      universal.getRowsInATableBody().should('have.length', 2)
+      getBillingIssueText().should('have.length', 2)
+
+      cy.graphqlMockSet({
+        operationName: 'searchPostalFulfillments',
+        count: 3,
+        fixture: 'searchBudgetHistoryMockB.json',
+      })
+      getFailureReasonSelect('Funds').select('-- Failure Reason --')
+      universal.progressBarZero()
+      universal.getRowsInATableBody().should('have.length', 2)
+      getBillingIssueText().should('have.length', 2)
+      getUnknownAddressText().should('have.length', 3)
+      getBudgetIssueText().should('have.length', 3)
+      //tests sorting by Date
+      cy.graphqlMockSet({
+        operationName: 'searchPostalFulfillments',
+        count: 3,
+        fixture: 'searchBudgetHistoryMockB.json',
+      })
+      visitOutstandingIssues()
+      universal.getSpinner().should('not.exist')
+      universal.getRowsInATableBody().should('have.length', 8)
+      universal.getRowsInATableBody().eq(0).should('contain', '8/24/2021')
+      cy.graphqlMockSet({
+        operationName: 'searchPostalFulfillments',
+        count: 1,
+        response: sortIt(json),
+      })
+      getDateSort().click()
+      universal.waitForProgressBar()
+      universal.getRowsInATableBody().eq(0).should('contain', '3/31/2021')
+    })
+    cy.graphqlMockClear()
+
+    //tests that entering info in the search boxes triggers the corretc api calls
+    //mocking seemed like overkill here
+    cy.intercept('/engage/api/graphql', (req) => {
+      if (req.body.operationName === 'searchPostalFulfillments') {
+        req.alias = 'searchPostalFulfillments'
+      }
+      if (req.body.operationName === 'searchApprovedPostals') {
+        req.alias = 'searchApprovedPostals'
+      }
+      if (req.body.operationName === 'searchContactsV2') {
+        req.alias = 'searchContactsV2'
+      }
+    })
+    cy.findAllByPlaceholderText('Order Date')
+      .eq(1)
+      .type(`${dateFormatInput(today)} to ${dateFormatInput(inTwoDays)}{enter}`, { force: true })
+    cy.wait('@searchPostalFulfillments')
+    universal.progressBarZero()
+    universal.getRowsInATableBody().should('have.length', 1)
+    cy.findByTestId('AutoCompleteItem').within(() => {
+      cy.findByText('Search Items').should('exist')
+      cy.get('input:not([type="hidden"])').click({ force: true }).type(`hello{enter}`)
+    })
+    cy.wait('@searchApprovedPostals')
+    cy.findByTestId('AutoCompleteContact').within(() => {
+      cy.findByText('Select Contact').should('exist')
+      cy.get('input:not([type="hidden"])').click({ force: true }).type(`contact{enter}`)
+    })
+    cy.wait('@searchContactsV2')
+  })
+
+  function visitOutstandingIssues() {
+    cy.visit('/profile/issues')
+    universal.getSpinner().should('not.exist')
+  }
+  function getIssuesTableHeaderText() {
+    return 'DateTypeFailure TypeStatusAddressItemContactEdit'
+  }
+  function getSingleSendText() {
+    return cy.findByText('Single Send')
+  }
+  function getPostcard6x9Text() {
+    return cy.findByText('Postcard - 6x9')
+  }
+  function getBudgetIssueText() {
+    return cy.findAllByText('Budget Issue')
+  }
+  function getUnknownAddressText() {
+    return cy.findAllByText('Unknown Address')
+  }
+  function getBillingIssueText() {
+    return cy.findAllByText('Billing Issue')
+  }
+  function getEditButton() {
+    return cy.findByLabelText('edit')
+  }
+  function getEditMenu() {
+    return cy.findByRole('menu')
+  }
+  function getRetryOrderButton() {
+    return cy.findByRole('button', { name: 'Retry Order', timeout: 28000 })
+  }
+  function getUpdateBudgetButton() {
+    return cy.findByRole('button', { name: 'Update Budget' })
+  }
+  function getCancelOrderButton() {
+    return cy.findByRole('button', { name: 'Cancel Order' })
+  }
+  function getSendWithCurrentAddressButton() {
+    return cy.findByRole('button', { name: 'Send With Current Address' })
+  }
+  function getUpdateAddressButton() {
+    return cy.findByRole('button', { name: 'Update Address' })
+  }
+  function getCancelOrderModal() {
+    return cy.contains('header', 'Cancel Order').parent()
+  }
+  function getCancelOrderModalText() {
+    return cy.contains('This action will cancel this order.')
+  }
+  function getVerifyAddressDrawer() {
+    return cy.findByRole('dialog', { name: 'Verify Address' })
+  }
+  function getFailureReasonSelect(reason: string) {
+    return cy.findByDisplayValue(reason)
+  }
+  function getDateSort() {
+    return cy.findByRole('button', { name: 'Date' })
+  }
+  function filterIt(failureType: string, json: any) {
+    const data = json.data.searchPostalFulfillments.filter(
+      (issue: { failureReason: string }) => issue.failureReason == failureType
+    )
+    const filtered = {
+      data: {
+        searchPostalFulfillments: data,
+      },
+    }
+    return filtered
+  }
+  function sortIt(json: any) {
+    const data = json.data.searchPostalFulfillments.reverse()
+    const filtered = {
+      data: {
+        searchPostalFulfillments: data,
+      },
+    }
+    return filtered
+  }
+})

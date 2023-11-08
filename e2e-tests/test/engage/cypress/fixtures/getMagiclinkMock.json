@@ -1,0 +1,57 @@
+{
+  "data": {
+    "getMagicLink": {
+      "id": "600709032d4abb3d66048a79",
+      "name": "Giftcard MagicLink",
+      "linkUrl": "http://localhost:3000/l/5uPfA1Mn",
+      "status": "ACTIVE",
+      "expirationDate": null,
+      "maxExecutions": 1,
+      "message": "Giftcard Message",
+      "approvedPostalId": "60070900f96b3d5533dbb0a7",
+      "variantId": "6006918c349b1d08b3ad931f",
+      "distributionChannel": null,
+      "metrics": {
+        "queued": 0,
+        "failed": 0,
+        "sent": 0,
+        "delivered": 0,
+        "bounces": 0,
+        "touches": 2,
+        "costInCents": 101,
+        "date": null,
+        "started": 0,
+        "completed": 0,
+        "cancelled": 0,
+        "successful": 0,
+        "campaignsSent": 0,
+        "playbooksStarted": 0,
+        "triggersExecuted": 0,
+        "linkTotalViews": 1,
+        "linkUniqViews": 0,
+        "linkMaxExeViews": 2,
+        "linkExpiredViews": 0,
+        "linkExecutions": 1,
+        "__typename": "BasicMetrics"
+      },
+      "lastView": "2021-01-19T16:30:20.800Z",
+      "lastExecution": "2021-01-19T16:30:24.771Z",
+      "created": {
+        "actor": "600708fdca3dd37f2a423ef1",
+        "dateTime": "2021-01-19T16:29:55.821Z",
+        "__typename": "ActionRecord"
+      },
+      "updated": {
+        "actor": "MagicLinkExecutor",
+        "dateTime": "2021-01-19T16:30:24.771Z",
+        "__typename": "ActionRecord"
+      },
+      "userLink": {
+        "userName": "625a347d-88f7-443e-a319-c40480f199b0@postal.dev",
+        "fullName": "Eli Murazik",
+        "__typename": "UserLink"
+      },
+      "__typename": "MagicLink"
+    }
+  }
+}

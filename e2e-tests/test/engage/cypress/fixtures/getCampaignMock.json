@@ -1,0 +1,56 @@
+{
+  "data": {
+    "getCampaign": {
+      "id": "5f7dffb78febb71d3309842c",
+      "userId": "5f7dffaf091fcc12292d7471",
+      "userLink": {
+        "userName": "0326f9ed-d1bc-4444-a62d-4c9cfc4ea287@postal.dev",
+        "fullName": "Isom Hoeger",
+        "__typename": "UserLink"
+      },
+      "name": "Second Campaign",
+      "status": "COMPLETE",
+      "scheduleDate": "2020-10-07T17:54:43.747Z",
+      "cancelDate": null,
+      "errorDate": null,
+      "completeDate": "2020-10-07T17:49:45.147Z",
+      "giftMessage": null,
+      "backgroundTaskId": null,
+      "playbookId": null,
+      "approvedPostalId": "5f7dffb230139b30f070eb47",
+      "variantId": "5f3d58d3fd6ec76fc7d85cae",
+      "designTemplate": null,
+      "totalContactsAttempted": null,
+      "deliveryEmail": true,
+      "metrics": {
+        "queued": null,
+        "failed": null,
+        "sent": null,
+        "delivered": null,
+        "bounces": null,
+        "touches": 2,
+        "costInCents": 400,
+        "date": null,
+        "started": null,
+        "completed": null,
+        "cancelled": null,
+        "successful": null,
+        "campaignsSent": null,
+        "playbooksStarted": null,
+        "triggersExecuted": null,
+        "linkTotalViews": null,
+        "linkUniqViews": null,
+        "linkMaxExeViews": null,
+        "linkExpiredViews": null,
+        "linkExecutions": null,
+        "__typename": "BasicMetrics"
+      },
+      "created": {
+        "actor": "5f7dffaf091fcc12292d7471",
+        "dateTime": "2020-10-07T17:49:43.747Z",
+        "__typename": "ActionRecord"
+      },
+      "__typename": "Campaign"
+    }
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "data": {
+    "searchPostalFulfillments": [
+      {
+        "id": "5fcfdd66dbfc163a049470b7",
+        "userId": "5fcfcda91844733289672f12",
+        "userLink": {
+          "userName": "081014ac-8855-44b9-8098-ddbb15604461@postal.dev",
+          "fullName": "Werner Moore",
+          "__typename": "UserLink"
+        },
+        "contactId": "5fcfd65036a769770a33a7d4",
+        "shipTo": {
+          "entryName": "",
+          "address1": "785 Islay Street",
+          "address2": "",
+          "address3": null,
+          "city": "San Luis Obispo",
+          "state": "California",
+          "postalCode": "93401",
+          "country": "United States",
+          "preferred": true,
+          "source": "MANUAL",
+          "status": "MATCHED",
+          "statusReason": null,
+          "systems": ["postal.io"],
+          "uspsAddress": {
+            "entryName": null,
+            "address1": "785 Islay Street",
+            "address2": null,
+            "address3": null,
+            "city": "San Luis Obispo",
+            "state": "CA",
+            "postalCode": "93401",
+            "country": "USA",
+            "preferred": false,
+            "status": null,
+            "statusReason": null,
+            "__typename": "Address"
+          },
+          "__typename": "Address"
+        },
+        "shipToEmail": "wwilliows@postal.com",
+        "shipToName": "Wilby Willows",
+        "campaignName": null,
+        "deliveryEmail": false,
+        "campaignId": null,
+        "playbookId": "5fcfd65cd41c4a285ce90014",
+        "triggerId": null,
+        "magicLinkId": null,
+        "magicLinkName": null,
+        "itemName": "Postcard",
+        "previewImage": "asset://5fcfcdac8fc6ad5d34e2fecb",
+        "giftMessage": null,
+        "marketplaceProductId": "5fcf329b02a68346488166f4",
+        "approvedPostalId": "5fcfcdac02a6834648816805",
+        "variantId": "5fcf329b02a68346488166ee",
+        "fulfillmentPartnerId": "000000000000000000000002",
+        "fulfillmentPartnerOrderId": "e644e09c-0e97-4a64-a35b-627dd9ef0cf1",
+        "cost": {
+          "subtotal": 22,
+          "shipping": 29,
+          "tax": 2,
+          "thirdPartyFee": 0,
+          "postalFee": 0,
+          "taxEstimated": null,
+          "budgetExpense": null,
+          "total": 53,
+          "__typename": "OrderCost"
+        },
+        "status": "CONFIRMED",
+        "history": [
+          {
+            "status": "CONFIRMED",
+            "notes": "Order Confirmed",
+            "created": "2020-12-08T20:09:11.994Z",
+            "currentLocation": null,
+            "__typename": "FulfillmentHistory"
+          }
+        ],
+        "targetDeliveryDate": "2020-12-14T20:09:10.355Z",
+        "deliveryDate": null,
+        "deliveryPartner": null,
+        "trackingNumber": null,
+        "attributes": {
+          "postalIoTrackingCode": "900343",
+          "targetPath": "http://localhost:3000/api/printmaker/output/5fcfcda9013b0a2eaf66dfea/5fcfdd66dbfc163a049470b7.pdf?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjVmY2ZkZDY2ZGJmYzE2M2EwNDk0NzBiNy5wZGYiLCJhY2NvdW50SWQiOiI1ZmNmY2RhOTAxM2IwYTJlYWY2NmRmZWEiLCJpYXQiOjE2MDc0NTgxNTEsImV4cCI6MTYwODY2Nzc1MX0.oA6gWBCq3X2B_eyZvA83S43_FDx3TaC-M8EaRi5aDcE&file=5fcfdd66dbfc163a049470b7.pdf"
+        },
+        "created": {
+          "actor": "5fcfcda91844733289672f12",
+          "dateTime": "2020-12-08T20:09:10.506Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "PostalFulfillment"
+      },
+      {
+        "id": "5fcfd5d5dbfc163a049470b1",
+        "userId": "5fcfcda91844733289672f12",
+        "userLink": {
+          "userName": "081014ac-8855-44b9-8098-ddbb15604461@postal.dev",
+          "fullName": "Werner Moore",
+          "__typename": "UserLink"
+        },
+        "contactId": "5fcfcebb36a769770a33a7d3",
+        "shipTo": {
+          "entryName": "",
+          "address1": "1250 Peach Street",
+          "address2": "",
+          "address3": null,
+          "city": "San Luis Obispo",
+          "state": "California",
+          "postalCode": "93401",
+          "country": "United States",
+          "preferred": true,
+          "source": "MANUAL",
+          "status": "MATCHED",
+          "statusReason": null,
+          "systems": ["postal.io"],
+          "uspsAddress": {
+            "entryName": null,
+            "address1": "1250 Peach Street",
+            "address2": null,
+            "address3": null,
+            "city": "San Luis Obispo",
+            "state": "CA",
+            "postalCode": "93401",
+            "country": "USA",
+            "preferred": false,
+            "status": null,
+            "statusReason": null,
+            "__typename": "Address"
+          },
+          "__typename": "Address"
+        },
+        "shipToEmail": "maridsjsdhscba@postal.dev",
+        "shipToName": "Maria Lara",
+        "campaignName": null,
+        "deliveryEmail": false,
+        "campaignId": null,
+        "playbookId": "5fcfcecbd41c4a285ce8fff8",
+        "triggerId": null,
+        "magicLinkId": null,
+        "magicLinkName": null,
+        "itemName": "Postcard",
+        "previewImage": "asset://5fcfcdac8fc6ad5d34e2fecb",
+        "giftMessage": null,
+        "marketplaceProductId": "5fcf329b02a68346488166f4",
+        "approvedPostalId": "5fcfcdac02a6834648816805",
+        "variantId": "5fcf329b02a68346488166ee",
+        "fulfillmentPartnerId": "000000000000000000000002",
+        "fulfillmentPartnerOrderId": null,
+        "cost": {
+          "subtotal": 22,
+          "shipping": 29,
+          "tax": 2,
+          "thirdPartyFee": 0,
+          "postalFee": 0,
+          "taxEstimated": null,
+          "budgetExpense": null,
+          "total": 53,
+          "__typename": "OrderCost"
+        },
+        "status": "PROCESSING_ERROR",
+        "history": [
+          {
+            "status": "PROCESSING_ERROR",
+            "notes": "An error occurred while trying to place your order: Billing Transaction Failed: Insufficient Funds - Please Contact  Your Administrator",
+            "created": "2020-12-07T19:36:56.017Z",
+            "currentLocation": null,
+            "__typename": "FulfillmentHistory"
+          }
+        ],
+        "targetDeliveryDate": "2020-12-14T19:36:53.624Z",
+        "deliveryDate": null,
+        "deliveryPartner": null,
+        "trackingNumber": null,
+        "attributes": {
+          "postalIoTrackingCode": "963512",
+          "targetPath": "http://localhost:3000/api/printmaker/output/5fcfcda9013b0a2eaf66dfea/5fcfd5d5dbfc163a049470b1.pdf?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjVmY2ZkNWQ1ZGJmYzE2M2EwNDk0NzBiMS5wZGYiLCJhY2NvdW50SWQiOiI1ZmNmY2RhOTAxM2IwYTJlYWY2NmRmZWEiLCJpYXQiOjE2MDc0NTYyMTUsImV4cCI6MTYwODY2NTgxNX0.7iiI7sUF7r_Xebl7g58ceymFTN71kU1ziIJruDT9CX0&file=5fcfd5d5dbfc163a049470b1.pdf"
+        },
+        "created": {
+          "actor": "5fcfcda91844733289672f12",
+          "dateTime": "2020-12-07T19:36:53.719Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "PostalFulfillment"
+      },
+      {
+        "id": "5fcfd4e6dbfc163a049470aa",
+        "userId": "5fcfcda91844733289672f12",
+        "userLink": {
+          "userName": "081014ac-8855-44b9-8098-ddbb15604461@postal.dev",
+          "fullName": "Werner Moore",
+          "__typename": "UserLink"
+        },
+        "contactId": "5fcfcdd636a769770a33a7d2",
+        "shipTo": {
+          "entryName": "",
+          "address1": "1366 Avalon Street",
+          "address2": "",
+          "address3": null,
+          "city": "San Luis Obispo",
+          "state": "California",
+          "postalCode": "93405",
+          "country": "United States",
+          "preferred": true,
+          "source": "MANUAL",
+          "status": "MATCHED",
+          "statusReason": null,
+          "systems": ["postal.io"],
+          "uspsAddress": {
+            "entryName": null,
+            "address1": "1366 Avalon Street",
+            "address2": null,
+            "address3": null,
+            "city": "San Luis Obispo",
+            "state": "CA",
+            "postalCode": "93405",
+            "country": "USA",
+            "preferred": false,
+            "status": null,
+            "statusReason": null,
+            "__typename": "Address"
+          },
+          "__typename": "Address"
+        },
+        "shipToEmail": "ghjut6789@postal.dev",
+        "shipToName": "Horrace Handy",
+        "campaignName": null,
+        "deliveryEmail": false,
+        "campaignId": null,
+        "playbookId": "5fcfcdd9d41c4a285ce8fff7",
+        "triggerId": null,
+        "magicLinkId": null,
+        "magicLinkName": null,
+        "itemName": "Postcard",
+        "previewImage": "asset://5fcfcdac8fc6ad5d34e2fecb",
+        "giftMessage": null,
+        "marketplaceProductId": "5fcf329b02a68346488166f4",
+        "approvedPostalId": "5fcfcdac02a6834648816805",
+        "variantId": "5fcf329b02a68346488166ee",
+        "fulfillmentPartnerId": "000000000000000000000002",
+        "fulfillmentPartnerOrderId": null,
+        "cost": {
+          "subtotal": 22,
+          "shipping": 29,
+          "tax": 2,
+          "thirdPartyFee": 0,
+          "postalFee": 0,
+          "taxEstimated": null,
+          "budgetExpense": null,
+          "total": 53,
+          "__typename": "OrderCost"
+        },
+        "status": "PROCESSING_ERROR",
+        "history": [
+          {
+            "status": "PROCESSING_ERROR",
+            "notes": "An error occurred while trying to place your order: Billing Transaction Failed: Insufficient Funds - Please Contact  Your Administrator",
+            "created": "2020-12-06T19:32:58.272Z",
+            "currentLocation": null,
+            "__typename": "FulfillmentHistory"
+          }
+        ],
+        "targetDeliveryDate": "2020-12-14T19:32:54.351Z",
+        "deliveryDate": null,
+        "deliveryPartner": null,
+        "trackingNumber": null,
+        "attributes": {
+          "postalIoTrackingCode": "924372",
+          "targetPath": "http://localhost:3000/api/printmaker/output/5fcfcda9013b0a2eaf66dfea/5fcfd4e6dbfc163a049470aa.pdf?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjVmY2ZkNGU2ZGJmYzE2M2EwNDk0NzBhYS5wZGYiLCJhY2NvdW50SWQiOiI1ZmNmY2RhOTAxM2IwYTJlYWY2NmRmZWEiLCJpYXQiOjE2MDc0NTU5NzgsImV4cCI6MTYwODY2NTU3OH0.OBn-odu_sHY4rG86iTWjObKt4B8regFtfy305AX0eRg&file=5fcfd4e6dbfc163a049470aa.pdf"
+        },
+        "created": {
+          "actor": "5fcfcda91844733289672f12",
+          "dateTime": "2020-12-06T19:32:54.575Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "PostalFulfillment"
+      },
+      {
+        "id": "5fcfd4d6dbfc163a049470a1",
+        "userId": "5fcfcda91844733289672f12",
+        "userLink": {
+          "userName": "081014ac-8855-44b9-8098-ddbb15604461@postal.dev",
+          "fullName": "Werner Moore",
+          "__typename": "UserLink"
+        },
+        "contactId": "5fcfcdae36a769770a33a7d1",
+        "shipTo": {
+          "entryName": "Work",
+          "address1": "742 Kessler Centers",
+          "address2": "Suite 968",
+          "address3": null,
+          "city": "Macejkovicfort",
+          "state": "Nevada",
+          "postalCode": "49926",
+          "country": "USA",
+          "preferred": true,
+          "source": "MANUAL",
+          "status": "INVALID",
+          "statusReason": "Can't match street to city/state/ZIP combination.",
+          "systems": ["postal.io"],
+          "uspsAddress": {
+            "entryName": null,
+            "address1": "742 Kessler Centers",
+            "address2": "Suite 968",
+            "address3": null,
+            "city": "Macejkovicfort",
+            "state": "Nevada",
+            "postalCode": "49926",
+            "country": "USA",
+            "preferred": false,
+            "status": null,
+            "statusReason": null,
+            "__typename": "Address"
+          },
+          "__typename": "Address"
+        },
+        "shipToEmail": "May.Macejkovic0@gmail.com",
+        "shipToName": "Ricky Bashirian",
+        "campaignName": null,
+        "deliveryEmail": false,
+        "campaignId": null,
+        "playbookId": "5fcfcdc3d41c4a285ce8ffe9",
+        "triggerId": null,
+        "magicLinkId": null,
+        "magicLinkName": null,
+        "itemName": "Postcard",
+        "previewImage": "asset://5fcfcdac8fc6ad5d34e2fecb",
+        "giftMessage": null,
+        "marketplaceProductId": "5fcf329b02a68346488166f4",
+        "approvedPostalId": "5fcfcdac02a6834648816805",
+        "variantId": "5fcf329b02a68346488166ee",
+        "fulfillmentPartnerId": "000000000000000000000002",
+        "fulfillmentPartnerOrderId": null,
+        "cost": {
+          "subtotal": 22,
+          "shipping": 29,
+          "tax": 2,
+          "thirdPartyFee": 0,
+          "postalFee": 0,
+          "taxEstimated": true,
+          "budgetExpense": null,
+          "total": 53,
+          "__typename": "OrderCost"
+        },
+        "status": "PROCESSING_ERROR",
+        "history": [
+          {
+            "status": "PROCESSING_ERROR",
+            "notes": "An error occurred while trying to place your order: The provided address has not been verified as a valid USPS address",
+            "created": "2020-12-05T19:32:38.491Z",
+            "currentLocation": null,
+            "__typename": "FulfillmentHistory"
+          }
+        ],
+        "targetDeliveryDate": "2020-12-14T19:32:38.400Z",
+        "deliveryDate": null,
+        "deliveryPartner": null,
+        "trackingNumber": null,
+        "attributes": null,
+        "created": {
+          "actor": "5fcfcda91844733289672f12",
+          "dateTime": "2020-12-05T19:32:38.485Z",
+          "__typename": "ActionRecord"
+        },
+        "__typename": "PostalFulfillment"
+      }
+    ]
+  }
+}
